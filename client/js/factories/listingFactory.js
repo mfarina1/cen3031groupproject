@@ -1,0 +1,18 @@
+angular.module('listings', []).factory('Listings', function($http) {
+  var methods = {
+    getAll: function() {
+        console.log("GETTING ALL LISTINGS")
+      return $http.get('http://localhost:8080/api/listings');
+    },
+	
+	create: function(listing) {
+	  return $http.post('http://localhost:8080/api/listings', listing);
+    }, 
+
+    delete: function(id) {
+        return $http.delete('http://localhost:8080/api/listings/'+id)
+    }
+  };
+
+  return methods;
+});
