@@ -4,20 +4,38 @@ var mongoose = require('mongoose'),
 
 /* Create your schema */
 var listingSchema = new Schema({
-  name: {
+  firstName: {
     type: String, 
     required: true
-  }, 
-  code: {
-    type: String, 
-    required: true, 
-    unique: true
-  }, 
-  address: String, 
-  coordinates: {
-    latitude: Number, 
-    longitude: Number
-  },
+    }, 
+    lastName: {
+        type: String,
+        required: true
+    },
+    address: {
+        type: String, 
+        required: true
+    }, 
+    orderStatus: {
+        type: String,
+        required: true
+    },
+    photoSize: {
+        type: String,
+        required: true
+    },
+    price: {
+        type: Number,
+        required: true
+    },
+    medium: {
+        type: String,
+        required: true
+    },
+    trackingNumber: {
+        type: String,
+        required: true
+    },
   created_at: Date,
   updated_at: Date
 });
