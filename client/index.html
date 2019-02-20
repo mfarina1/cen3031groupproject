@@ -16,15 +16,15 @@
             First Name: <input type="text" ng-model="newUpload.firstName" /><br />
             Last Name: <input type="text" ng-model="newUpload.lastName" /><br />
             Address: <input type="text" ng-model="newUpload.address" /><br />
-            <h2>Photo print sizes</h2> 
-            <input type="radio" name="photoSize" value="5x10"> 5x10 Photo<br>
-            <input type="radio" name="photoSize" value="20x30"> 20x30 Photo<br>
-            <input type="radio" name="photoSize" value="40x70"> 40x70 Photo 
+            <h3>Photo print sizes</h3> 
+            <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value="5x10"> 5x10 Photo<br>
+            <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value="20x30"> 20x30 Photo<br>
+            <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value="40x70"> 40x70 Photo 
               <br />
               
-            <h2>Print Material</h2> 
-            <input type="radio" name="paperMaterial" value="matte"> Matte<br>
-            <input type="radio" name="paperMaterial" value="canvas">Canvas<br>
+            <h3>Print Material</h3> 
+            <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="matte"> Matte<br>
+            <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="canvas">Canvas<br>
               <br />
               
               
