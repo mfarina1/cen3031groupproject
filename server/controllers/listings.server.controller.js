@@ -14,10 +14,10 @@ var mongoose = require('mongoose'),
 
 /* Create a listing */
 exports.create = function(req, res) {
+    console.log("Trying to uplode new photo here")
 
   /* Instantiate a Listing */
   var listing = new Listing(req.body);
-
   /* Then save the listing */
   listing.save(function(err) {
     if(err) {
