@@ -28,6 +28,8 @@
             <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="canvas">Canvas<br>
               <br />
               
+              <button> Upload <input type="file" ng-file-select="onFileSelect($files)"></button> <br/>
+              
               
             <button class="btn btn-primary" ng-click="uploadNewPhoto()">Upload Photo</button>
           </form>

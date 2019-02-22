@@ -18,6 +18,9 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     $scope.uploadNewPhoto = function() {
         console.log($scope.newUpload.photoSize);
         $scope.newUpload.orderStatus = "Processing"
+        $scope.newUpload.trackingNumber = "testing"
+        $scope.newUpload.price = 6.32
+        
         Listings.create($scope.newUpload).then(function(response){
             console.log("Updating with new photo");
         }, function(error){
