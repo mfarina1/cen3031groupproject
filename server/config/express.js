@@ -32,16 +32,24 @@ module.exports.init = function() {
         res.send();
     });
     
+    app.get('/about',function(req,res){
+        res.sendFile(path.join(__dirname+'/upload.html'));
+    });
+
+    app.get('/sitemap',function(req,res){
+        res.sendFile(path.join(__dirname+'/sitemap.html'));
+    });
+    
      app.post('/api/listings', listingsRouter, function(req, res){
         console.log("Create listing")
         //res.send()
     });
     
-   
     app.get('/:listingId', listingsRouter, function(req, res){
         console.log("Read single listing")
         //res.send()
     });
+    
     
     app.put('/api/listings/:listingId', listingsRouter, function(req, res){
         console.log("update listing")
@@ -53,14 +61,25 @@ module.exports.init = function() {
         res.send()
     });
     
-    
+    listingsRouter.get('/',function(req,res){
+  res.sendFile(path.join(__dirname+'/client/home.html'));
+  //__dirname : It will resolve to your project folder.
+});
 
+
+
+//add the router
+app.use(express.static(__dirname + '/client'));
+//Store all HTML files in view folder.
+app.use(express.static(__dirname + '/Script'));
+//Store all JS and CSS in Scripts folder.
+    
   /**TODO 
   Go to homepage for all routes not specified */ 
 //OR should it be a *?
     app.get('*', function(req, res){
         console.log("Throwing homepage")
-        res.sendFile('index.html')
+        res.sendFile(path.join(__dirname+'/home.html'));
     });
   return app;
 };  
