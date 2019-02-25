@@ -16,6 +16,18 @@ var listingSchema = new Schema({
         type: String, 
         required: true
     }, 
+    city: {
+        type: String, 
+        required: true
+    }, 
+    state: {
+        type: String, 
+        required: true
+    }, 
+    zipCode: {
+        type: String, 
+        required: true
+    }, 
     orderStatus: {
         type: String,
         required: true

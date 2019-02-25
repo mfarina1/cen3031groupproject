@@ -20,10 +20,10 @@
         <a href="/">Home</a>
       </li>
       <li class="active">
-        <a href="/about">Upload</a>
+        <a href="/upload">Upload</a>
       </li>
       <li>
-        <a href="/sitemap">Sitemap</a>
+        <a href="/dashboard">Dashboard</a>
       </li>
     </ul>
   </div>
@@ -40,6 +40,10 @@
             First Name: <input type="text" ng-model="newUpload.firstName" /><br />
             Last Name: <input type="text" ng-model="newUpload.lastName" /><br />
             Address: <input type="text" ng-model="newUpload.address" /><br />
+            City: <input type="text" ng-model="newUpload.city" /><br />
+            State: <input type="text" ng-model="newUpload.state" /><br />
+            Zip Code: <input type="text" ng-model="newUpload.zipCode" /><br />
+              
             <h3>Photo print sizes</h3> 
             <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value="5x10"> 5x10 Photo<br>
             <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value="20x30"> 20x30 Photo<br>
