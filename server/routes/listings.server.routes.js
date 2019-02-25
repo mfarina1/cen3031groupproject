@@ -21,8 +21,8 @@ router.route('/api/listings/:listingId')
   The ':' specifies a URL parameter. 
  */
 router.route('/:listingId')
-  .get(listings.read)
-  
+  .get(listings.read);
+
   //.delete(listings.delete);
 
 /*

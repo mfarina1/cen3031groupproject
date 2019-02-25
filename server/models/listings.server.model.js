@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
 var listingSchema = new Schema({
   firstName: {
     type: String, 
-    required: true
+        required: true,
     }, 
     lastName: {
         type: String,
