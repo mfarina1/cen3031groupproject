@@ -36,8 +36,8 @@ module.exports.init = function() {
         res.sendFile(path.join(__dirname+'/../../client/upload.html'));
     });
 
-    app.get('/sitemap',function(req,res){
-        res.sendFile(path.join(__dirname+'/../../client/sitemap.html'));
+    app.get('/dashboard',function(req,res){
+        res.sendFile(path.join(__dirname+'/../../client/dashboard.html'));
     });
     
      app.post('/api/listings', listingsRouter, function(req, res){
