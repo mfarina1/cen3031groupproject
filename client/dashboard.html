@@ -1,46 +1,46 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/main.css">
-  </head>
-  <!-- <img src="image.png" alt="Tree">  added by madeline for title photo-->
-  <body ng-app="directoryApp">
+<head>
+  <title>Express HTML</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/factories/listingFactory.js"></script>
+  <script src="js/controllers/listingController.js"></script>
+</head>
+<body>
+  <div style="margin:100px;">
+    <nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">Express HTML</a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/upload">Upload</a>
+      </li>
+      <li class="active">
+        <a href="/dashboard">Dashboard</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    <body ng-app="directoryApp">
     <div class="container">
       <div class="row">
         <h1>Dashboard</h1>
       </div>
       <div class="row" ng-controller="ListingsController">
         <div class="col-md-6">
-          <form novalidate class="simple-form">
-            <h2>Add New Listing</h2>
-            First Name: <input type="text" ng-model="newUpload.firstName" /><br />
-            Last Name: <input type="text" ng-model="newUpload.lastName" /><br />
-            Address: <input type="text" ng-model="newUpload.address" /><br />
-            <h3>Photo print sizes</h3> 
-            <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value="5x10"> 5x10 Photo<br>
-            <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value="20x30"> 20x30 Photo<br>
-            <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value="40x70"> 40x70 Photo 
-              <br />
-              
-            <h3>Print Material</h3> 
-            <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="matte"> Matte<br>
-            <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="canvas">Canvas<br>
-              <br />
-              
-              <button> Upload <input type="file" ng-file-select="onFileSelect($files)"></button> <br/>
-              
-              
-            <button class="btn btn-primary" ng-click="uploadNewPhoto()">Upload Photo</button>
-          </form>
+          
+        
+            
+            
         </div>
       </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/factories/listingFactory.js"></script>
-    <script src="js/controllers/listingController.js"></script>
-  </body>
+</body>
 </html>
