@@ -4,6 +4,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" src="styles/main.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
   <script src="js/app.js"></script>
@@ -34,10 +35,21 @@
         <h1>Dashboard</h1>
       </div>
       <div class="row" ng-controller="ListingsController">
-        <div class="col-md-6">
+        <div class="col-md-12">
           
+          <div class="col-md-3">
+            <div class="order">
+              <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/reserve/bOvf94dPRxWu0u3QsPjF_tree.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" width="100%" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Firstname Lastname</h5>
+                  <p class="card-text">Address<br>City<br>State<br>Zip Code</p>
+                  <a href="#" class="btn btn-primary">Edit order</a>
+                </div>
+              </div>
+            </div>
+          </div>
         
-            
             
         </div>
       </div>
