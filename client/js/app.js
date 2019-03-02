@@ -1,4 +1,4 @@
-// madeline - test commit
+// madeline - test commit and merge
 
 /* register the modules the application depends upon here*/
 angular.module('listings', []);
