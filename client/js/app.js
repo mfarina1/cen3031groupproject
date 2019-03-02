@@ -1,3 +1,5 @@
+// madeline - test commit
+
 /* register the modules the application depends upon here*/
 angular.module('listings', []);
 
