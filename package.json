@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/mfarina1/cen3031groupproject#readme",
   "dependencies": {
+    "express": "^4.16.4",
     "mongoose": "^5.4.18"
   }
 }
