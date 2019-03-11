@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/mfarina1/cen3031groupproject/issues"
   },
-  "homepage": "https://github.com/mfarina1/cen3031groupproject#readme"
+  "homepage": "https://github.com/mfarina1/cen3031groupproject#readme",
+  "dependencies": {
+    "mongoose": "^5.4.18"
+  }
 }
