@@ -6,11 +6,13 @@ angular.module('listings', []).factory('Listings', function($http) {
     },
 	
 	create: function(listing) {
-	  return $http.post('http://localhost:8080/api/listings', listing);
+	  //return $http.post('http://localhost:8080/api/listings', listing);
+      return $http.post('https://gentle-cove-13713.herokuapp.com/api/listings', listing);
     }, 
 
     delete: function(id) {
-        return $http.delete('http://localhost:8080/api/listings/'+id)
+        //return $http.delete('http://localhost:8080/api/listings/'+id)
+        return $http.delete('https://gentle-cove-13713.herokuapp.com/api/listings/'+id)
     }
   };
 
