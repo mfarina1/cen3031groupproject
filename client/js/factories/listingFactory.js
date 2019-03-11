@@ -3,6 +3,8 @@ angular.module('listings', []).factory('Listings', function($http) {
     getAll: function() {
         console.log("GETTING ALL LISTINGS")
       //return $http.get('http://localhost:8080/api/listings');
+        return $http.get('https://gentle-cove-13713.herokuapp.com/api/listings');
+        
     },
 	
 	create: function(listing) {
