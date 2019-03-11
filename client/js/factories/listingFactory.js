@@ -4,7 +4,7 @@ angular.module('listings', []).factory('Listings', function($http) {
         console.log("GETTING ALL LISTINGS")
       //return $http.get('http://localhost:8080/api/listings');
         return $http.get('/api/listings');
-        
+
     },
 	
 	create: function(listing) {

@@ -4,14 +4,14 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       $scope.listings = undefined;
       
     /* Get all the listings, then bind it to the scope */
-    /*
+    
     Listings.getAll().then(function(response) {
       $scope.listings = response.data;
         console.log("getting listing data")
     }, function(error) {
       console.log('Unable to retrieve listings:', error);
     });
-    */
+    
 
     $scope.newUpload = undefined;
       
