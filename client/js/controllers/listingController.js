@@ -1,3 +1,4 @@
+
 angular.module('listings').controller('ListingsController', ['$scope', 'Listings', 
   function($scope, Listings) {
       
@@ -30,7 +31,11 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
 	  *Save the article using the Listings factory. If the object is successfully 
 	  saved redirect back to the list page. Otherwise, display the error
 	 */
+    
   
-    };
+      };
+
+      
   }
 ]);
+
