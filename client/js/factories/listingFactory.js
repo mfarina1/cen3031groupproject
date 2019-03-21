@@ -11,6 +11,10 @@ angular.module('listings', []).factory('Listings', function($http) {
 	  //return $http.post('http://localhost:8080/api/listings', listing);
       return $http.post('/api/listings', listing);
     }, 
+      
+    updateOrderStatus: function(id) {
+        return $http.put('/api/listings/'+id)
+    },
 
     delete: function(id) {
         //return $http.delete('http://localhost:8080/api/listings/'+id)
