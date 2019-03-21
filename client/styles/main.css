@@ -7,7 +7,7 @@
   overflow: auto;
 }
 
-.card {
+/* .card {
   -webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.31);
   -moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.31);
   box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.31);
@@ -15,4 +15,39 @@
 
 .imageCrop {
   max-width: 100%;
+} */
+
+/* .cropArea {
+  background: #E4E4E4;
+  overflow: hidden;
+  width: 495px;
+  height: 300px;
+} */
+
+.preview-image {
+  margin: 0 auto;
+  background: #E4E4E4;
+  min-width: 400px;
+  min-height: 300px;
 }
+
+.download-well {
+  background: #38424D;
+  border-radius: 20px;
+}
+
+.download-well p {
+  font-size: 18px;
+}
+
+.jumbotron .small {
+  font-size: 16px;
+}
+.jumbotron .text-muted{
+  color: #7D8FA1;
+}
+
+.tool {
+  font-size: 20px;
+}
+

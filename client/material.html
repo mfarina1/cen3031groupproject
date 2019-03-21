@@ -1,4 +1,5 @@
 <html>
+
 <head>
   <title>Petree Print</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -11,31 +12,32 @@
   <script src="js/factories/listingFactory.js"></script>
   <script src="js/controllers/listingController.js"></script>
 </head>
+
 <body ng-app="directoryApp">
   <div style="margin:100px;" ng-controller="ListingsController">
     <nav class="navbar navbar-inverse navbar-static-top">
-  <div class="container">
-    <a class="navbar-brand" href="/">Petree Print</a>
-    <ul class="nav navbar-nav">
-      <li class="active">
-        <a href="/">Home</a>
-      </li>
-      <li>
-        <a href="/upload">Upload</a>
-      </li>
-<!--
+      <div class="container">
+        <a class="navbar-brand" href="/">Petree Print</a>
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/upload">Upload</a>
+          </li>
+          <!--
       <li>
         <a href="/tracking">Tracking</a>
       </li>
 -->
-      <li>
-        <a href="/dashboard">Dashboard</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-    <div class="jumbotron"  style="padding:40px;">
-      <h3>Print Material</h3> 
+          <li>
+            <a href="/dashboard">Dashboard</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="jumbotron" style="padding:40px;">
+      <h3>Print Material</h3>
       <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="matte"> Matte<br>
       <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="canvas">Canvas<br>
       <br />
@@ -48,4 +50,5 @@
     </div>
   </div>
 </body>
+
 </html>

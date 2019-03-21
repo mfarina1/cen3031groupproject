@@ -1,4 +1,5 @@
-angular.module('listings', []).factory('Listings', function($http) {
+angular.module('listings', [])
+.factory('Listings', function($http) {
   var methods = {
     getAll: function() {
         console.log("GETTING ALL LISTINGS")
