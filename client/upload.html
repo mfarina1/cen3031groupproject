@@ -37,28 +37,28 @@
         <div class="col-md-6">
           <form novalidate class="simple-form">
             <h2>Add New Listing</h2>
-            First Name: <input type="text" ng-model="newUpload.firstName" /><br />
+            First Name: <input type="text" ng-model="newUpload.firstName" /><br /> <br>
             Last Name: <input type="text" ng-model="newUpload.lastName" /><br />
-            Address   : <input type="text" ng-model="newUpload.address" /><br />
-            City     : <input type="text" ng-model="newUpload.city" /><br />
-            State   : <input type="text" ng-model="newUpload.state" /><br />
-            Zip Code : <input type="text" ng-model="newUpload.zipCode" /><br />
+            Address: <input type="text" ng-model="newUpload.address" /><br />
+            City: <input type="text" ng-model="newUpload.city" /><br />
+            State: <input type="text" ng-model="newUpload.state" /><br />
+            Zip Code: <input type="text" ng-model="newUpload.zipCode" /><br />
               
             <h3>Photo print sizes</h3> 
-            <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value="5x10"> 5x10 Photo<br>
-            <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value="20x30"> 20x30 Photo<br>
-            <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value="40x70"> 40x70 Photo 
+            <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value=" 5x10"> 5x10 Photo<br>
+            <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value=" 20x30"> 20x30 Photo<br>
+            <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value=" 40x70"> 40x70 Photo 
               <br />
               
             <h3>Print Material</h3> 
             <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="matte"> Matte<br>
-            <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="canvas">Canvas<br>
+            <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value=" canvas">Canvas<br>
               <br />
               
               <button> Upload <input type="file" ng-file-select="onFileSelect($files)"></button> <br/>
               
               
-            <button class="btn btn-primary" ng-click="uploadNewPhoto()">Upload Photo</button>
+            <button class="btn btn-primary" ng-click="uploadNewPhoto()"><br>Upload Photo</button>
              <!-- below added by madeline for Buy Now paypal button-->
              <br> <br> <br>
              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
