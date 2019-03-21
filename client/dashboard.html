@@ -2,11 +2,12 @@
     <head>
         <title>Petree Print</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-                <link rel="stylesheet" src="styles/main.css">
-                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-                    </head>
+        <link rel="stylesheet" type="text/css" href="styles/main.css"></link>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"></link>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css"></link>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    </head>
     <body>
         <div style="margin:20px;">
             <nav class="navbar navbar-inverse navbar-static-top">
@@ -47,7 +48,7 @@
                                                 <th>Order Status</th>
                                                 <th></th>
                                             </tr>
-                                            <tr ng-repeat="listing in listings | orderBy : 'created_at'  | filter: query" ng-click="showDetails($index)">
+                                            <tr ng-repeat="listing in listings | filter: query track by $index" ng-click="showDetails($index)">
                                                 <td>{{listing.firstName}} {{listing.lastName}}</td>
                                                 <td>{{listing.photoSize}}</td>
                                                 <td>{{listing.medium}}</td>
@@ -63,11 +64,11 @@
                                         <p>Order Status: {{detailedInfo.orderStatus}}</p>
                                         
                                         <div class="dropdown">
-                                            <button class="dropbtn">Dropdown</button>
+                                            <button class="dropbtn">Change Order Status</button>
                                             <div class="dropdown-content">
-                                                <a href="#">Printing</a>
-                                                <a href="#">Preparing to Ship</a>
-                                                <a href="#">Shipped</a>
+                                                <a ng-click="modifyStatus(detailedInfo._id, 'Printing')">Printing</a>
+                                                <a ng-click="modifyStatus(detailedInfo._id, 'Preparing to Ship')">Preparing to Ship</a>
+                                                <a ng-click="modifyStatus(detailedInfo._id, 'Shipped')">Shipped</a>
                                             </div>
                                         </div>
                                         
@@ -76,12 +77,12 @@
                                             <!-- Auto width -->
                                             <button class="btn"><i class="fa fa-download"></i> Download</button>
                                             </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    </body>
+                </div>
+            </body>
         </div>
     </body>
     <script src="https://code.angularjs.org/1.4.3/angular.js"></script>

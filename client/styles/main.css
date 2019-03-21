@@ -3,7 +3,7 @@
 }
 
 .tableWrapper {
-  max-height: 400px;
+  max-height: 600px;
   overflow: auto;
 }
 
@@ -11,6 +11,11 @@
   -webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.31);
   -moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.31);
   box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.31);
+}
+
+
+h1 {
+  color: red;
 }
 
 /* Dropdown Button */
