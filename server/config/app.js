@@ -13,6 +13,8 @@ var config = require('./config'),
     express = require('./express');
 
 firebase.initializeApp(FBconfig);
+// Get a reference to the storage service, which is used to create references in your storage bucket
+var storage = firebase.storage();
 
 module.exports.start = function() {
   var app = express.init();
