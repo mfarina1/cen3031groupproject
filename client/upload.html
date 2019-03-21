@@ -39,10 +39,10 @@
             <h2>Add New Listing</h2>
             First Name: <input type="text" ng-model="newUpload.firstName" /><br />
             Last Name: <input type="text" ng-model="newUpload.lastName" /><br />
-            Address: <input type="text" ng-model="newUpload.address" /><br />
-            City: <input type="text" ng-model="newUpload.city" /><br />
-            State: <input type="text" ng-model="newUpload.state" /><br />
-            Zip Code: <input type="text" ng-model="newUpload.zipCode" /><br />
+            Address   : <input type="text" ng-model="newUpload.address" /><br />
+            City     : <input type="text" ng-model="newUpload.city" /><br />
+            State   : <input type="text" ng-model="newUpload.state" /><br />
+            Zip Code : <input type="text" ng-model="newUpload.zipCode" /><br />
               
             <h3>Photo print sizes</h3> 
             <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value="5x10"> 5x10 Photo<br>
@@ -63,7 +63,6 @@
              <br> <br> <br>
              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
               <input type="hidden" name="cmd" value="_xclick">
-              <!---<input type="hidden" name="business" value="mhfarina1@gmail.com">-->
               <input type="hidden" name="lc" value="US">
               <input type="hidden" name="item_name" value="User's Print">
               <input type="hidden" name="button_subtype" value="services">
