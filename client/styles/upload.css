@@ -1,0 +1,24 @@
+/* searchBar is an ID selector, meaning they only target one unique element 
+#searchBar {
+    margin: 15px 10px;
+  }
+  
+  .container {
+    color: green;
+    font-family: Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
+    font-style: Sans-serif;
+    font-weight: bold;
+  }
+  
+  // .tableWrapper is a class 
+  .tableWrapper {
+    max-height: 400px;
+    overflow: auto;
+    color: rgb(147, 236, 14);
+    font-size: 14px;
+  }
+  
+  body {
+    background:
+       white;
+  } */
