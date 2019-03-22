@@ -19,6 +19,7 @@
   "homepage": "https://github.com/mfarina1/cen3031groupproject#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "firebase": "^5.9.0",
     "mongoose": "^5.4.18",
     "morgan": "^1.9.1"
   },
