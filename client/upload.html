@@ -10,78 +10,62 @@
   <script src="js/factories/listingFactory.js"></script>
   <script src="js/controllers/listingController.js"></script>
 </head>
-
 <body>
   <div style="margin:100px;">
     <nav class="navbar navbar-inverse navbar-static-top">
-      <div class="container">
-        <a class="navbar-brand" href="/">Petree Print</a>
-        <ul class="nav navbar-nav">
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li class="active">
-            <a href="/upload">Upload</a>
-          </li>
-          <li>
-            <a href="/dashboard">Dashboard</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
+  <div class="container">
+    <a class="navbar-brand" href="/">Petree Print</a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li class="active">
+        <a href="/upload">Upload</a>
+      </li>
+      <li>
+        <a href="/dashboard">Dashboard</a>
+      </li>
+    </ul>
+  </div>
+</nav>
     <body ng-app="directoryApp">
-      <div class="container">
-        <div class="row">
-          <h1>Photo Upload</h1>
-        </div>
-        <div class="row" ng-controller="ListingsController">
-          <div class="col-md-6">
-            <form novalidate class="simple-form">
-              <h2>Add New Listing</h2>
-              First Name: <input type="text" ng-model="newUpload.firstName" /><br />
-              Last Name: <input type="text" ng-model="newUpload.lastName" /><br />
-              Address: <input type="text" ng-model="newUpload.address" /><br />
-              City: <input type="text" ng-model="newUpload.city" /><br />
-              State: <input type="text" ng-model="newUpload.state" /><br />
-              Zip Code: <input type="text" ng-model="newUpload.zipCode" /><br />
-
-              <h3>Photo print sizes</h3>
-              <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value="5x10"> 5x10 Photo<br>
-              <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value="20x30"> 20x30 Photo<br>
-              <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value="40x70"> 40x70 Photo
+    <div class="container">
+      <div class="row">
+        <h1>Photo Upload</h1>
+      </div>
+      <div class="row" ng-controller="ListingsController">
+        <div class="col-md-6">
+          <form novalidate class="simple-form">
+            <h2>Add New Listing</h2>
+            First Name: <input type="text" ng-model="newUpload.firstName" /><br /> <br>
+            Last Name: <input type="text" ng-model="newUpload.lastName" /><br /> <br>
+            Address: <input type="text" ng-model="newUpload.address" /><br /> <br>
+            City: <input type="text" ng-model="newUpload.city" /><br /> <br>
+            State: <input type="text" ng-model="newUpload.state" /><br /> <br>
+            Zip Code: <input type="text" ng-model="newUpload.zipCode" /><br />
+              
+            <h3>Photo print sizes</h3> 
+            <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value="5x10"> 5x10 Photo<br>
+            <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value="20x30"> 20x30 Photo<br>
+            <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value="40x70"> 40x70 Photo 
               <br />
-
-              <h3>Print Material</h3>
-              <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="matte"> Matte<br>
-              <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="canvas">Canvas<br>
+              
+            <h3>Print Material</h3> 
+            <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="matte"> Matte<br>
+            <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="canvas">Canvas<br>
               <br />
-
-              <button> Upload <input type="file" ng-file-select="onFileSelect($files)"></button> <br />
-
-
-              <button class="btn btn-primary" ng-click="uploadNewPhoto()">Upload Photo</button>
-              <!-- below added by madeline for Buy Now paypal button-->
-              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                <input type="hidden" name="cmd" value="_xclick">
-                <input type="hidden" name="business" value="roygbiv750@gmail.com">
-                <input type="hidden" name="lc" value="US">
-                <input type="hidden" name="item_name" value="Print">
-                <input type="hidden" name="amount" value="100.00">
-                <input type="hidden" name="currency_code" value="USD">
-                <input type="hidden" name="button_subtype" value="services">
-                <input type="hidden" name="no_note" value="0">
-                <input type="hidden" name="tax_rate" value="6.500">
-                <input type="hidden" name="shipping" value="5.00">
-                <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
-                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit"
-                  alt="PayPal - The safer, easier way to pay online!">
-                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-              </form>
-            </form>
-          </div>
+              
+              <button> Upload <input type="file" ng-file-select="onFileSelect($files)"></button> <br/>
+              <br>
+              
+            <button class="btn btn-primary" ng-click="uploadNewPhoto()">Upload Photo</button>
+             <!-- below added by madeline for Buy Now paypal button-->
+            <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
+            <script>paypal.Buttons().render('body');</script>          
+            <!-- maybe delete this and the form below--></form>            
+          </form>
         </div>
       </div>
-    </body>
-
+    </div>
+</body>
 </html>

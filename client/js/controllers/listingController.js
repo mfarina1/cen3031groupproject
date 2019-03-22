@@ -1,5 +1,4 @@
-angular.module('listings').controller('ListingsController', ['$scope', 'Listings', 
-  function($scope, Listings) {
+angular.module('listings').controller('ListingsController', ['$scope', 'Listings', function($scope, Listings) {
       
       $scope.listings = undefined;
       
@@ -26,11 +25,27 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
         }, function(error){
             console.log('Unable to upload new photo request:', error);
         });
-	  /**TODO 
-	  *Save the article using the Listings factory. If the object is successfully 
+	  /**TODO
+	  *Save the article using the Listings factory. If the object is successfully
 	  saved redirect back to the list page. Otherwise, display the error
 	 */
   
     };
+    $scope.showDetails = function(index) {
+      $scope.detailedInfo = $scope.listings[index];
+      console.log($scope.listings[index].firstName);
+    };
+    
+    $scope.modifyStatus = function(id, newStatus){
+        console.log($scope.detailedInfo.orderStatus);
+        console.log(newStatus);
+        
+        Listings.updateOrderStatus(id).then(function(response){
+            console.log("Modifing status");
+        }, function(error){
+            console.log('Unable to modify status:', error);
+        });
+    }
+                                                             
   }
 ]);

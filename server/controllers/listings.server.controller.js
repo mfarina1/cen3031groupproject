@@ -39,19 +39,17 @@ exports.read = function(req, res) {
 /* Update a listing */
 exports.update = function(req, res) {
   var listing = req.listing;
-    console.log("UPDATING")
-  /** TODO **/
-  /* Replace the article's properties with the new properties found in req.body */
-  /* Save the article */
-    console.log(listing.name)
-    console.log(req.body.code)
-    Listing.findOneAndUpdate({ name: listing.name}, {code: req.body.code}, function(err, updatedListing){
+    console.log("UPDATING ORDER STATUS")
+
+    console.log(listing.orderStatus)
+    
+    Listing.findOneAndUpdate({ _id: listing.id}, {orderStatus: "Printing"}, function(err, updatedListing){
         if (err) {
             console.log(err);
             res.status(400).send(err);
         } else{
-            updatedListing.code = req.body.code
-            console.log(updatedListing.code)
+            updatedListing.orderStatus = req.body.orderStatus
+            console.log(updatedListing.orderStatus)
             res.json(updatedListing);
         } 
     })
