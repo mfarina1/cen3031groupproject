@@ -9,6 +9,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/orderprocess.js"></script>
   <script src="js/controllers/cropController.js"></script>
   <script src="http://rawgit.com/CrackerakiUA/ui-cropper/master/compile/unminified/ui-cropper.js"> </script>
 </head>
@@ -33,7 +34,8 @@
       </div>
     </nav> -->
   <div class="container" ng-app="directoryApp" ng-controller="CropController">
-    <div class="jumbotron">
+
+    <div class="jumbotron" id="size">
       <h2 class="title">Photo print size</h2>
       <p>Select from the list below to choose which size you would like to crop print for.</p>
       </br>
@@ -52,16 +54,18 @@
           <p>{{selectedOption.name}}</p>
         </div>
       </div>
-      <p><a class="btn btn-primary btn-lg" href="" role="button">Next step</a></p>
+      <p><a class="btn btn-primary btn-lg" onclick="showSection('material', 'size')" role="button">Next step</a></p>
     </div>
-    <div class="jumbotron">
+
+    <div class="jumbotron" id="material" style="display: none;">
       <h2 class="title">Print Material</h2>
       <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="matte"> Matte<br>
       <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="canvas"> Canvas<br>
       <br />
-      <p><a class="btn btn-primary btn-lg" href="" role="button">Next step</a></p>
+      <p><a class="btn btn-primary btn-lg" onclick="showSection('upload', 'material')" role="button">Next step</a></p>
     </div>
-    <div class="jumbotron">
+
+    <div class="jumbotron" id="upload" style="display: none;">
       <h2>Select an image file:</h2>
       <div class="row">
         <div class="col-lg-5">
@@ -79,11 +83,13 @@
           </br>
         </div>
       </div>
-      <p><a class="btn btn-primary btn-lg" href="" role="button">Next step</a></p>
+      <p><a class="btn btn-primary btn-lg" onclick="showSection('crop', 'upload')" role="button">Next step</a></p>
     </div>
-    <div class="jumbotron">
+
+    <div class="jumbotron" id="crop" style="display: none;">
       <div class="row">
         <div class="col-lg-6">
+          <h2>Crop Image</h2>
           <h3>Crop Area for {{selectedOption.name}}</h3>
           </br>
           <div class="cropArea"><br><br><br><br><br><br><br>
@@ -103,9 +109,48 @@
             <button class="btn btn-primary btn-lg btn-block" ng-click="download()">DOWNLOAD</button>
           </div>
         </div>
-        <p><a class="btn btn-primary btn-lg" href="/login" role="button">Next step</a></p>
       </div>
+      <p><a class="btn btn-primary btn-lg" onclick="showSection('singup', 'crop')" role="button">Next step</a></p>
     </div>
+
+    <div class="jumbotron" id="singup" style="display: none;">
+      <h2>Sign up/Login</h2>
+      <p><a class="btn btn-primary btn-lg" onclick="showSection('userinfo', 'singup')" role="button">Next step</a></p>
+    </div>
+
+    <div class="jumbotron" id="userinfo" style="display: none;">
+      <h2>User Information</h2>
+      First Name: <input type="text" ng-model="newUpload.firstName" /><br />
+      Last Name: <input type="text" ng-model="newUpload.lastName" /><br />
+      Address: <input type="text" ng-model="newUpload.address" /><br />
+      City: <input type="text" ng-model="newUpload.city" /><br />
+      State: <input type="text" ng-model="newUpload.state" /><br />
+      Zip Code: <input type="text" ng-model="newUpload.zipCode" /><br />
+      <p><a class="btn btn-primary btn-lg" onclick="showSection('payment', 'userinfo')" role="button">Next step</a></p>
+      <button class="btn btn-primary" ng-click="uploadNewPhoto()">Upload Photo</button>
+    </div>
+
+    <div class="jumbotron" id="payment" style="display: none;">
+      <h2>Payment</h2>
+      <!-- below added by madeline for Buy Now paypal button-->
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="roygbiv750@gmail.com">
+        <input type="hidden" name="lc" value="US">
+        <input type="hidden" name="item_name" value="Print">
+        <input type="hidden" name="amount" value="100.00">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="hidden" name="button_subtype" value="services">
+        <input type="hidden" name="no_note" value="0">
+        <input type="hidden" name="tax_rate" value="6.500">
+        <input type="hidden" name="shipping" value="5.00">
+        <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit"
+          alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+      </form>
+    </div>
+
   </div>
 </body>
 <!-- <script type="module" src="../node_modules/cropperjs/dist/cropper.js"></script> -->
