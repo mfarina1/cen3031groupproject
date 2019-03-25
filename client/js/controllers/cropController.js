@@ -1,4 +1,4 @@
-angular.module('cropService', ['uiCropper'])
+angular.module('mainApp', ['uiCropper'])
 	.controller('CropController', ['$scope',
 		function ($scope) {
 			$scope.myImage = '';
