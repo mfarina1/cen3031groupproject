@@ -98,12 +98,14 @@ exports.list = function(req, res) {
         then finally call next
  */
 exports.listingByID = function(req, res, next, id) {
-  Listing.findById(id).exec(function(err, listing) {
-    if(err) {
-      res.status(400).send(err);
-    } else {
-      req.listing = listing;
-      next();
-    }
-  });
+  // Listing.findById(id).exec(function(err, listing) {
+  //   if(err) {
+  //     res.status(400).send(err);
+  //   } else {
+  //     req.listing = listing;
+  //     next();
+  //   }
+  // });
+  console.log('ID');
+  
 };

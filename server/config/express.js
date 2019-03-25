@@ -36,6 +36,22 @@ module.exports.init = function() {
         res.sendFile(path.join(__dirname+'/../../client/upload.html'));
     });
 
+    app.get('/size',function(req,res){
+      res.sendFile(path.join(__dirname+'/../../client/size.html'));
+    });
+
+    app.get('/material',function(req,res){
+      res.sendFile(path.join(__dirname+'/../../client/material.html'));
+    });
+
+    app.get('/login',function(req,res){
+      res.sendFile(path.join(__dirname+'/../../client/login.html'));
+    });
+
+    app.get('/payment',function(req,res){
+      res.sendFile(path.join(__dirname+'/../../client/payment.html'));
+    });
+
     app.get('/dashboard',function(req,res){
         res.sendFile(path.join(__dirname+'/../../client/dashboard.html'));
     });
