@@ -1,160 +1,166 @@
 <html>
-
-<head>
-  <title>Petree Print</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" src="styles/main.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-  <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/orderprocess.js"></script>
-  <script src="js/controllers/cropController.js"></script>
-  <script src="http://rawgit.com/CrackerakiUA/ui-cropper/master/compile/unminified/ui-cropper.js"> </script>
-</head>
-
-<body>
-
-  <!-- <nav class="navbar navbar-inverse navbar-static-top">
-      <div class="container">
-        <a class="navbar-brand" href="/">Petree Print</a>
-        <ul class="nav navbar-nav">
-          <li class="active">
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/upload">Upload</a>
-          </li>
-        
-          <li>
-            <a href="/dashboard">Dashboard</a>
-          </li>
-        </ul>
-      </div>
-    </nav> -->
-  <div class="container" ng-app="mainApp" ng-controller="CropController">
-
-    <div class="jumbotron" id="size">
-      <h2 class="title">Photo print size</h2>
-      <p>Select from the list below to choose which size you would like to crop print for.</p>
-      </br>
-      <form>
-        <fieldset>
-          <legend>List size: </legend>
-          <div class="form-group">
-            <select class="form-control" name="campaignSelect" id="repeatSelect" ng-model="selectedOption" ng-options="option.name for option in availableOptions">
-            </select>
-          </div>
-        </fieldset>
-      </form>
-      <div class="well">
-        <div class="alert alert-success">
-          <h4>You have selected:</h4>
-          <p>{{selectedOption.name}}</p>
+    
+    <head>
+        <title>Petree Print</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+                <link rel="stylesheet" type="text/css" href="styles/home.css">
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+                    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+                    <script src="js/app.js"></script>
+                    <script src="js/orderprocess.js"></script>
+                    <script src="js/controllers/cropController.js"></script>
+                    <script src="http://rawgit.com/CrackerakiUA/ui-cropper/master/compile/unminified/ui-cropper.js"> </script>
+                    </head>
+    
+    <body>
+        <div style="margin:20px">
+            <div class="title-login">
+                <h2>Petree Prints</h2>
+                <a class="log_in" href="/login" role="button">Log In</a>
+                <a class="log_in" href="/signin" role="button">Sign In</a>
+            </div>
+            
+            <div class="container">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li class = "active"><a href="/size">Upload</a></li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/">Track Order</a></li>
+                </ul>
+            </div>
+            <div class="divLeft">
+                
+                <div class="container" ng-app="mainApp" ng-controller="CropController" style="background-color:#ededed; margin:20px">
+                    
+                    <div id="size" style="padding:10px">
+                        <h2 class="title">Photo print size</h2>
+                        <p>Select from the list below to choose which size you would like to crop print for.</p>
+                        </br>
+                        <form>
+                            <fieldset>
+                                <legend>List size: </legend>
+                                <div class="form-group">
+                                    <select class="form-control" name="campaignSelect" id="repeatSelect" ng-model="selectedOption" ng-options="option.name for option in availableOptions">
+                                    </select>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <div class="well">
+                            <div class="alert alert-success">
+                                <h4>You have selected:</h4>
+                                <p>{{selectedOption.name}}</p>
+                            </div>
+                        </div>
+                        <p><a class="log_in" onclick="showSection('material', 'size')" role="button">Next step</a></p>
+                        
+                    </div>
+                    <div class="jumbotron" id="material" style="display: none;">
+                        <h2 class="title">Print Material</h2>
+                        <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="matte"> Matte<br>
+                            <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="canvas"> Canvas<br>
+                                <br />
+                                <p><a class="log_in" onclick="showSection('upload', 'material')" role="button">Next step</a></p>
+                                <p><a class="log_in" onclick="showSection('size', 'material')" role="button">Go Back</a></p>
+                                </div>
+                    
+                    <div class="jumbotron" id="upload" style="display: none;">
+                        <h2>Select an image file:</h2>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <h3>Upload</h3>
+                                <p>Upload image from your computer</p>
+                                <input class="btn btn-default btn-lg" type="file" id="fileInput" />
+                            </div>
+                            <div class="col-lg-2">
+                                <h3>or</h3>
+                            </div>
+                            <div class="col-lg-5">
+                                <h3>Copy/Paste</h3>
+                                <p>Copy and paste the image url below</p>
+                                <input type="text" class="form-control input-lg" placeholder="Image url" ng-model="myImage">
+                                    </br>
+                                    </div>
+                        </div>
+                        <p><a class="btn btn-primary btn-lg" onclick="showSection('crop', 'upload')" role="button">Next step</a></p>
+                    </div>
+                    
+                    <div class="jumbotron" id="crop" style="display: none;">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h2>Crop Image</h2>
+                                <h3>Crop Area for {{selectedOption.name}}</h3>
+                                </br>
+                                <div class="cropArea"><br><br><br><br><br><br><br>
+                                    <ui-cropper image="myImage" area-type="rectangle" aspect-ratio="1.7" result-image="myCroppedImage"
+                                        result-image-size="{w: selectedOption.value.w, h: selectedOption.value.h}" area-min-size="{w:selectedOption.value.w, h: selectedOption.value.h}"
+                                        init-max-area="true" style="margin-left: 150px;"></ui-cropper>
+                                </div>
+                            </div>
+                            <div class="col-lg-offset-2 col-lg-4">
+                                <h3>Preview Image:</h3>
+                                </br>
+                                <img ng-src="{{myCroppedImage}}" class="preview-image img-responsive" />
+                                </br>
+                                <div class="download-well well">
+                                    <p class="text-danger">*Dont forget to add ".jpg" to the end of your file name before downloading</p>
+                                    <input type="text" class="form-control" placeholder="File name" ng-model="filename"> <br>
+                                        <button class="btn btn-primary btn-lg btn-block" ng-click="download()">DOWNLOAD</button>
+                                        </div>
+                            </div>
+                        </div>
+                        <p><a class="btn btn-primary btn-lg" onclick="showSection('singup', 'crop')" role="button">Next step</a></p>
+                    </div>
+                    
+                    <div class="jumbotron" id="singup" style="display: none;">
+                        <h2>Sign up/Login</h2>
+                        <p><a class="btn btn-primary btn-lg" onclick="showSection('userinfo', 'singup')" role="button">Next step</a></p>
+                    </div>
+                    
+                    <div class="jumbotron" id="userinfo" style="display: none;">
+                        <h2>User Information</h2>
+                        First Name: <input type="text" ng-model="newUpload.firstName" /><br />
+                        Last Name: <input type="text" ng-model="newUpload.lastName" /><br />
+                        Address: <input type="text" ng-model="newUpload.address" /><br />
+                        City: <input type="text" ng-model="newUpload.city" /><br />
+                        State: <input type="text" ng-model="newUpload.state" /><br />
+                        Zip Code: <input type="text" ng-model="newUpload.zipCode" /><br />
+                        <p><a class="btn btn-primary btn-lg" onclick="showSection('payment', 'userinfo')" role="button">Next step</a></p>
+                        <button class="btn btn-primary" ng-click="uploadNewPhoto()">Upload Photo</button>
+                    </div>
+                    
+                    <div class="jumbotron" id="payment" style="display: none;">
+                        <h2>Payment</h2>
+                        <!-- below added by madeline for Buy Now paypal button-->
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                            <input type="hidden" name="cmd" value="_xclick">
+                                <input type="hidden" name="business" value="roygbiv750@gmail.com">
+                                    <input type="hidden" name="lc" value="US">
+                                        <input type="hidden" name="item_name" value="Print">
+                                            <input type="hidden" name="amount" value="100.00">
+                                                <input type="hidden" name="currency_code" value="USD">
+                                                    <input type="hidden" name="button_subtype" value="services">
+                                                        <input type="hidden" name="no_note" value="0">
+                                                            <input type="hidden" name="tax_rate" value="6.500">
+                                                                <input type="hidden" name="shipping" value="5.00">
+                                                                    <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
+                                                                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit"
+                                                                            alt="PayPal - The safer, easier way to pay online!">
+                                                                            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                                                                </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="divRight">
+                <p>Testing</p>
+            </div>
+            
         </div>
-      </div>
-      <p><a class="btn btn-primary btn-lg" onclick="showSection('material', 'size')" role="button">Next step</a></p>
-    </div>
-
-    <div class="jumbotron" id="material" style="display: none;">
-      <h2 class="title">Print Material</h2>
-      <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="matte"> Matte<br>
-      <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="canvas"> Canvas<br>
-      <br />
-      <p><a class="btn btn-primary btn-lg" onclick="showSection('upload', 'material')" role="button">Next step</a></p>
-    </div>
-
-    <div class="jumbotron" id="upload" style="display: none;">
-      <h2>Select an image file:</h2>
-      <div class="row">
-        <div class="col-lg-5">
-          <h3>Upload</h3>
-          <p>Upload image from your computer</p>
-          <input class="btn btn-default btn-lg" type="file" id="fileInput" />
-        </div>
-        <div class="col-lg-2">
-          <h3>or</h3>
-        </div>
-        <div class="col-lg-5">
-          <h3>Copy/Paste</h3>
-          <p>Copy and paste the image url below</p>
-          <input type="text" class="form-control input-lg" placeholder="Image url" ng-model="myImage">
-          </br>
-        </div>
-      </div>
-      <p><a class="btn btn-primary btn-lg" onclick="showSection('crop', 'upload')" role="button">Next step</a></p>
-    </div>
-
-    <div class="jumbotron" id="crop" style="display: none;">
-      <div class="row">
-        <div class="col-lg-6">
-          <h2>Crop Image</h2>
-          <h3>Crop Area for {{selectedOption.name}}</h3>
-          </br>
-          <div class="cropArea"><br><br><br><br><br><br><br>
-            <ui-cropper image="myImage" area-type="rectangle" aspect-ratio="1.7" result-image="myCroppedImage"
-              result-image-size="{w: selectedOption.value.w, h: selectedOption.value.h}" area-min-size="{w:selectedOption.value.w, h: selectedOption.value.h}"
-              init-max-area="true" style="margin-left: 150px;"></ui-cropper>
-          </div>
-        </div>
-        <div class="col-lg-offset-2 col-lg-4">
-          <h3>Preview Image:</h3>
-          </br>
-          <img ng-src="{{myCroppedImage}}" class="preview-image img-responsive" />
-          </br>
-          <div class="download-well well">
-            <p class="text-danger">*Dont forget to add ".jpg" to the end of your file name before downloading</p>
-            <input type="text" class="form-control" placeholder="File name" ng-model="filename"> <br>
-            <button class="btn btn-primary btn-lg btn-block" ng-click="download()">DOWNLOAD</button>
-          </div>
-        </div>
-      </div>
-      <p><a class="btn btn-primary btn-lg" onclick="showSection('singup', 'crop')" role="button">Next step</a></p>
-    </div>
-
-    <div class="jumbotron" id="singup" style="display: none;">
-      <h2>Sign up/Login</h2>
-      <p><a class="btn btn-primary btn-lg" onclick="showSection('userinfo', 'singup')" role="button">Next step</a></p>
-    </div>
-
-    <div class="jumbotron" id="userinfo" style="display: none;">
-      <h2>User Information</h2>
-      First Name: <input type="text" ng-model="newUpload.firstName" /><br />
-      Last Name: <input type="text" ng-model="newUpload.lastName" /><br />
-      Address: <input type="text" ng-model="newUpload.address" /><br />
-      City: <input type="text" ng-model="newUpload.city" /><br />
-      State: <input type="text" ng-model="newUpload.state" /><br />
-      Zip Code: <input type="text" ng-model="newUpload.zipCode" /><br />
-      <p><a class="btn btn-primary btn-lg" onclick="showSection('payment', 'userinfo')" role="button">Next step</a></p>
-      <button class="btn btn-primary" ng-click="uploadNewPhoto()">Upload Photo</button>
-    </div>
-
-    <div class="jumbotron" id="payment" style="display: none;">
-      <h2>Payment</h2>
-      <!-- below added by madeline for Buy Now paypal button-->
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-        <input type="hidden" name="cmd" value="_xclick">
-        <input type="hidden" name="business" value="roygbiv750@gmail.com">
-        <input type="hidden" name="lc" value="US">
-        <input type="hidden" name="item_name" value="Print">
-        <input type="hidden" name="amount" value="100.00">
-        <input type="hidden" name="currency_code" value="USD">
-        <input type="hidden" name="button_subtype" value="services">
-        <input type="hidden" name="no_note" value="0">
-        <input type="hidden" name="tax_rate" value="6.500">
-        <input type="hidden" name="shipping" value="5.00">
-        <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
-        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit"
-          alt="PayPal - The safer, easier way to pay online!">
-        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-      </form>
-    </div>
-
-  </div>
-</body>
-<!-- <script type="module" src="../node_modules/cropperjs/dist/cropper.js"></script> -->
-<!-- <script src="js/main.js"></script> -->
-
-
+    </body>
+    <!-- <script type="module" src="../node_modules/cropperjs/dist/cropper.js"></script> -->
+    <!-- <script src="js/main.js"></script> -->
+    
+    
 </html>
