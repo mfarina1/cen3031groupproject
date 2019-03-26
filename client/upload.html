@@ -1,16 +1,28 @@
 <html>
 <head>
-  <title>Express HTML</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-  <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/factories/listingFactory.js"></script>
-  <script src="js/controllers/listingController.js"></script>
-  <script src="js/controllers/cropController.js"></script>
-  <script src="http://rawgit.com/CrackerakiUA/ui-cropper/master/compile/unminified/ui-cropper.js"> </script>
+    <title>Express HTML</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyC8iqW-J1UCgSg7GHez4SuO51APq_n6AJI",
+            authDomain: "cen3031-photography-group3.firebaseapp.com",
+            databaseURL: "https://cen3031-photography-group3.firebaseio.com",
+            projectId: "cen3031-photography-group3",
+            storageBucket: "cen3031-photography-group3.appspot.com",
+            messagingSenderId: "194055935448"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/factories/listingFactory.js"></script>
+    <script src="js/controllers/listingController.js"></script>
+    <script src="js/controllers/cropController.js"></script>
+    <script src="http://rawgit.com/CrackerakiUA/ui-cropper/master/compile/unminified/ui-cropper.js"></script>
 </head>
 <body>
   <div style="margin:20px;">
@@ -31,6 +43,7 @@
   </div>
 </nav>
     <body ng-app="directoryApp">
+<<<<<<< HEAD
     <div class="container">
       <div class="row">
         <h1>Photo Upload</h1>
@@ -80,8 +93,112 @@
               </form>              
             maybe delete this and the form below--></form>            
           </form>
+=======
+        <div class="container">
+            <div class="row">
+                <h1>Photo Upload</h1>
+            </div>
+            <div class="row" ng-controller="ListingsController">
+                <div class="col-md-6">
+                    <form novalidate class="simple-form">
+                        <h2>Add New Listing</h2>
+                        First Name: <input type="text" ng-model="newUpload.firstName" /><br /> <br>
+                        Last Name: <input type="text" ng-model="newUpload.lastName" /><br /> <br>
+                        Address: <input type="text" ng-model="newUpload.address" /><br /> <br>
+                        City: <input type="text" ng-model="newUpload.city" /><br /> <br>
+                        State: <input type="text" ng-model="newUpload.state" /><br /> <br>
+                        Zip Code: <input type="text" ng-model="newUpload.zipCode" /><br />
+
+                        <h3>Photo print sizes</h3>
+                        <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value="5x10"> 5x10 Photo<br>
+                        <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value="20x30"> 20x30 Photo<br>
+                        <input type="radio" ng-model="newUpload.photoSize" name="photoSize" value="40x70"> 40x70 Photo
+                        <br />
+
+                        <h3>Print Material</h3>
+                        <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="matte"> Matte<br>
+                        <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="canvas">Canvas<br>
+                        <br />
+                        <button>
+                            Upload <input type="file" id="file" name="file" />
+
+                        </button>
+                        <br />
+                        <br>
+
+                        <button class="btn btn-primary" ng-click="uploadNewPhoto()">Upload Photo</button>
+                        <!-- below added by madeline for Buy Now paypal button-->
+                        <br> <br>
+                        <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
+                        <script>paypal.Buttons().render('body');</script>
+                        <!---<br> <br> <br>
+                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                      <input type="hidden" name="cmd" value="_xclick">
+                      <input type="hidden" name="lc" value="US">
+                      <input type="hidden" name="item_name" value="User's Print">
+                      <input type="hidden" name="button_subtype" value="services">
+                      <input type="hidden" name="no_note" value="0">
+                      <input type="hidden" name="currency_code" value="USD">
+                      <input type="hidden" name="tax_rate" value="6.500">
+                      <input type="hidden" name="bn" value="PP-BuyNowBF:btn_paynowCC_LG.gif:NonHostedGuest">
+                      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                      <img alt="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                      </form>
+                    maybe delete this and the form below-->
+                    </form>
+                    </form>
+                </div>
+            </div>
+>>>>>>> 373a09a13e1315697f55814deda84c61401180fe
         </div>
-      </div>
-    </div>
-</body>
+        <script>
+            var auth = firebase.auth();
+            var storageRef = firebase.storage().ref();
+            function handleFileSelect(evt) {
+                evt.stopPropagation();
+                evt.preventDefault();
+                var file = evt.target.files[0];
+                var metadata = {
+                    'contentType': file.type
+                };
+                // Push to child path.
+                // [START oncomplete]
+                storageRef.child('images/' + file.name).put(file, metadata).then(function (snapshot) {
+                    console.log('Uploaded', snapshot.totalBytes, 'bytes.');
+                    console.log('File metadata:', snapshot.metadata);
+                    // Let's get a download URL for the file.
+                    snapshot.ref.getDownloadURL().then(function (url) {
+                        console.log('File available at', url);
+                        // [START_EXCLUDE]
+                        document.getElementById('linkbox').innerHTML = '<a href="' + url + '">Click For File</a>';
+                        // [END_EXCLUDE]
+                    });
+                }).catch(function (error) {
+                    // [START onfailure]
+                    console.error('Upload failed:', error);
+                    // [END onfailure]
+                });
+                // [END oncomplete]
+            }
+            window.onload = function () {
+                document.getElementById('file').addEventListener('change', handleFileSelect, false);
+                document.getElementById('file').disabled = true;
+                auth.onAuthStateChanged(function (user) {
+                    if (user) {
+                        console.log('Anonymous user signed-in.', user);
+                        document.getElementById('file').disabled = false;
+                    } else {
+                        console.log('There was no anonymous session. Creating a new anonymous user.');
+                        // Sign the user in anonymously since accessing Storage requires the user to be authorized.
+                        auth.signInAnonymously().catch(function (error) {
+                            if (error.code === 'auth/operation-not-allowed') {
+                                window.alert('Anonymous Sign-in failed. Please make sure that you have enabled anonymous ' +
+                                    'sign-in on your Firebase project.');
+                            }
+                        });
+                    }
+                });
+            }
+        </script>
+    </body>
 </html>
