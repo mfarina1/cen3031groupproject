@@ -1,24 +1,79 @@
-/*taken from bootcamp 2
-#searchBar {
-    margin: 15px 10px;
-  }
-  
-  .container {
-    color: green;
-    font-family: Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
-    font-style: Sans-serif;
-    font-weight: bold;
-  }
-  
-  // .tableWrapper is a class 
-  .tableWrapper {
-    max-height: 400px;
-    overflow: auto;
-    color: rgb(147, 236, 14);
-    font-size: 14px;
-  }
-  
-  body {
-    background:
-       white;
-  } */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #53ad29;
+  border-radius: 7px;
+}
+
+li {
+  float: left;
+}
+
+
+li a {
+  display: block;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #316818;
+    color: white;
+    text-decoration: none;
+}
+
+.active {
+  background-color: #408720;
+  color: white;
+}
+
+.log_in {
+  background-color: #53ad29; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  float: right;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.log_in:hover {
+    background-color: #316818;
+    color: white;
+    text-decoration: none;
+}
+
+.title-login h2 {
+    display: inline-block;
+    
+    font-family: Apple Chancery, cursive; 
+    color: #53ad29; 
+    font-weight: bold  
+}
+
+
+.divLeft {
+    float: left;
+    width: 300px;
+    height: 300px;
+    margin-right: 8px; 
+    background-color: black
+}
+.divRight {
+    margin-left: 200px;
+    background-color: beige;
+}
+
+.size{
+    background-color:#ededed;
+}
