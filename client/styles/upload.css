@@ -63,17 +63,32 @@ li a:hover {
 
 
 .divLeft {
-    float: left;
-    width: 300px;
-    height: 300px;
-    margin-right: 8px; 
-    background-color: black
+    flex-grow: 5;
+    background-color: #edefed;
 }
 .divRight {
-    margin-left: 200px;
-    background-color: beige;
+    flex-grow: 1;
+    background-color: #e0f9e1;
 }
 
-.size{
-    background-color:#ededed;
+.flex-container {
+  display: flex;
+  align-items: stretch;
+}
+
+.flex-container > div {
+  color: white;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+p {
+    color:black;
+}
+
+h2 {
+    color:black;
 }

@@ -5,7 +5,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-                <link rel="stylesheet" type="text/css" href="styles/home.css">
+                <link rel="stylesheet" type="text/css" href="styles/upload.css">
                     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
                     <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
                     <script src="js/app.js"></script>
@@ -22,7 +22,7 @@
                 <a class="log_in" href="/signin" role="button">Sign In</a>
             </div>
             
-            <div class="container">
+            <div>
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li class = "active"><a href="/size">Upload</a></li>
@@ -30,10 +30,10 @@
                     <li><a href="/">Track Order</a></li>
                 </ul>
             </div>
+            <div class="flex-container">
             <div class="divLeft">
                 
-                <div class="container" ng-app="mainApp" ng-controller="CropController" style="background-color:#ededed; margin:20px">
-                    
+                <div ng-app="mainApp" ng-controller="CropController" style=" margin:20px">
                     <div id="size" style="padding:10px">
                         <h2 class="title">Photo print size</h2>
                         <p>Select from the list below to choose which size you would like to crop print for.</p>
@@ -154,8 +154,9 @@
             </div>
             
             <div class="divRight">
-                <p>Testing</p>
+                <p>Your Order</p>
             </div>
+        </div>
             
         </div>
     </body>
