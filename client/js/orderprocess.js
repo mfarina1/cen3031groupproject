@@ -5,10 +5,15 @@ function showSection(nextSection, currentSection) {
     } else {
       x.style.display = "none";
     }
+
     var y = document.getElementById(currentSection);
     if (y.style.display === "none") {
       y.style.display = "block";
     } else {
       y.style.display = "none";
+    }
+
+    if (payment.style.display === "block") {
+      paypal.Buttons().render('body');
     }
   }
