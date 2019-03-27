@@ -1,5 +1,5 @@
 <html>
-    
+
 <head>
     <title>Petree Print</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -26,7 +26,8 @@
         firebase.initializeApp(config);
     </script>
 </head>
-    
+
+
 <body>
     <div style="margin:20px">
         <div class="title-login">
@@ -96,10 +97,12 @@
                                 <h3>Copy/Paste</h3>
                                 <p>Copy and paste the image url below</p>
                                 <input type="text" class="form-control input-lg" placeholder="Image url" ng-model="myImage">
+
                                 </br>
                             </div>
                         </div>
-                        <p><a class="btn btn-primary btn-lg" onclick="showSection('crop', 'upload')" role="button">Next step</a></p>
+                        <p><a class="btn btn-primary btn-lg" onclick="showSection('crop', 'upload')" role="button">Next
+                                step</a></p>
                     </div>
 
                     <div class="jumbotron" id="crop" style="display: none;">
@@ -108,11 +111,14 @@
                                 <h2>Crop Image</h2>
                                 <h3>Crop Area for {{selectedOption.name}}</h3>
                                 </br>
-                                <div class="cropArea">
-                                    <br><br><br><br><br><br><br>
-                                    <ui-cropper image="myImage" area-type="rectangle" aspect-ratio="1.7" result-image="myCroppedImage"
-                                                result-image-size="{w: selectedOption.value.w, h: selectedOption.value.h}" area-min-size="{w:selectedOption.value.w, h: selectedOption.value.h}"
-                                                init-max-area="true" style="margin-left: 150px;"></ui-cropper>
+
+                                <div class="cropArea"><br><br><br><br><br><br><br>
+                                    <ui-cropper image="myImage" area-type="rectangle" aspect-ratio="1.7"
+                                        result-image="myCroppedImage"
+                                        result-image-size="{w: selectedOption.value.w, h: selectedOption.value.h}"
+                                        area-min-size="{w:selectedOption.value.w, h: selectedOption.value.h}"
+                                        init-max-area="true" style="margin-left: 150px;"></ui-cropper>
+
                                 </div>
                             </div>
                             <div class="col-lg-offset-2 col-lg-4">
@@ -121,18 +127,25 @@
                                 <img ng-src="{{myCroppedImage}}" class="preview-image img-responsive" />
                                 </br>
                                 <div class="download-well well">
-                                    <p class="text-danger">*Dont forget to add ".jpg" to the end of your file name before downloading</p>
-                                    <input type="text" class="form-control" placeholder="File name" ng-model="filename"> <br>
-                                    <button class="btn btn-primary btn-lg btn-block" ng-click="download()">DOWNLOAD</button>
+
+                                    <p class="text-danger">*Dont forget to add ".jpg" to the end of your file name
+                                        before downloading</p>
+                                    <input type="text" class="form-control" placeholder="File name" ng-model="filename">
+                                    <br>
+                                    <button class="btn btn-primary btn-lg btn-block"
+                                        ng-click="download()">DOWNLOAD</button>
+
                                 </div>
                             </div>
                         </div>
-                        <p><a class="btn btn-primary btn-lg" onclick="showSection('singup', 'crop')" role="button">Next step</a></p>
+                        <p><a class="btn btn-primary btn-lg" onclick="showSection('singup', 'crop')" role="button">Next
+                                step</a></p>
                     </div>
 
                     <div class="jumbotron" id="singup" style="display: none;">
                         <h2>Sign up/Login</h2>
-                        <p><a class="btn btn-primary btn-lg" onclick="showSection('userinfo', 'singup')" role="button">Next step</a></p>
+                        <p><a class="btn btn-primary btn-lg" onclick="showSection('userinfo', 'singup')"
+                                role="button">Next step</a></p>
                     </div>
 
                     <div class="jumbotron" id="userinfo" style="display: none;">
@@ -143,18 +156,21 @@
                         City: <input type="text" ng-model="newUpload.city" /><br />
                         State: <input type="text" ng-model="newUpload.state" /><br />
                         Zip Code: <input type="text" ng-model="newUpload.zipCode" /><br />
-                        <p><a class="btn btn-primary btn-lg" onclick="showSection('payment', 'userinfo')" role="button">Next step</a></p>
+                        <p><a class="btn btn-primary btn-lg" onclick="showSection('payment', 'userinfo')"
+                                role="button">Next step</a></p>
                         <button class="btn btn-primary" ng-click="uploadNewPhoto()">Upload Photo</button>
                     </div>
 
                     <div class="jumbotron" id="payment" style="display: none;">
                         <h2>Payment</h2>
                         <!-- below added by madeline for paypal buttons-->
+
                         <div>
                             <br> <br>
                             <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
                             <script>paypal.Buttons().render('body');</script>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -220,3 +236,4 @@
     
     
 </html>
+
