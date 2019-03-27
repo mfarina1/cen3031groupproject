@@ -16,6 +16,11 @@ angular.module('listings')
 
       $scope.newUpload = undefined;
 
+        $scope.printNewUpload = function(){
+            console.log($scope.newUpload.photoSize)
+            console.log($scope.newUpload.medium)
+        }
+        
       $scope.uploadNewPhoto = function () {
         console.log($scope.newUpload.photoSize);
         $scope.newUpload.orderStatus = "Processing"

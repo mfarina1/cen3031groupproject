@@ -55,7 +55,6 @@ li a:hover {
 
 .title-login h2 {
     display: inline-block;
-    
     font-family: Apple Chancery, cursive; 
     color: #53ad29; 
     font-weight: bold  
@@ -69,6 +68,7 @@ li a:hover {
 .divRight {
     flex-grow: 1;
     background-color: #e0f9e1;
+    text-align: center;
 }
 
 .flex-container {
@@ -77,18 +77,35 @@ li a:hover {
 }
 
 .flex-container > div {
-  color: white;
   width: 100px;
   margin: 10px;
+  padding: 10px;
+}
+
+
+
+.next {
+  background-color: #53ad29; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 15px;
   text-align: center;
-  line-height: 75px;
-  font-size: 30px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 10px;
+  border-radius: 5px;
+  float: right;
+  display: flex;
+  align-items: stretch;
+
 }
 
-p {
-    color:black;
+.next:hover {
+    background-color: #316818;
+    color: white;
+    text-decoration: none;
 }
 
-h2 {
-    color:black;
+label {
+  font-weight: normal;
 }
