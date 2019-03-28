@@ -17,6 +17,7 @@ angular.module('mainApp')
       $scope.newUpload = undefined;
 
       $scope.printNewUpload = function () {
+        $scope.newUpload.photoSize = "Henlo"
         console.log($scope.newUpload.photoSize)
         console.log($scope.newUpload.medium)
       }
@@ -26,7 +27,9 @@ angular.module('mainApp')
         $scope.newUpload.orderStatus = "Processing"
         $scope.newUpload.trackingNumber = "testing"
         $scope.newUpload.price = 6.32
-        $scope.newUpload.photoSize = 6
+        $scope.newUpload.photoSize = $scope.selectedOption.value.w + "x" + $scope.selectedOption.value.w
+				console.log("TCL: $scope.uploadNewPhoto -> $scope.newUpload.photoSize", $scope.newUpload.photoSize)
+        
 
         Listings.create($scope.newUpload).then(function (response) {
           console.log("Updating with new photo");
@@ -119,6 +122,16 @@ angular.module('mainApp')
       $scope.download = function () {
         SaveToDisk($scope.myCroppedImage, $scope.filename);
       };
+
+      // $scope.saveSize = function(){
+      //   console.log('Henlo');
+
+      //   $scope.newUpload.photoSize = "Henlo ich bin die size";//$scope.selectedOption.value.w + "x" + $scope.selectedOption.value.w;
+      //   console.log('bii');
+      //   $scope.newUpload.photoSize = "Henlo"
+      //   console.log($scope.newUpload.photoSize)
+      // }
+      
 
       function SaveToDisk(fileURL, fileName) {
         // for non-IE
