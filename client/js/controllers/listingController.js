@@ -27,8 +27,8 @@ angular.module('mainApp')
         $scope.newUpload.trackingNumber = "testing"
         $scope.newUpload.price = 6.32
         $scope.newUpload.photoSize = $scope.selectedOption.value.w + "x" + $scope.selectedOption.value.w
-				// console.log("TCL: $scope.uploadNewPhoto -> $scope.newUpload.photoSize", $scope.newUpload.photoSize)
-        
+        // console.log("TCL: $scope.uploadNewPhoto -> $scope.newUpload.photoSize", $scope.newUpload.photoSize)
+
 
         Listings.create($scope.newUpload).then(function (response) {
           console.log("Updating with new photo");
