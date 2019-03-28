@@ -39,11 +39,11 @@
                 <li><a href="/">Track Order</a></li>
             </ul>
         </div>
-        <div class="flex-container">
+        <div class="flex-container" ng-app="mainApp"  ng-controller="ListingsController">
             <div class="divLeft">
 
-                <div ng-app="mainApp" style=" margin:20px">
-                    <div ng-controller="ListingsController">
+                <div style=" margin:20px">
+                    <div>
                         <div id="size" style="padding:10px">
                             <h2>Photo print size</h2>
                             <p>Select from the list below to choose which size you would like to crop print for.</p>
@@ -161,16 +161,17 @@
                                 <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
                             </div>
                         </div>
-                        <div class="divRight">
-                            <h2>Your Order</h2>
-                            <p>First Name: {{newUpload.firstName}}</p>
-                            <p>Last Name: {{newUpload.lastName}}</p>
-                            <p>Size: {{selectedOption.value.w}} x {{selectedOption.value.h}}</p>
-                            <p>Material: {{newUpload.medium}}</p>
-                            <p>Image Name: imageName</p>
-                        </div>
+                        
                     </div>
                 </div>
+            </div>
+            <div class="divRight">
+                <h2>Your Order</h2>
+                <p>First Name: {{newUpload.firstName}}</p>
+                <p>Last Name: {{newUpload.lastName}}</p>
+                <p>Size: {{selectedOption.value.w}} x {{selectedOption.value.h}}</p>
+                <p>Material: {{newUpload.medium}}</p>
+                <p>Image Name: imageName</p>
             </div>
         </div>
     </div>
