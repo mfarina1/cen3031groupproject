@@ -21,11 +21,12 @@ li a {
   padding: 14px 16px;
   text-decoration: none;
 }
+
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-    background-color: #316818;
-    color: white;
-    text-decoration: none;
+  background-color: #316818;
+  color: white;
+  text-decoration: none;
 }
 
 .active {
@@ -34,7 +35,8 @@ li a:hover {
 }
 
 .log_in {
-  background-color: #53ad29; /* Green */
+  background-color: #53ad29;
+  /* Green */
   border: none;
   color: white;
   padding: 10px 15px;
@@ -48,27 +50,28 @@ li a:hover {
 }
 
 .log_in:hover {
-    background-color: #316818;
-    color: white;
-    text-decoration: none;
+  background-color: #316818;
+  color: white;
+  text-decoration: none;
 }
 
 .title-login h2 {
-    display: inline-block;
-    font-family: Apple Chancery, cursive; 
-    color: #53ad29; 
-    font-weight: bold  
+  display: inline-block;
+  font-family: Apple Chancery, cursive;
+  color: #53ad29;
+  font-weight: bold
 }
 
 
 .divLeft {
-    flex-grow: 5;
-    background-color: #edefed;
+  flex-grow: 5;
+  background-color: #edefed;
 }
+
 .divRight {
-    flex-grow: 1;
-    background-color: #e0f9e1;
-    text-align: center;
+  flex-grow: 1;
+  background-color: #e0f9e1;
+  text-align: center;
 }
 
 .flex-container {
@@ -76,7 +79,7 @@ li a:hover {
   align-items: stretch;
 }
 
-.flex-container > div {
+.flex-container>div {
   width: 100px;
   margin: 10px;
   padding: 10px;
@@ -85,14 +88,15 @@ li a:hover {
 
 
 .next {
-  background-color: #53ad29; /* Green */
+  background-color: #53ad29;
+  /* Green */
   border: none;
   color: white;
   padding: 10px 15px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  margin: 10px;
+  margin: 14px;
   border-radius: 5px;
   float: right;
   display: flex;
@@ -100,10 +104,29 @@ li a:hover {
 
 }
 
+.back {
+  background-color: darkgray;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  float: right;
+
+}
+
 .next:hover {
-    background-color: #316818;
-    color: white;
-    text-decoration: none;
+  background-color: #316818;
+  color: white;
+  text-decoration: none;
+}
+
+.back:hover {
+  background-color: #316818;
+  color: white;
+  text-decoration: none;
 }
 
 label {
