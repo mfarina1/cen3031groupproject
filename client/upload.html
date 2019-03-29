@@ -44,7 +44,7 @@
             <div ng-controller="ListingsController">
                 <div class="flex-container">
                     <div class="divLeft">
-                        <div class="jumbotron" id="size" style="padding:10px">
+                        <div class="jumbotron" id="size">
                             <h2>Photo print size</h2>
                             <p>Select from the list below to choose which size you would like to crop print for.</p>
                             <form>
@@ -71,10 +71,9 @@
                                     Canvas</input>
                                 </label>
                             </div>
-                            <p>
-                                <a class="next" onclick="showSection('upload', 'material')" role="button"
-                                   ng-click="printNewUpload()">Next step</a>
-                            </p>
+
+                            <p><a class="next" onclick="showSection('upload', 'material')" role="button">Next step</a></p>
+
                             <p><a class="back" onclick="showSection('size', 'material')" role="button">Go Back</a></p>
                         </div>
 

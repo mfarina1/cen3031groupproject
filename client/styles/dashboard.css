@@ -7,58 +7,91 @@
   overflow: auto;
 }
 
-/* .card {
-  -webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.31);
-  -moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.31);
-  box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.31);
-}
-
-.imageCrop {
-  max-width: 100%;
-} */
-
-/* .cropArea {
-  background: #E4E4E4;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
-  width: 495px;
-  height: 300px;
-} */
-
-.preview-image {
-  margin: 0 auto;
-  background: #E4E4E4;
-  min-width: 400px;
-  min-height: 300px;
+  background-color: #53ad29;
+  border-radius: 7px;
 }
 
-.download-well {
-  background: #38424D;
-  border-radius: 20px;
+li {
+  float: left;
 }
 
-.download-well p {
-  font-size: 18px;
+
+li a {
+  display: block;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #316818;
+    color: white;
+    text-decoration: none;
 }
 
-.jumbotron .small {
+.active {
+  background-color: #408720;
+  color: white;
+}
+
+.log_in {
+  background-color: #53ad29; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
   font-size: 16px;
-}
-.jumbotron .text-muted{
-  color: #7D8FA1;
-}
-
-.tool {
-  font-size: 20px;
+  float: right;
+  margin: 5px;
+  border-radius: 5px;
 }
 
-#material {
-  display: none;
+.log_in:hover {
+    background-color: #316818;
+    color: white;
+    text-decoration: none;
 }
 
-
-h1 {
-  color: red;
+.title-login h2 {
+    display: inline-block;
+    
+    font-family: Apple Chancery, cursive; 
+    color: #53ad29; 
+    font-weight: bold  
 }
+
+.listTable {
+  flex-grow: 3;
+  background-color: #edefed;
+}
+
+.displayDataView {
+  flex-grow: 1;
+  background-color: #e0f9e1;
+
+}
+
+.flex-container {
+  display: flex;
+  align-items: stretch;
+}
+
+.flex-container>div {
+  width: 100px;
+  margin: 10px;
+  padding: 10px;
+}
+
 
 /* Dropdown Button */
 .dropbtn {

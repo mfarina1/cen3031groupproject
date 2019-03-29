@@ -101,6 +101,7 @@ li a:hover {
   float: right;
   display: flex;
   align-items: stretch;
+  font-family: Arial, Helvetica, sans-serif;
 
 }
 
@@ -114,7 +115,7 @@ li a:hover {
   font-size: 16px;
   border-radius: 5px;
   float: right;
-
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .next:hover {
@@ -124,7 +125,7 @@ li a:hover {
 }
 
 .back:hover {
-  background-color: #316818;
+  background-color: #6d6d6d;
   color: white;
   text-decoration: none;
 }
