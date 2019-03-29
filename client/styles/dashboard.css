@@ -70,43 +70,28 @@ li a:hover {
     font-weight: bold  
 }
 
-/*
-.preview-image {
-  margin: 0 auto;
-  background: #E4E4E4;
-  min-width: 400px;
-  min-height: 300px;
+.listTable {
+  flex-grow: 3;
+  background-color: #edefed;
 }
 
-.download-well {
-  background: #38424D;
-  border-radius: 20px;
+.displayDataView {
+  flex-grow: 1;
+  background-color: #e0f9e1;
+
 }
 
-.download-well p {
-  font-size: 18px;
+.flex-container {
+  display: flex;
+  align-items: stretch;
 }
 
-.jumbotron .small {
-  font-size: 16px;
-}
-.jumbotron .text-muted{
-  color: #7D8FA1;
-}
-
-.tool {
-  font-size: 20px;
+.flex-container>div {
+  width: 100px;
+  margin: 10px;
+  padding: 10px;
 }
 
-#material {
-  display: none;
-}
-
-*/
-
-h1 {
-  color: red;
-}
 
 /* Dropdown Button */
 .dropbtn {
