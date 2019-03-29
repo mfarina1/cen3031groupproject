@@ -7,23 +7,70 @@
   overflow: auto;
 }
 
-/* .card {
-  -webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.31);
-  -moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.31);
-  box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.31);
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #53ad29;
+  border-radius: 7px;
 }
 
-.imageCrop {
-  max-width: 100%;
-} */
+li {
+  float: left;
+}
 
-/* .cropArea {
-  background: #E4E4E4;
-  overflow: hidden;
-  width: 495px;
-  height: 300px;
-} */
 
+li a {
+  display: block;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #316818;
+    color: white;
+    text-decoration: none;
+}
+
+.active {
+  background-color: #408720;
+  color: white;
+}
+
+.log_in {
+  background-color: #53ad29; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  float: right;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.log_in:hover {
+    background-color: #316818;
+    color: white;
+    text-decoration: none;
+}
+
+.title-login h2 {
+    display: inline-block;
+    
+    font-family: Apple Chancery, cursive; 
+    color: #53ad29; 
+    font-weight: bold  
+}
+
+/*
 .preview-image {
   margin: 0 auto;
   background: #E4E4E4;
@@ -55,6 +102,7 @@
   display: none;
 }
 
+*/
 
 h1 {
   color: red;
