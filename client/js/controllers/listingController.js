@@ -58,6 +58,30 @@ angular.module('mainApp')
       }
 
       /////////////////////////////
+        function dataURItoBlob(dataURI) {
+            // convert base64 to raw binary data held in a string
+            // doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
+            var byteString = atob(dataURI.split(',')[1]);
+
+            // separate out the mime component
+            var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+
+            // write the bytes of the string to an ArrayBuffer
+            var ab = new ArrayBuffer(byteString.length);
+
+            // create a view into the buffer
+            var ia = new Uint8Array(ab);
+
+            // set the bytes of the buffer to the correct values
+            for (var i = 0; i < byteString.length; i++) {
+                ia[i] = byteString.charCodeAt(i);
+            }
+
+            // write the ArrayBuffer to a blob, and you're done
+            var blob = new Blob([ab], { type: mimeString });
+            return blob;
+
+        }
 
       $scope.myImage = '';
       $scope.myCroppedImage = '';
@@ -120,7 +144,37 @@ angular.module('mainApp')
 
       $scope.download = function () {
         SaveToDisk($scope.myCroppedImage, $scope.filename);
-      };
+        };
+
+        $scope.currentData = '';
+        $scope.cropUpload = function () {
+            $scope.currentData = new Date();
+            var croppedImageCorrect = dataURItoBlob($scope.myCroppedImage);
+            var storageRef = firebase.storage().ref();
+            var metadata = {
+                'contentType': croppedImageCorrect.type
+            };
+            // Push to child path.
+            // [START oncomplete]
+            storageRef.child('images/' + $scope.currentData).put(croppedImageCorrect, metadata).then(function (snapshot) {
+                console.log('Uploaded', snapshot.totalBytes, 'bytes.');
+                console.log('File metadata:', snapshot.metadata);
+                // Let's get a download URL for the file.
+                snapshot.ref.getDownloadURL().then(function (url) {
+                    console.log('File available at', url);
+                    // [START_EXCLUDE]
+                    document.getElementById('linkbox').innerHTML = '<a href="' + url +
+                        '">Click For File</a>';
+                    // [END_EXCLUDE]
+                });
+            }).catch(function (error) {
+                // [START onfailure]
+                console.error('Upload failed:', error);
+                // [END onfailure]
+            });
+            // [END oncomplete]
+        };
+
 
       function SaveToDisk(fileURL, fileName) {
         // for non-IE

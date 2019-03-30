@@ -48,6 +48,10 @@ var listingSchema = new Schema({
         type: String,
         required: true
     },
+    /*FBphotoName: {
+        type: String,
+        required: true
+    },*/
     created_at: Date,
     updated_at: Date
 });
