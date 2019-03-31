@@ -25,8 +25,6 @@ angular.module('mainApp')
         console.log($scope.newUpload.photoSize);
         $scope.newUpload.orderStatus = "Processing"
         $scope.newUpload.trackingNumber = "testing"
-        $scope.newUpload.price = 6.32
-        $scope.newUpload.photoSize = $scope.selectedOption.value.w + "x" + $scope.selectedOption.value.w
         // console.log("TCL: $scope.uploadNewPhoto -> $scope.newUpload.photoSize", $scope.newUpload.photoSize)
 
 
@@ -41,21 +39,35 @@ angular.module('mainApp')
 	 */
 
       };
-      $scope.showDetails = function (index) {
-        $scope.detailedInfo = $scope.listings[index];
-        console.log($scope.listings[index].firstName);
+       
+      $scope.calculatePrice = function() {
+          $scope.newUpload.photoSize = $scope.selectedOption.value.w + "x" + $scope.selectedOption.value.h
+          console.log($scope.newUpload.photoSize)
+         $scope.newUpload.price = 0.00
+         switch ($scope.newUpload.photoSize){
+             case '2750x3500':
+                 $scope.newUpload.price = 49.99;
+               break;
+             case '4000x5000':
+                 $scope.newUpload.price = 69.99;
+               break;
+             case '5000x6000':
+                 $scope.newUpload.price = 99.99;
+               break;
+             case '5000x7500':
+                 $scope.newUpload.price = 129.99;
+               break;
+             default:
+                 $scope.newUpload.price = 0.00;
+         }
+        if ($scope.newUpload.medium === 'canvas'){
+            $scope.newUpload.price += 10;
+        }  
+
       };
-
-      $scope.modifyStatus = function (id, newStatus) {
-        console.log($scope.detailedInfo.orderStatus);
-        console.log(newStatus);
-
-        Listings.updateOrderStatus(id).then(function (response) {
-          console.log("Modifing status");
-        }, function (error) {
-          console.log('Unable to modify status:', error);
-        });
-      }
+        
+        
+        
 
       /////////////////////////////
         function dataURItoBlob(dataURI) {
@@ -88,15 +100,15 @@ angular.module('mainApp')
       $scope.filename = '';
       $scope.availableOptions = [{
           id: '1',
-          name: '11x14',
+          name: '11x14, Starts at $49.99',
           value: {
-            w: 1000,
-            h: 60
+            w: 2750,
+            h: 3500
           }
         },
         {
           id: '2',
-          name: '16x20',
+          name: '16x20, Starts at $69.99',
           value: {
             w: 4000,
             h: 5000
@@ -104,7 +116,7 @@ angular.module('mainApp')
         },
         {
           id: '3',
-          name: '20x24',
+          name: '20x24, Starts at $99.99',
           value: {
             w: 5000,
             h: 6000
@@ -112,7 +124,7 @@ angular.module('mainApp')
         },
         {
           id: '4',
-          name: '20x30',
+          name: '20x30, Starts at $129.99',
           value: {
             w: 5000,
             h: 7500
@@ -140,23 +152,24 @@ angular.module('mainApp')
         };
 
         $scope.currentData = '';
+        
         $scope.cropUpload = function () {
+            console.log("starting to upload")
             $scope.currentData = new Date();
             var croppedImageCorrect = dataURItoBlob($scope.myCroppedImage);
             var storageRef = firebase.storage().ref();
             var metadata = {
                 'contentType': croppedImageCorrect.type
             };
-            // Push to child path.
-            // [START oncomplete]
+            
             storageRef.child('images/' + $scope.file.name).put(croppedImageCorrect, metadata).then(function (snapshot) {
+                
                 console.log('Uploaded', snapshot.totalBytes, 'bytes.');
-                console.log('File metadata:', snapshot.metadata);
-                // Let's get a download URL for the file.
                 snapshot.ref.getDownloadURL().then(function (url) {
                     console.log('File available at', url);
                     // [START_EXCLUDE]
                     $scope.newUpload.FBImageURL = url;
+                    $scope.uploadNewPhoto();
                     document.getElementById('linkbox').innerHTML = '<a href="' + url +
                         '">Click For File</a>';
                     // [END_EXCLUDE]

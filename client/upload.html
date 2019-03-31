@@ -72,7 +72,7 @@
                                 </label>
                             </div>
 
-                            <p><a class="next" onclick="showSection('upload', 'material')" role="button">Next step</a></p>
+                            <p><a class="next" ng-click="calculatePrice()" onclick="showSection('upload', 'material') " role="button">Next step</a></p>
 
                             <p><a class="back" onclick="showSection('size', 'material')" role="button">Go Back</a></p>
                         </div>
@@ -92,8 +92,7 @@
                             </div>
 
                             <p>
-                                <a class="next" onclick="showSection('crop', 'upload')" role="button"
-                                   ng-click="printNewUpload()">Next step</a>
+                                <a class="next" onclick="showSection('crop', 'upload')" role="button">Next step</a>
                             </p>
                             <p><a class="back" onclick="showSection('material', 'upload')" role="button">Go Back</a></p>
                         </div>
@@ -102,9 +101,7 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <h2>Crop Image</h2>
-                                    <h3>Crop Area for {{selectedOption.name}}</h3>
                                     </br>
-
                                     <div class="cropArea">
                                         <br><br><br><br><br><br><br>
                                         <ui-cropper image="myImage" area-type="rectangle" aspect-ratio="1.7"
@@ -120,57 +117,21 @@
                                     </br>
                                     <img ng-src="{{myCroppedImage}}" class="preview-image img-responsive" />
                                     </br>
-                                    <div class="download-well well">
-
-                                        <p class="text-danger">
-                                            *Dont forget to add ".jpg" to the end of your file name
-                                            before downloading
-                                        </p>
-                                        <input type="text" class="form-control" placeholder="File name"
-                                               ng-model="filename">
-                                        <br>
-                                        <button class="btn btn-primary btn-lg btn-block"
-                                                ng-click="download()">
-                                            DOWNLOAD
-                                        </button>
-                                        <!-- TESTING UPLOAD OF CROPPED IMAGE, CAN BE MOVED LATER -->
-                                        <button class="btn btn-primary btn-lg btn-block"
-                                                ng-click="cropUpload()">
-                                            UPLOAD
-                                        </button>
-
-                                    </div>
                                 </div>
                             </div>
-                            <p>
-                                <a class="btn btn-primary btn-lg" onclick="showSection('signup', 'crop')"
-                                   role="button">
-                                    Next
-                                    step
-                                </a>
-                            </p>
-                        </div>
-
-                        <div class="jumbotron" id="signup" style="display: none;">
-                            <h2>Sign up/Login</h2>
-                            <p>
-                                <a class="btn btn-primary btn-lg" onclick="showSection('userinfo', 'signup')"
-                                   role="button">Next step</a>
-                            </p>
+                            <p><a class="next" onclick="showSection('userinfo', 'crop')" role="button">Next step</a></p>
+                            <p><a class="back" onclick="showSection('upload', 'crop')" role="button">Go Back</a></p>
                         </div>
                         <div class="jumbotron" id="userinfo" style="display: none;">
-                            <h2>User Information</h2>
+                            <h2>Shipping Information</h2>
                             First Name: <input type="text" ng-model="newUpload.firstName" /><br />
                             Last Name: <input type="text" ng-model="newUpload.lastName" /><br />
                             Address: <input type="text" ng-model="newUpload.address" /><br />
                             City: <input type="text" ng-model="newUpload.city" /><br />
                             State: <input type="text" ng-model="newUpload.state" /><br />
                             Zip Code: <input type="text" ng-model="newUpload.zipCode" /><br />
-                            <p>
-                                <a class="btn btn-primary btn-lg" onclick="showSection('payment', 'userinfo')"
-                                   role="button">Next step</a>
-                            </p>
-                            <button class="btn btn-primary" ng-click="uploadNewPhoto()">Upload Photo</button>
+                            <p><a class="next" onclick="showSection('payment', 'userinfo')" role="button">Next step</a></p>
+                            <p><a class="back" onclick="showSection('crop', 'userinfo')" role="button">Go Back</a></p>
                         </div>
 
                         <div class="jumbotron" id="payment" style="display: none;">
@@ -185,11 +146,11 @@
                     </div>
                     <div class="divRight">
                         <h2>Your Order</h2>
-                        <p>First Name: {{newUpload.firstName}}</p>
-                        <p>Last Name: {{newUpload.lastName}}</p>
-                        <p>Size: {{selectedOption.value.w}} x {{selectedOption.value.h}}</p>
-                        <p>Material: {{newUpload.medium}}</p>
-                        <p>Image Name: imageName</p>
+                        <p style="text-align:left">Size: {{selectedOption.value.w}} x {{selectedOption.value.h}}</p>
+                        <p style="text-align:left">Material: {{newUpload.medium}}</p>
+                        <p style="text-align:left">Price: ${{newUpload.price}}</p>
+                        <br><br>
+                        <a class="submitButton" role="button" ng-click="cropUpload()">Submit Order</a>
                     </div>
                 </div>
             </div>
