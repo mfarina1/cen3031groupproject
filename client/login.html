@@ -1,8 +1,7 @@
 
 <html>
     <head>
-    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js">
-        </script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
         <script>
             var config = {
                 apiKey: "AIzaSyC8iqW-J1UCgSg7GHez4SuO51APq_n6AJI",
@@ -16,43 +15,39 @@
         </script> 
 
 
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     </head>
 
 
+
+        <script type="text/javascript">  
+            var uiConfig = {  
+            signInSuccessUrl: "/upload",  
+            signInOptions: [  
+            firebase.auth.EmailAuthProvider.PROVIDER_ID  
+            ],
+            // Terms of service url can be specified and will show up in the widget.  
+            tosUrl: '<your-tos-url>'  
+            };  
+    
+
+            // Initialize the FirebaseUI Widget using Firebase.  
+            var ui = new firebaseui.auth.AuthUI(firebase.auth());  
+                if ((firebase.auth().isSignInWithEmailLink(window.location.href)) {
+                ui.start('#firebaseui-auth-container', uiConfig);
+                }        
+        </script>  
         
 
-
-    <script type="text/javascript">  
-      var uiConfig = {  
-      signInSuccessUrl: "/upload",  
-      signInOptions: [  
-      // Specify providers you want to offer your users.  
-      firebase.auth.EmailAuthProvider.PROVIDER_ID  
-     ],  
-     // Terms of service url can be specified and will show up in the widget.  
-     tosUrl: '<your-tos-url>'  
-    };  
-    // Initialize the FirebaseUI Widget using Firebase.  
-    var ui = new firebaseui.auth.AuthUI(firebase.auth());  
-    // The start method will wait until the DOM is loaded.  
-    ui.start('#firebaseui-auth-container', uiConfig);  
-    </script>  
-  <!-- Include a simple background image & and title -->  
-    <div>
-        <img src="Petree_Print_Logo.png" alt="Welcome to Petree Prints"
-    </div>  
+        <!-- Include a simple background image & and title -->  
+        <div>
+        </div>  
+    
     <body>  
-        <h1 align="center" style="color: #53ad29;">Log in to Start Printing!!!</h1>  
+        <h1 align="center" style="color: #53ad29;">Welcome to Petree Prints</h1>  
         <div id="firebaseui-auth-container"></div>  
     </body>  
-  </html>  
+</html>  
 
 
-<body>
-  <h1 align="center" style="color:white;">Firebase Auth Quickstart Demo</h1>
-  <div id="firebaseui-auth-container"></div>
-</body>
-
-</html>
