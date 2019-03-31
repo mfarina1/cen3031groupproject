@@ -88,42 +88,34 @@ angular.module('mainApp')
       $scope.filename = '';
       $scope.availableOptions = [{
           id: '1',
-          name: 'Option A (200*150)',
+          name: '11x14',
           value: {
-            w: 200,
-            h: 150
+            w: 1000,
+            h: 60
           }
         },
         {
           id: '2',
-          name: 'Option B (150*100)',
+          name: '16x20',
           value: {
-            w: 150,
-            h: 100
-          }
-        },
-        {
-          id: '2',
-          name: 'Option C (100*50)',
-          value: {
-            w: 100,
-            h: 50
-          }
-        },
-        {
-          id: '2',
-          name: 'Option D (40*20)',
-          value: {
-            w: 40,
-            h: 20
+            w: 4000,
+            h: 5000
           }
         },
         {
           id: '3',
-          name: 'Option E (14*10)',
+          name: '20x24',
           value: {
-            w: 15,
-            h: 10
+            w: 5000,
+            h: 6000
+          }
+        },
+        {
+          id: '4',
+          name: '20x30',
+          value: {
+            w: 5000,
+            h: 7500
           }
         }
       ];
@@ -131,7 +123,8 @@ angular.module('mainApp')
       $scope.selectedOption = $scope.availableOptions[1];
 
       var handleFileSelect = function (evt) {
-        var file = evt.currentTarget.files[0];
+        $scope.file = evt.currentTarget.files[0];
+          var file = $scope.file;
         var reader = new FileReader();
         reader.onload = function (evt) {
           $scope.$apply(function ($scope) {
@@ -156,13 +149,14 @@ angular.module('mainApp')
             };
             // Push to child path.
             // [START oncomplete]
-            storageRef.child('images/' + $scope.currentData).put(croppedImageCorrect, metadata).then(function (snapshot) {
+            storageRef.child('images/' + $scope.file.name).put(croppedImageCorrect, metadata).then(function (snapshot) {
                 console.log('Uploaded', snapshot.totalBytes, 'bytes.');
                 console.log('File metadata:', snapshot.metadata);
                 // Let's get a download URL for the file.
                 snapshot.ref.getDownloadURL().then(function (url) {
                     console.log('File available at', url);
                     // [START_EXCLUDE]
+                    $scope.newUpload.FBImageURL = url;
                     document.getElementById('linkbox').innerHTML = '<a href="' + url +
                         '">Click For File</a>';
                     // [END_EXCLUDE]
