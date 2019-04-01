@@ -160,9 +160,14 @@
     <script src="/js/controllers/listingController.js"></script>
     <script>
 
+         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            if (user != null) {
+                String uid = user.getUid();
+            };
+        
+
         var auth = firebase.auth();
         var storageRef = firebase.storage().ref();
-
        
         window.onload = function () {
             //document.getElementById('file').addEventListener('change', handleFileSelect, false);
