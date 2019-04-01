@@ -1,13 +1,8 @@
 <html>
-<<<<<<< HEAD
-    <head>
-        <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
-=======
   <head>
     <meta charset="UTF-8">
     <title>Petree Print Login</title>
         <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"> </script>
->>>>>>> login
         <script>
             var config = {
                 apiKey: "AIzaSyC8iqW-J1UCgSg7GHez4SuO51APq_n6AJI",
@@ -51,10 +46,7 @@
                     };
             </script>  
 
-<<<<<<< HEAD
-        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-=======
+
         <script type="text/javascript">
             //Tracking login status across all of the pages
             initApp = function() {
@@ -97,7 +89,10 @@
                         initApp()
                     });
             </script>
->>>>>>> login
+
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
     </head>
   <body>
     <h1>Welcome to My Awesome App</h1>
@@ -107,69 +102,3 @@
   </body>
 </html>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-        <script type="text/javascript">  
-            var uiConfig = {  
-                signInSuccessUrl: "/upload",  
-                signInOptions: [  
-                    firebase.auth.EmailAuthProvider.PROVIDER_ID  
-                ],
-                // Terms of service url can be specified and will show up in the widget.  
-                tosUrl: '<your-tos-url>'  
-            };  
-
-=======
->>>>>>> login
-
-            // Initialize the FirebaseUI Widget using Firebase.  
-            var ui = new firebaseui.auth.AuthUI(firebase.auth());  
-                    ui.start('#firebaseui-auth-container', uiConfig);       
-        </script>  
-        
-
-<<<<<<< HEAD
-        <!-- Include a simple background image & and title -->  
-        <div>
-        </div>  
-    
-    <body>  
-        <h1 align="center" style="color: #53ad29;">Welcome to Petree Prints</h1>  
-        <div id="firebaseui-auth-container"></div>  
-    </body>  
-</html>  
-
-
-=======
-    <script type="text/javascript">  
-        var uiConfig = {  
-            signInSuccessUrl: "/upload",  
-            signInOptions: [  
-                firebase.auth.EmailAuthProvider.PROVIDER_ID  
-            ],  
-            tosUrl: '<your-tos-url>'  
-        };  
-        var ui = new firebaseui.auth.AuthUI(firebase.auth());  
-        ui.start('#firebaseui-auth-container', uiConfig);  
-    </script>  
-    </head>
-    <body>
-        <h1>    </h1>
-            <div id="sign-in-status"></div>
-            <div id="sign-in"></div>
-            <pre id="account-details"></pre>
-  </body>  
-</html>  
->>>>>>> login
