@@ -61,4 +61,21 @@ li a:hover {
     font-weight: bold  
 }
 
+.sectionOne {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 
+.sectionTwo {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.sectionThree {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+li {
+  float: left;
+}
