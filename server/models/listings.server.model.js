@@ -54,6 +54,10 @@ var listingSchema = new Schema({
     },
     created_at: Date,
     updated_at: Date
+    },
+    uid: {
+        type: String,
+        required: true
 });
 
 /* create a 'pre' function that adds the updated_at (and created_at if not already there) property */
