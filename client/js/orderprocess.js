@@ -17,3 +17,10 @@ function showSection(nextSection, currentSection) {
     paypal.Buttons().render('body');
   }
 }
+
+function showSubmitButton() {
+  var s = document.getElementById('submitButton');
+  if (s.style.display === "none") {
+    s.style.display = "block";
+  }
+}
