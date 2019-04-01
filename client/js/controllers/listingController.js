@@ -25,6 +25,8 @@ angular.module('mainApp')
         console.log($scope.newUpload.photoSize);
         $scope.newUpload.orderStatus = "Processing"
         $scope.newUpload.trackingNumber = "testing"
+        $scope.newUpload.uid = ""
+
         // console.log("TCL: $scope.uploadNewPhoto -> $scope.newUpload.photoSize", $scope.newUpload.photoSize)
 
 
