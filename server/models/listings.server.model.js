@@ -52,12 +52,11 @@ var listingSchema = new Schema({
         type: String,
         required: true
     },
-    uid: {
-        type: String
+    FBUID:{
+        type:String
     },
     created_at: Date,
     updated_at: Date
-    }
 });
 
 /* create a 'pre' function that adds the updated_at (and created_at if not already there) property */
