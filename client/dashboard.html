@@ -11,6 +11,19 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
         </link>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyC8iqW-J1UCgSg7GHez4SuO51APq_n6AJI",
+                authDomain: "cen3031-photography-group3.firebaseapp.com",
+                databaseURL: "https://cen3031-photography-group3.firebaseio.com",
+                projectId: "cen3031-photography-group3",
+                storageBucket: "cen3031-photography-group3.appspot.com",
+                messagingSenderId: "194055935448"
+            };
+        firebase.initializeApp(config);
+            </script>
     </head>
     
     <body>
@@ -34,7 +47,7 @@
                 <div style="padding:20px">
                     <h1>Dashboard</h1>
                 </div>
-                <div ng-controller="ListingsController">
+                <div ng-controller="DashboardController">
                     <div class="flex-container">
                         <div class="listTable">
                             <div class="input-group" id="searchBar">
@@ -72,7 +85,8 @@
                                 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                             </link>
                             
-                            <button class="btn"><i class="fa fa-download"></i> Download Image</button>
+                            <a href={{detailedInfo.FBImageURL}} download>
+                            <button class="btn" ng-click="downloadImage()"><i class="fa fa-download"></i> Download Image</button>
                             
                             <div class="dropdown">
                                 <button class="dropbtn">Change Order Status</button>
@@ -89,11 +103,11 @@
                 </div>
             </body>
         </div>
+        
     </body>
     <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
     <script src="js/app.js"></script>
     <script src="js/factories/listingFactory.js"></script>
-    <script src="js/controllers/listingController.js"></script>
-    <script src="http://rawgit.com/CrackerakiUA/ui-cropper/master/compile/unminified/ui-cropper.js"></script>
+    <script src="js/controllers/dashboardController.js"></script>
     
 </html>

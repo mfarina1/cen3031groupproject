@@ -46,6 +46,7 @@
                     };
             </script>  
 
+
         <script type="text/javascript">
             //Tracking login status across all of the pages
             initApp = function() {
@@ -88,6 +89,10 @@
                         initApp()
                     });
             </script>
+
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
     </head>
   <body>
     <h1>Welcome to My Awesome App</h1>
@@ -97,37 +102,3 @@
   </body>
 </html>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script type="text/javascript">  
-        var uiConfig = {  
-            signInSuccessUrl: "/upload",  
-            signInOptions: [  
-                firebase.auth.EmailAuthProvider.PROVIDER_ID  
-            ],  
-            tosUrl: '<your-tos-url>'  
-        };  
-        var ui = new firebaseui.auth.AuthUI(firebase.auth());  
-        ui.start('#firebaseui-auth-container', uiConfig);  
-    </script>  
-    </head>
-    <body>
-        <h1>    </h1>
-            <div id="sign-in-status"></div>
-            <div id="sign-in"></div>
-            <pre id="account-details"></pre>
-  </body>  
-</html>  

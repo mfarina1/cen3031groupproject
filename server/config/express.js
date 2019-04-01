@@ -17,8 +17,12 @@ module.exports.init = function() {
   app.use(morgan('dev'));
 
   //body parsing middleware 
-  app.use(bodyParser.json());
-
+  app.use(bodyParser.json()); 
+app.all('/', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+ });
   
   /**TODO
   Serve static files */
@@ -83,12 +87,23 @@ module.exports.init = function() {
 });
 
 
+var allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', "*");
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+}
+
+
+
 
 //add the router
 app.use(express.static(__dirname + '/client'));
 //Store all HTML files in view folder.
 app.use(express.static(__dirname + '/Script'));
 //Store all JS and CSS in Scripts folder.
+    
+
     
   /**TODO 
   Go to homepage for all routes not specified */ 

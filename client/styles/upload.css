@@ -130,6 +130,23 @@ li a:hover {
   text-decoration: none;
 }
 
+.submitButton {
+  background-color: #53ad29;
+  /* Green */
+  border: none;
+  color: white;
+    padding: 10px 15px;
+  font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.submitButton:hover {
+  background-color: #316818;
+  color: white;
+  text-decoration: none;
+}
+
 label {
   font-weight: normal;
 }
