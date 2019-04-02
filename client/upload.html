@@ -61,18 +61,18 @@
                         <div class="jumbotron" id="material" style="display: none;">
                             <h2 class="title">Print Material</h2>
                             <p>Select the type of material your would like your order to be printed on</p>
-                            <div style="background-color:#d6d6d6; padding:10px;line-height: 26pt">
+                            <div ng-click="calculatePrice()" style="background-color:#d6d6d6; padding:10px;line-height: 26pt">
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="matte">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="Matte">
                                     Matte</input>
                                 </label>
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="canvas">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="Canvas">
                                     Canvas</input>
                                 </label>
                             </div>
 
-                            <p><a class="next" ng-click="calculatePrice()" onclick="showSection('upload', 'material') " role="button">Next step</a></p>
+                            <p><a class="next" onclick="showSection('upload', 'material') " role="button">Next step</a></p>
 
                             <p><a class="back" onclick="showSection('size', 'material')" role="button">Go Back</a></p>
                         </div>

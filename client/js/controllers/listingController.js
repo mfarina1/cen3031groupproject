@@ -29,6 +29,7 @@ angular.module('mainApp')
 
         // console.log("TCL: $scope.uploadNewPhoto -> $scope.newUpload.photoSize", $scope.newUpload.photoSize)
 
+        window.location = '/';
 
         Listings.create($scope.newUpload).then(function (response) {
           console.log("Updating with new photo");
@@ -44,8 +45,6 @@ angular.module('mainApp')
        
       $scope.calculatePrice = function() {
           $scope.newUpload.photoSize = $scope.selectedOption.value.w + "x" + $scope.selectedOption.value.h
-          console.log($scope.newUpload.photoSize)
-         $scope.newUpload.price = 0.00
          switch ($scope.newUpload.photoSize){
              case '2750x3500':
                  $scope.newUpload.price = 49.99;
@@ -62,7 +61,7 @@ angular.module('mainApp')
              default:
                  $scope.newUpload.price = 0.00;
          }
-        if ($scope.newUpload.medium === 'canvas'){
+        if ($scope.newUpload.medium === 'Canvas'){
             $scope.newUpload.price += 10;
         }  
 
@@ -157,6 +156,8 @@ angular.module('mainApp')
         
         $scope.cropUpload = function () {
             console.log("starting to upload")
+            document.getElementById("submitButton").innerHTML = "Uploading...";
+            document.getElementById("submitButton").disabled = true;
             $scope.currentData = new Date();
             var croppedImageCorrect = dataURItoBlob($scope.myCroppedImage);
             var storageRef = firebase.storage().ref();
