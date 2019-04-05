@@ -53,7 +53,7 @@ var listingSchema = new Schema({
         required: true
     },
     FBUID:{
-        type:String
+        type:String,
         required: true
     },
     created_at: Date,
