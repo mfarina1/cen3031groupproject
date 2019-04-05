@@ -54,6 +54,7 @@ var listingSchema = new Schema({
     },
     FBUID:{
         type:String
+        required: true
     },
     created_at: Date,
     updated_at: Date
