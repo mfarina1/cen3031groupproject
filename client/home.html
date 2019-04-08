@@ -2,18 +2,39 @@
 
 <head>
     <title>Petree Print</title>
-    <link rel="stylesheet" type="text/css" href="styles/home.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     </link>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
     </link>
+    <link href="https://fonts.googleapis.com/css?family=Mukta:300,400,700" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/home.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 
 <body>
-    <div style="margin:20px;">
-        <div class="title-login">
+    <nav class="navbar navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">
+                    <img src="./resources/petree_logo.png" height="50" alt="">
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/upload">Upload</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/">Track Order</a></li>
+                <li><a class="log_in" href="#"><span class="glyphicon glyphicon-user"></span>&nbsp; Sign Up</a></li>
+                <li><a class="log_in" href="#"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div>
+        <!-- <div class="title-login">
             <h2>Petree Prints</h2>
             <a class="log_in" href="/login" role="button">Log In</a>
             <a class="log_in" href="/signin" role="button">Sign In</a>
@@ -25,26 +46,31 @@
                 <li><a href="/dashboard">Dashboard</a></li>
                 <li><a href="/">Track Order</a></li>
             </ul>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="sectionOne col-lg-12">
-                    <div class="col-lg-6">
-                        <div class="text">
-                            <br><br><br><br><br>
-                            <h1>Large format prints</h1>
-                            <h4>Of your favorite pictures</h4>
-                            <br><br>
-                            <p><a class="btn btn-primary btn-lg" href="/upload" role="button">Order now</a></p>
+        </div> -->
+        <div class="aquaSection">
+            <div class="container">
+                <div class="row">
+                    <div class="sectionOne col-lg-12">
+                        <div class="col-lg-6">
+                            <div class="text">
+                                <br><br><br><br><br>
+                                <h1>Large format prints</h1>
+                                <h4>Of your favorite pictures</h4>
+                                <br><br>
+                                <p><a class="standardButton" href="/upload" role="button">Order now</a></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="image">
-                            <img src="./resources/homepage_img_1.png" alt="Tree">
+                        <div class="col-lg-6">
+                            <div class="image">
+                                <img src="./resources/homepage_img_1.png" alt="Tree">
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
                 <div class="sectionTwo col-lg-12">
                     <div class="col-lg-6">
                         <div class="image">
@@ -57,18 +83,23 @@
                             <h1>High quality</h1>
                             <h4>We use latest technology</h4>
                             <br><br>
-                            <p><a class="btn btn-primary btn-lg" href="/upload" role="button">Show samples</a></p>
+                            <p><a class="standardButton" href="/upload" role="button">Show samples</a></p>
                         </div>
                     </div>
                 </div>
-                <div class="sectionThree col-lg-12">
+            </div>
+        </div>
+        <div class="aquaSection">
+            <div class="container">
+                <div class="row">
+                    <div class="sectionThree col-lg-12">
                         <div class="col-lg-6">
                             <div class="text">
                                 <br><br><br><br>
                                 <h1>Choose your material</h1>
                                 <h4>From a wide variety</h4>
                                 <br><br>
-                                <p><a class="btn btn-primary btn-lg" href="/upload" role="button">Show options</a></p>
+                                <p><a class="standardButton" href="/upload" role="button">Show options</a></p>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -77,8 +108,19 @@
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
+        <footer>
+            <h4><b>Petree Prints</b></br></br>Copyright 2019 &nbsp; | &nbsp; All rights reserved</h4></br>
+            <p>
+                <a class="standardButton" href="https://www.facebook.com/">Facebook</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a class="standardButton" href="https://www.twitter.com/">Twitter</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a class="standardButton" href="https://www.instagram.com/">Instagram</a>
+            </p>
+            </br>
+            <p><a href="#">Impressum</a></p>
+        </footer>
     </div>
 </body>
 

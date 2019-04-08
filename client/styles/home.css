@@ -1,30 +1,34 @@
+.navbar {
+  margin: 40px;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #53ad29;
-  border-radius: 7px;
+  /* background-color: #53ad29; */
+  font-size: 16px;
+  border-radius: 0px;
 }
 
 li {
   float: left;
 }
 
-
 li a {
   display: block;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  color: #3A3A3A;
   font-weight: bold;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  margin: 10px;
 }
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-    background-color: #316818;
-    color: white;
+    background-color: #00B4CC;
+    color: black;
     text-decoration: none;
 }
 
@@ -34,21 +38,20 @@ li a:hover {
 }
 
 .log_in {
-  background-color: #53ad29; /* Green */
+  background-color: #FFCA00; /* Yellow */
   border: none;
-  color: white;
   padding: 10px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   float: right;
-  margin: 5px;
-  border-radius: 5px;
+  margin: 8px;
+  border-radius: 0px;
 }
 
 .log_in:hover {
-    background-color: #316818;
+    background-color: #FF4C5E !important;
     color: white;
     text-decoration: none;
 }
@@ -62,20 +65,28 @@ li a:hover {
 }
 
 .sectionOne {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .sectionTwo {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 120px;
+  margin-bottom: 120px;
 }
 
 .sectionThree {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 li {
   float: left;
+}
+
+.aquaSection {
+  background-color: #B2F0E4;
+}
+
+h1 {
+  font-weight: 700;
 }
