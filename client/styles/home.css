@@ -1,5 +1,7 @@
 .navbar {
-  margin: 40px;
+  padding: 40px;
+  background-color: white;
+  z-index:1;
 }
 
 ul {
@@ -25,6 +27,7 @@ li a {
   text-decoration: none;
   margin: 10px;
 }
+
 /* Change the link color to #111 (black) on hover */
 li a:hover {
     background-color: #00B4CC;
@@ -89,4 +92,38 @@ li {
 
 h1 {
   font-weight: 700;
+}
+
+/* Style the navbar */
+#navbar {
+  overflow: hidden;
+  background-color: white;
+  padding: 40px;
+  z-index:1;
+}
+
+/* Navbar links */
+#navbar a {
+  float: left;
+  display: block;
+  text-align: center;
+  /* padding: 14px; */
+  text-decoration: none;
+}
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .pageContent {
+  padding-top: 150px;
 }
