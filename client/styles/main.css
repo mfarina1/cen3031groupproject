@@ -27,10 +27,10 @@ p {
 }
 
 footer {
-	float: left;
-	width: 100%;
-	padding: 30px;
-	text-align: center;
+    float: left;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
     margin-top: 60px;
     margin-bottom: 60px;
 }

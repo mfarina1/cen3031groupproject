@@ -1,7 +1,7 @@
 .navbar {
   padding: 40px;
   background-color: white;
-  z-index:1;
+  z-index: 1;
 }
 
 ul {
@@ -30,9 +30,8 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-    background-color: #00B4CC;
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 .active {
@@ -41,7 +40,8 @@ li a:hover {
 }
 
 .log_in {
-  background-color: #FFCA00; /* Yellow */
+  background-color: #FFCA00;
+  /* Yellow */
   border: none;
   padding: 10px 15px;
   text-align: center;
@@ -54,17 +54,17 @@ li a:hover {
 }
 
 .log_in:hover {
-    background-color: #FF4C5E !important;
-    color: white;
-    text-decoration: none;
+  background-color: #FF4C5E !important;
+  color: white;
+  text-decoration: none;
 }
 
 .title-login h2 {
-    display: inline-block;
-    
-    font-family: Apple Chancery, cursive; 
-    color: #53ad29; 
-    font-weight: bold  
+  display: inline-block;
+
+  font-family: Apple Chancery, cursive;
+  color: #53ad29;
+  font-weight: bold
 }
 
 .sectionOne {
@@ -99,7 +99,7 @@ h1 {
   overflow: hidden;
   background-color: white;
   padding: 40px;
-  z-index:1;
+  z-index: 1;
 }
 
 /* Navbar links */
@@ -111,11 +111,6 @@ h1 {
   text-decoration: none;
 }
 
-/* Page content */
-.content {
-  padding: 16px;
-}
-
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
 .sticky {
   position: fixed;
@@ -124,6 +119,6 @@ h1 {
 }
 
 /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .pageContent {
+.sticky+.pageContent {
   padding-top: 150px;
 }
