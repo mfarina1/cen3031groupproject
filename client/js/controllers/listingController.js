@@ -25,12 +25,15 @@ angular.module('mainApp')
         console.log($scope.newUpload.photoSize);
           $scope.newUpload.orderStatus = "Processing";
           $scope.newUpload.trackingNumber = "testing";
+
        
         // BUG 
         var user = FirebaseAuth.getInstance().getCurrentUser();
             if (user != null) {
+
                 var FBUID = user.getUid();
           };
+
         $scope.newUpload.FBUID = FBUID;
 
         // console.log("TCL: $scope.uploadNewPhoto -> $scope.newUpload.photoSize", $scope.newUpload.photoSize)
