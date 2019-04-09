@@ -72,7 +72,8 @@
                                 </label>
                             </div>
 
-                            <p><a class="next" onclick="showSection('upload', 'material') " role="button">Next step</a></p>
+                            <p><button ng-click="calculatePrice()" onclick="showSection('upload', 'material')" id="matSelectNext">Next Step</button></p>
+
 
                             <p><a class="back" onclick="showSection('size', 'material')" role="button">Go Back</a></p>
                         </div>
@@ -84,16 +85,14 @@
                                     <h3>Upload</h3>
                                     <p>Upload image from your computer</p>
                                     <input class="btn btn-default btn-lg" type="file" id="fileInput" />
-                                    <button>
-                                        <!-- ///////////////Upload <input type="file" id="file" name="file" /> -->
-
-                                    </button>
                                 </div>
                             </div>
 
                             <p>
-                                <a class="next" onclick="showSection('crop', 'upload')" role="button">Next step</a>
+                                <button onclick="showSection('crop', 'upload')" id="fileSelectNext">Next step</button>
                             </p>
+
+
                             <p><a class="back" onclick="showSection('material', 'upload')" role="button">Go Back</a></p>
                         </div>
 
@@ -124,13 +123,15 @@
                         </div>
                         <div class="jumbotron" id="userinfo" style="display: none;">
                             <h2>Shipping Information</h2>
-                            First Name: <input type="text" ng-model="newUpload.firstName" /><br />
-                            Last Name: <input type="text" ng-model="newUpload.lastName" /><br />
-                            Address: <input type="text" ng-model="newUpload.address" /><br />
-                            City: <input type="text" ng-model="newUpload.city" /><br />
-                            State: <input type="text" ng-model="newUpload.state" /><br />
-                            Zip Code: <input type="text" ng-model="newUpload.zipCode" /><br />
-                            <p><a class="next" onclick="showSection('payment', 'userinfo'); showSubmitButton()" role="button">Next step</a></p>
+
+                                First Name: <input type="text" ng-model="newUpload.firstName" name="sA"><br />
+                                Last Name: <input type="text" ng-model="newUpload.lastName" name="sB"><br />
+                                Address: <input type="text" ng-model="newUpload.address" name="sC"><br />
+                                City: <input type="text" ng-model="newUpload.city" name="sD"><br />
+                                State: <input type="text" ng-model="newUpload.state" name="sE"><br />
+                                Zip Code: <input type="text" ng-model="newUpload.zipCode" name="sF"><br />
+                                <p><button onclick="showSection('payment', 'userinfo')" id="shipInfoNext">Next step</button></p>
+
                             <p><a class="back" onclick="showSection('crop', 'userinfo')" role="button">Go Back</a></p>
                         </div>
 
