@@ -1,97 +1,46 @@
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title>Petree Print Login</title>
-        <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"> </script>
-        <script>
-            var config = {
-                apiKey: "AIzaSyC8iqW-J1UCgSg7GHez4SuO51APq_n6AJI",
-                authDomain: "cen3031-photography-group3.firebaseapp.com",
-                databaseURL: "https://cen3031-photography-group3.firebaseio.com",
-                projectId: "cen3031-photography-group3",
-                storageBucket: "cen3031-photography-group3.appspot.com",
-                messagingSenderId: "194055935448"
-            };
-            firebase.initializeApp(config); </script> 
-        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"> </script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyC8iqW-J1UCgSg7GHez4SuO51APq_n6AJI",
+            authDomain: "cen3031-photography-group3.firebaseapp.com",
+            databaseURL: "https://cen3031-photography-group3.firebaseio.com",
+            projectId: "cen3031-photography-group3",
+            storageBucket: "cen3031-photography-group3.appspot.com",
+            messagingSenderId: "194055935448"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 
 
+    <script type="text/javascript">
+        var uiConfig = {
+            signInSuccessUrl: '/upload',
+            signInOptions: [
+                // Specify providers you want to offer your users.  
+                firebase.auth.EmailAuthProvider.PROVIDER_ID
+            ],
+            // Terms of service url can be specified and will show up in the widget.  
+            tosUrl: '<your-tos-url>'
+        };
+        // Initialize the FirebaseUI Widget using Firebase.  
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        // The start method will wait until the DOM is loaded.  
+        ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+    <!-- Include a simple background image & and title -->
+    <div></div>
 
-        <script type="text/javascript">  
-            var uiConfig = {  
-                signInSuccessUrl: "/upload",  
-                signInOptions: [  
-                    firebase.auth.EmailAuthProvider.EMAIL_PASSWORD_SIGN_IN_METHOD  
-                ], 
-                // tosUrl and privacyPolicyUrl accept either url string or a callback
-                // function.
-                // Terms of service url/callback. 
-                tosUrl: '<your-tos-url>'  
-                // Privacy policy url/callback.
-                privacyPolicyUrl: function() {
-                    window.location.assign('<your-privacy-policy-url>');
-                }
-            };  
-            var ui = new firebaseui.auth.AuthUI(firebase.auth());  
-                // The start method will wait until the DOM is loaded.
-                if (ui.isPendingRedirect()) {
-                    ui.start('#firebaseui-auth-container', uiConfig) {
-                        signInOptions: [
-                            {
-                              firebase.auth.EmailAuthProvider.EMAIL_PASSWORD_SIGN_IN_METHOD,
-                              requireDisplayName: false
-                            }
-                        ]
-                    };
-            </script>  
+<body>
+    <h1 align="center" style="color:green;">PeTrEe PrInTs</h1>
+    <div id="firebaseui-auth-container"></div>
+</body>
+</head>
 
-
-        <script type="text/javascript">
-            //Tracking login status across all of the pages
-            initApp = function() {
-                firebase.auth().onAuthStateChanged(function(user) {
-                    if (user) {
-                        // User is signed in.
-                        var email = user.email;
-                        var uid = user.uid;
-                        var providerData = user.providerData;
-                        user.getIdToken().then(function(accessToken) {
-                            document.getElementById('sign-in-status').textContent = 'Signed in';
-                            document.getElementById('sign-in').textContent = 'Sign out';
-                            document.getElementById('account-details').textContent = JSON.stringify({
-                                email: email,
-                                uid: uid,
-                                accessToken: accessToken,
-                                providerData: providerData
-                            }, null, '  ');
-                        });
-                    } else {
-                        // User is signed out.
-                        document.getElementById('sign-in-status').textContent = 'Signed out';
-                        document.getElementById('sign-in').textContent = 'Sign in';
-                        document.getElementById('account-details').textContent = 'null';
-                        }
-                    }, function(error) {
-                      console.log(error);
-                    });
-                };
-
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-            if (user != null) {
-                String uid = user.getUid();
-            };
-                
-               window.addEventListener('load', function() {
-                        initApp()
-                    });
-            </script>
-
-    </head>
-  <body>
-    <div id="sign-in-status"></div>
-    <div id="sign-in"></div>
-    <pre id="account-details"></pre>
-  </body>
 </html>
-

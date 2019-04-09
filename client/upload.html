@@ -61,17 +61,19 @@
                         <div class="jumbotron" id="material" style="display: none;">
                             <h2 class="title">Print Material</h2>
                             <p>Select the type of material your would like your order to be printed on</p>
-                            <div style="background-color:#d6d6d6; padding:10px;line-height: 26pt">
+                            <div ng-click="calculatePrice()" style="background-color:#d6d6d6; padding:10px;line-height: 26pt">
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="matte">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="Matte">
                                     Matte</input>
                                 </label>
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="canvas">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="Canvas">
                                     Canvas</input>
                                 </label>
                             </div>
+
                             <p><button ng-click="calculatePrice()" onclick="showSection('upload', 'material')" id="matSelectNext">Next Step</button></p>
+
 
                             <p><a class="back" onclick="showSection('size', 'material')" role="button">Go Back</a></p>
                         </div>
@@ -121,6 +123,7 @@
                         </div>
                         <div class="jumbotron" id="userinfo" style="display: none;">
                             <h2>Shipping Information</h2>
+
                                 First Name: <input type="text" ng-model="newUpload.firstName" name="sA"><br />
                                 Last Name: <input type="text" ng-model="newUpload.lastName" name="sB"><br />
                                 Address: <input type="text" ng-model="newUpload.address" name="sC"><br />
@@ -128,8 +131,7 @@
                                 State: <input type="text" ng-model="newUpload.state" name="sE"><br />
                                 Zip Code: <input type="text" ng-model="newUpload.zipCode" name="sF"><br />
                                 <p><button onclick="showSection('payment', 'userinfo')" id="shipInfoNext">Next step</button></p>
-                            
-                            
+
                             <p><a class="back" onclick="showSection('crop', 'userinfo')" role="button">Go Back</a></p>
                         </div>
 
@@ -149,7 +151,7 @@
                         <p style="text-align:left">Material: {{newUpload.medium}}</p>
                         <p style="text-align:left">Price: ${{newUpload.price}}</p>
                         <br><br>
-                        <a class="submitButton" role="button" ng-click="cropUpload()">Submit Order</a>
+                        <a class="submitButton" id="submitButton" role="button" style="display: none;" ng-click="cropUpload()">Submit Order</a>
                     </div>
                 </div>
             </div>
@@ -158,13 +160,6 @@
     </div>
     <script src="/js/controllers/listingController.js"></script>
     <script>
-
-         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-            if (user != null) {
-                String uid = user.getUid();
-            };
-        
-
         var auth = firebase.auth();
         var storageRef = firebase.storage().ref();
        

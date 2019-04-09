@@ -18,9 +18,17 @@ function showSection(nextSection, currentSection) {
   }
 }
 
+function showSubmitButton() {
+  var s = document.getElementById('submitButton');
+  if (s.style.display === "none") {
+    s.style.display = "block";
+  }
+}
+
+
 //Input Validation Source: https://stackoverflow.com/questions/5614399/disabling-submit-button-until-all-fields-have-values
 
-//****************Materuak Select Input***********************************************
+//****************Material Select Input***********************************************
 
 var $matInputForm = $('input:radio'),
     $matSelectNext = $('#matSelectNext');
@@ -67,5 +75,6 @@ $shipInput.keyup(function () {
     });
     trigger3 ? $shipInfoNext.attr('disabled', true) : $shipInfoNext.removeAttr('disabled');
 });
+
 
 
