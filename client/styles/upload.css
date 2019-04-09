@@ -123,6 +123,10 @@ li a:hover {
   text-decoration: none;
 }
 
+.next:disabled {
+	background-color: #25422d;
+}
+
 .back:hover {
   background-color: #6d6d6d;
   color: white;

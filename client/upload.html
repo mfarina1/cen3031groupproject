@@ -72,7 +72,7 @@
                                 </label>
                             </div>
 
-                            <p><button ng-click="calculatePrice()" onclick="showSection('upload', 'material')" id="matSelectNext">Next Step</button></p>
+                            <p><button class="next" ng-click="calculatePrice()" onclick="showSection('upload', 'material')" id="matSelectNext">Next Step</button></p>
 
 
                             <p><a class="back" onclick="showSection('size', 'material')" role="button">Go Back</a></p>
@@ -89,7 +89,7 @@
                             </div>
 
                             <p>
-                                <button onclick="showSection('crop', 'upload')" id="fileSelectNext">Next step</button>
+                                <button class="next" onclick="showSection('crop', 'upload')" id="fileSelectNext">Next step</button>
                             </p>
 
 
@@ -130,7 +130,7 @@
                                 City: <input type="text" ng-model="newUpload.city" name="sD"><br />
                                 State: <input type="text" ng-model="newUpload.state" name="sE"><br />
                                 Zip Code: <input type="text" ng-model="newUpload.zipCode" name="sF"><br />
-                                <p><button onclick="showSection('payment', 'userinfo')" id="shipInfoNext">Next step</button></p>
+                                <p><button class="next" onclick="showSection('payment', 'userinfo')" id="shipInfoNext">Next step</button></p>
 
                             <p><a class="back" onclick="showSection('crop', 'userinfo')" role="button">Go Back</a></p>
                         </div>
