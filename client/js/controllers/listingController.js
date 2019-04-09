@@ -25,7 +25,8 @@ angular.module('mainApp')
         console.log($scope.newUpload.photoSize);
         $scope.newUpload.orderStatus = "Processing"
         $scope.newUpload.trackingNumber = "testing"
-        
+       
+        // BUG 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             if (user != null) {
                 String FBUID = user.getUid();
