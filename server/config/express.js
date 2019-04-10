@@ -47,6 +47,10 @@ app.all('/', function(req, res, next) {
     app.get('/material',function(req,res){
       res.sendFile(path.join(__dirname+'/../../client/material.html'));
     });
+    
+    app.get('/trackOrder',function(req,res){
+      res.sendFile(path.join(__dirname+'/../../client/trackOrder.html'));
+    });
 
     app.get('/login',function(req,res){
       res.sendFile(path.join(__dirname+'/../../client/login.html'));
@@ -67,7 +71,7 @@ app.all('/', function(req, res, next) {
     
     app.get('/:listingId', listingsRouter, function(req, res){
         console.log("Read single listing")
-        //res.send()
+        res.send()
     });
     
     

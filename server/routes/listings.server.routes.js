@@ -20,8 +20,8 @@ router.route('/api/listings/:listingId')
 /*
   The ':' specifies a URL parameter. 
  */
-router.route('/:listingId')
-  .get(listings.read);
+router.route('/listingId')
+  .get(listings.listUserOrders);
 /*
   The 'router.param' method allows us to specify middleware we would like to use to handle 
   requests with a parameter.

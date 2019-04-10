@@ -79,7 +79,7 @@ exports.list = function(req, res) {
   /* Your code here */
     console.log("Trying to get all listing here")
     //res.send("Trying to get all listing here")
-    Listing.find({}, null, {sort: 'code'}, function(err, listing){
+    Listing.find({}, null, {sort: 'created_at'}, function(err, listing){
         if (err) {
             console.log(err)
             res.status(400).send(err);
@@ -90,6 +90,22 @@ exports.list = function(req, res) {
     })
 };
 
+
+exports.listUserOrders = function(req, res) {
+  /** TODO **/
+  /* Your code here */
+    console.log("Trying to get users orders here")
+    //res.send("Trying to get all listing here")
+    Listing.find({'FBUID': '4xgf4i6xb1gXChvcOambr7AO7Tl1'}, null, {sort: 'created_at'}, function(err, listing){
+        if (err) {
+            console.log(err)
+            res.status(400).send(err);
+        } else{
+            console.log("SENDING LISTINGS")
+            res.json(listing);
+        }      
+    })
+};
 /* 
   Middleware: find a listing by its ID, then pass it to the next request handler. 
 

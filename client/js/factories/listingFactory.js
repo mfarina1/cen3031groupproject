@@ -5,7 +5,12 @@ angular.module('mainApp')
         console.log("GETTING ALL LISTINGS")
         //return $http.get('http://localhost:8080/api/listings');
         return $http.get('/api/listings');
-
+      },
+      
+      getUserOrders: function () {
+        console.log("USER LISTINGS")
+        //return $http.get('http://localhost:8080/api/listings');
+        return $http.get('/listingId');
       },
 
       create: function (listing) {
