@@ -20,7 +20,7 @@
   "dependencies": {
     "cropperjs": "^1.5.1",
     "express": "^4.16.4",
-    "firebase": "^5.9.1",
+    "firebase": "^5.9.3",
     "mongoose": "^5.4.20",
     "morgan": "^1.9.1",
     "ui-cropper": "^1.0.7"
