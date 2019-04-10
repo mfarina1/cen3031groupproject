@@ -1,4 +1,15 @@
 angular.module('mainApp')
+
+/* Firebase config and connection */
+var firebase = require("firebase");
+var config = {
+  apiKey: "AIzaSyC8iqW-J1UCgSg7GHez4SuO51APq_n6AJI",
+  authDomain: "cen3031-photography-group3.firebaseapp.com",
+  databaseURL: "https://cen3031-photography-group3.firebaseio.com",
+  storageBucket: "cen3031-photography-group3.appspot.com",
+};
+firebase.initializeApp(config);
+
   .controller('ListingsController', ['$scope', 'Listings',
     function ($scope, Listings) {
 
@@ -27,14 +38,14 @@ angular.module('mainApp')
           $scope.newUpload.trackingNumber = "testing";
 
        
-        // BUG 
-        var user = FirebaseAuth.getInstance().getCurrentUser();
-            if (user != null) {
-
-                var FBUID = user.getUid();
-          };
-
-        $scope.newUpload.FBUID = FBUID;
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            // User is signed in.
+            $scope.newUpload.FBUID = user.getUid();
+          } else {
+            // No user is signed in.
+          }
+        });
 
         // console.log("TCL: $scope.uploadNewPhoto -> $scope.newUpload.photoSize", $scope.newUpload.photoSize)
 
@@ -46,9 +57,9 @@ angular.module('mainApp')
           console.log('Unable to upload new photo request:', error);
         });
         /**TODO
-	  *Save the article using the Listings factory. If the object is successfully
-	  saved redirect back to the list page. Otherwise, display the error
-	 */
+	     *Save the article using the Listings factory. If the object is successfully
+	     saved redirect back to the list page. Otherwise, display the error
+	     */
 
       };
        
