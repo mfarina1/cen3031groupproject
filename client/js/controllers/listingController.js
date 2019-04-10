@@ -38,15 +38,6 @@ angular.module('mainApp')
           $scope.newUpload.orderStatus = "Processing";
           $scope.newUpload.trackingNumber = "testing";
 
-       
-        // firebase.auth().onAuthStateChanged(function(user) {
-//           if (user) {
-//             // User is signed in.
-//             $scope.newUpload.FBUID = user.getUid();
-//           } else {
-//             // No user is signed in.
-//           }
-//         });
 
 		var firebaseUser = firebase.auth().currentUser
 		$scope.newUpload.FBUID = firebaseUser.uid;

@@ -18,7 +18,7 @@ angular.module('mainApp')
 		console.log(firebaseUser);
 		
 		
-      Listings.getUserOrders("4xgf4i6xb1gXChvcOambr7AO7Tl").then(function (response) {
+      Listings.getUserOrders("4xgf4i6xb1gXChvcOambr7AO7Tl1").then(function (response) {
         $scope.listings = response.data;
         console.log("getting listing data")
       }, function (error) {
