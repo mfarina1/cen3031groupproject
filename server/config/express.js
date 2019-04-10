@@ -69,7 +69,7 @@ app.all('/', function(req, res, next) {
         //res.send()
     });
     
-    app.get('/:listingId', listingsRouter, function(req, res){
+    app.get('/listingId/:UID', listingsRouter, function(req, res){
         console.log("Read single listing")
         res.send()
     });

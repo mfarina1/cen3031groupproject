@@ -7,10 +7,11 @@ angular.module('mainApp')
         return $http.get('/api/listings');
       },
       
-      getUserOrders: function () {
+      getUserOrders: function (UID) {
         console.log("USER LISTINGS")
+        console.log(UID);
         //return $http.get('http://localhost:8080/api/listings');
-        return $http.get('/listingId');
+        return $http.get('/listingId/'+UID);
       },
 
       create: function (listing) {

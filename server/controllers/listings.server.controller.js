@@ -94,7 +94,9 @@ exports.list = function(req, res) {
 exports.listUserOrders = function(req, res) {
   /** TODO **/
   /* Your code here */
+  	var listing = req.listing;
     console.log("Trying to get users orders here")
+    console.log(listing)
     //res.send("Trying to get all listing here")
     Listing.find({'FBUID': '4xgf4i6xb1gXChvcOambr7AO7Tl1'}, null, {sort: 'created_at'}, function(err, listing){
         if (err) {

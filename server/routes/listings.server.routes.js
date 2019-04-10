@@ -17,6 +17,9 @@ router.route('/api/listings')
 router.route('/api/listings/:listingId')
   .delete(listings.delete)
   .put(listings.update);
+  
+router.route('/listingId/:UID')
+	.get(listings.listUserOrders)
 /*
   The ':' specifies a URL parameter. 
  */
