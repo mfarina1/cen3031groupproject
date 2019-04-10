@@ -8,7 +8,8 @@
     <link rel="stylesheet" type="text/css" href="styles/upload.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
-    <script>
+    <!-- 
+<script>
         // Initialize Firebase
         var config = {
             apiKey: "AIzaSyC8iqW-J1UCgSg7GHez4SuO51APq_n6AJI",
@@ -20,6 +21,7 @@
         };
         firebase.initializeApp(config);
     </script>
+ -->
 </head>
 
 
@@ -151,7 +153,7 @@
                         <p style="text-align:left">Material: {{newUpload.medium}}</p>
                         <p style="text-align:left">Price: ${{newUpload.price}}</p>
                         <br><br>
-                        <a class="submitButton" id="submitButton" role="button" style="display: none;" ng-click="cropUpload()">Submit Order</a>
+                        <a class="submitButton" id="submitButton" role="button"  ng-click="cropUpload()">Submit Order</a>
                     </div>
                 </div>
             </div>

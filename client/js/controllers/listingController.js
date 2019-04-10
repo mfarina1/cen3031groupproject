@@ -1,18 +1,19 @@
 angular.module('mainApp')
 
 /* Firebase config and connection */
-var firebase = require("firebase");
-var config = {
-  apiKey: "AIzaSyC8iqW-J1UCgSg7GHez4SuO51APq_n6AJI",
-  authDomain: "cen3031-photography-group3.firebaseapp.com",
-  databaseURL: "https://cen3031-photography-group3.firebaseio.com",
-  storageBucket: "cen3031-photography-group3.appspot.com",
-};
-firebase.initializeApp(config);
+
 
   .controller('ListingsController', ['$scope', 'Listings',
     function ($scope, Listings) {
-
+	var config = {
+  		apiKey: "AIzaSyC8iqW-J1UCgSg7GHez4SuO51APq_n6AJI",
+  		authDomain: "cen3031-photography-group3.firebaseapp.com",
+  		databaseURL: "https://cen3031-photography-group3.firebaseio.com",
+  		storageBucket: "cen3031-photography-group3.appspot.com",
+	};
+	firebase.initializeApp(config);
+	
+	
       $scope.listings = undefined;
 
       /* Get all the listings, then bind it to the scope */
@@ -38,14 +39,18 @@ firebase.initializeApp(config);
           $scope.newUpload.trackingNumber = "testing";
 
        
-        firebase.auth().onAuthStateChanged(function(user) {
-          if (user) {
-            // User is signed in.
-            $scope.newUpload.FBUID = user.getUid();
-          } else {
-            // No user is signed in.
-          }
-        });
+        // firebase.auth().onAuthStateChanged(function(user) {
+//           if (user) {
+//             // User is signed in.
+//             $scope.newUpload.FBUID = user.getUid();
+//           } else {
+//             // No user is signed in.
+//           }
+//         });
+
+		var firebaseUser = firebase.auth().currentUser
+		$scope.newUpload.FBUID = firebaseUser.uid;
+		console.log($scope.newUpload.FBUID)
 
         // console.log("TCL: $scope.uploadNewPhoto -> $scope.newUpload.photoSize", $scope.newUpload.photoSize)
 
