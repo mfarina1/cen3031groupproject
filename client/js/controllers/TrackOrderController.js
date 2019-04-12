@@ -1,8 +1,9 @@
 
 angular.module('mainApp')
+
   .controller('TrackOrderController', ['$scope', 'Listings',
     function ($scope, Listings) {
-		var config = {
+	var config = {
   		apiKey: "AIzaSyC8iqW-J1UCgSg7GHez4SuO51APq_n6AJI",
   		authDomain: "cen3031-photography-group3.firebaseapp.com",
   		databaseURL: "https://cen3031-photography-group3.firebaseio.com",
@@ -20,7 +21,7 @@ angular.module('mainApp')
 		
       Listings.getUserOrders("4xgf4i6xb1gXChvcOambr7AO7Tl1").then(function (response) {
         $scope.listings = response.data;
-        console.log("getting listing data")
+        console.log("getting user listing data")
       }, function (error) {
         console.log('Unable to retrieve listings:', error);
       });
@@ -41,16 +42,6 @@ angular.module('mainApp')
           console.log('Unable to modify status:', error);
         });
       }
-      
-//      $scope.downloadImage = function(){
-//          console.log("starting to download image");
-//          var downloadRequest = new XMLHttpRequest();
-//          downloadRequest.responseType = 'blob';
-//          downloadRequest.onload = function(event){
-//              var blob = downloadRequest.response;
-//          };
-//          downloadRequest.open('GET', $scope.detailedInfo.FBImageURL);
-//          downloadRequest.send();
-//      }
+    
     }
   ]);

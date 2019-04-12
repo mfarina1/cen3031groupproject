@@ -13,7 +13,6 @@ angular.module('mainApp')
 	};
 	firebase.initializeApp(config);
 	
-	
       $scope.listings = undefined;
 
       /* Get all the listings, then bind it to the scope */
@@ -37,8 +36,6 @@ angular.module('mainApp')
         console.log($scope.newUpload.photoSize);
           $scope.newUpload.orderStatus = "Processing";
           $scope.newUpload.trackingNumber = "testing";
-
-
 		var firebaseUser = firebase.auth().currentUser
 		$scope.newUpload.FBUID = firebaseUser.uid;
 		console.log($scope.newUpload.FBUID)
