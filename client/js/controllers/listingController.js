@@ -57,6 +57,8 @@ angular.module('mainApp')
       };
        
       $scope.calculatePrice = function() {
+       	var firebaseUser = firebase.auth().currentUser
+			console.log(firebaseUser)
           $scope.newUpload.photoSize = $scope.selectedOption.value.w + "x" + $scope.selectedOption.value.h
          switch ($scope.newUpload.photoSize){
              case '2750x3500':

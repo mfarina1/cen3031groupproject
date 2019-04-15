@@ -9,8 +9,8 @@ var config = require('./config'),
     },
     express = require('./express');
 
-firebase.initializeApp(FBconfig);
-
+	firebase.initializeApp(FBconfig);
+	console.log("INIT FIREBASE")
 module.exports.start = function() {
   var app = express.init();
   app.listen(config.port, function() {
