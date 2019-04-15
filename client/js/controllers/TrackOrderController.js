@@ -1,9 +1,8 @@
-
 angular.module('mainApp')
 
   .controller('TrackOrderController', ['$scope', 'Listings',
     function ($scope, Listings) {
-	var config = {
+	  var config = {
   		apiKey: "AIzaSyC8iqW-J1UCgSg7GHez4SuO51APq_n6AJI",
   		authDomain: "cen3031-photography-group3.firebaseapp.com",
   		databaseURL: "https://cen3031-photography-group3.firebaseio.com",
@@ -13,18 +12,23 @@ angular.module('mainApp')
       $scope.listings = undefined;
 
       /* Get all the listings, then bind it to the scope */
-
-		var firebaseUser = firebase.auth().currentUser;
-		//var UID = firebaseUser.uid;
-		console.log(firebaseUser);
 		
+		firebase.auth().onAuthStateChanged(function(user) {
+			if (user) {
+				populateData(user.uid);
+			}
+		});
 		
-      Listings.getUserOrders("4xgf4i6xb1gXChvcOambr7AO7Tl1").then(function (response) {
-        $scope.listings = response.data;
-        console.log("getting user listing data")
-      }, function (error) {
-        console.log('Unable to retrieve listings:', error);
-      });
+	 	populateData = function(uid){
+	 		console.log(uid);
+	 		Listings.getUserOrders(uid).then(function (response) {
+       			$scope.listings = response.data;
+        		console.log("getting user listing data")
+      		}, function (error) {
+        		console.log('Unable to retrieve listings:', error);
+     		});
+	 	}
+     
 
 
       $scope.showDetails = function (index) {
