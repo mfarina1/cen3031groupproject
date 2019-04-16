@@ -105,10 +105,10 @@
                                     </br>
                                     <div class="cropArea">
                                         <br><br><br><br><br><br><br>
-                                        <ui-cropper image="myImage" area-type="rectangle" aspect-ratio="1.7"
-                                                    result-image="myCroppedImage"
-                                                    result-image-size="{w: selectedOption.value.w, h: selectedOption.value.h}"
-                                                    area-min-size="{w:selectedOption.value.w, h: selectedOption.value.h}"
+                                             <ui-cropper image="myImage" area-type="rectangle" aspect-ratio="1.7"
+                                                      result-image="myCroppedImage"
+                                                      result-image-size="{w: selectedOption.value.w, h: selectedOption.value.h}"
+                                                    
                                                     init-max-area="true" style="margin-left: 150px;"></ui-cropper>
 
                                     </div>
@@ -116,7 +116,7 @@
                                 <div class="col-lg-offset-2 col-lg-4">
                                     <h3>Preview Image:</h3>
                                     </br>
-                                    <img ng-src="{{myCroppedImage}}" class="preview-image img-responsive" />
+                                    <img ng-src="{{myCroppedImage}}" class="preview-image img-responsive"/>
                                     </br>
                                 </div>
                             </div>
