@@ -132,7 +132,7 @@
                                 City: <input type="text" ng-model="newUpload.city" name="sD"><br />
                                 State: <input type="text" ng-model="newUpload.state" name="sE"><br />
                                 Zip Code: <input type="text" ng-model="newUpload.zipCode" name="sF"><br />
-                                <p><button class="next" onclick="showSection('payment', 'userinfo')" id="shipInfoNext">Next step</button></p>
+                                <p><button class="next" onclick="showSection('payment', 'userinfo'); showSubmitButton()" id="shipInfoNext">Next step</button></p>
 
                             <p><a class="back" onclick="showSection('crop', 'userinfo')" role="button">Go Back</a></p>
                         </div>
@@ -153,7 +153,7 @@
                         <p style="text-align:left">Material: {{newUpload.medium}}</p>
                         <p style="text-align:left">Price: ${{newUpload.price}}</p>
                         <br><br>
-                        <a class="submitButton" id="submitButton" role="button"  ng-click="cropUpload()">Submit Order</a>
+                        <a class="submitButton" id="submitButton" style="display: none" role="button"  ng-click="cropUpload()">Submit Order</a>
                     </div>
                 </div>
             </div>
