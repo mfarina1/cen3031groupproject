@@ -61,18 +61,64 @@ angular.module('mainApp')
 			console.log(firebaseUser)
           $scope.newUpload.photoSize = $scope.selectedOption.value.w + "x" + $scope.selectedOption.value.h
          switch ($scope.newUpload.photoSize){
-             case '2750x3500':
+             case '400x600':
+                 $scope.newUpload.price = 6.99;
+               break;
+             case '500x700':
+                 $scope.newUpload.price = 9.99;
+               break;
+             case '800x1000':
+                 $scope.newUpload.price = 14.99;
+               break;
+             case '500x500':
+                 $scope.newUpload.price = 9.99;
+                 break;
+             case '1000x1000':
+                 $scope.newUpload.price = 14.99;
+                 break;
+             case '1200x1200':
+                 $scope.newUpload.price = 19.99;
+                 break;
+             case '1600x1600':
+                 $scope.newUpload.price = 29.99;
+                 break;
+             case '2000x2000':
                  $scope.newUpload.price = 49.99;
-               break;
-             case '4000x5000':
+                 break;
+             case '3000x3000':
                  $scope.newUpload.price = 69.99;
-               break;
-             case '5000x6000':
+                 break;
+             case '1000x1300':
+                 $scope.newUpload.price = 24.99;
+                 break;
+             case '1000x2000':
+                 $scope.newUpload.price = 34.99;
+                 break;
+             case '1100x1400':
+                 $scope.newUpload.price = 49.99;
+                 break;
+             case '1600x2000':
+                 $scope.newUpload.price = 69.99;
+                 break;
+             case '1800x2400':
+                 $scope.newUpload.price = 89.99;
+                 break;
+             case '2000x2400':
                  $scope.newUpload.price = 99.99;
-               break;
-             case '5000x7500':
+                 break;
+             case '2000x3000':
                  $scope.newUpload.price = 129.99;
-               break;
+                 break;
+             case '500x1500':
+                 $scope.newUpload.price = 39.99;
+                 break;
+             case '800x2400':
+                 $scope.newUpload.price = 69.99;
+                 break;
+             case '1200x3600':
+                 $scope.newUpload.price = 99.99;
+                 break;
+             
              default:
                  $scope.newUpload.price = 0.00;
          }
@@ -114,38 +160,159 @@ angular.module('mainApp')
       $scope.myImage = '';
       $scope.myCroppedImage = '';
       $scope.filename = '';
-      $scope.availableOptions = [{
-          id: '1',
+        $scope.availableOptions = [
+            {
+                id: '1',
+                name: '4x6, Starts at $6.99',
+                value: {
+                    w: 400,
+                    h: 600
+                }
+            },
+            {
+                id: '2',
+                name: '5x7, Starts at $9.99',
+                value: {
+                    w: 500,
+                    h: 700
+                }
+            },
+            {
+                id: '3',
+                name: '8x10, Starts at $14.99',
+                value: {
+                    w: 800,
+                    h: 1000
+                }
+            },
+            {
+                id: '4',
+                name: '5x5, Starts at $9.99',
+                value: {
+                    w: 500,
+                    h: 500
+                }
+            },
+            {
+                id: '5',
+                name: '10x10, Starts at $14.99',
+                value: {
+                    w: 1000,
+                    h: 1000
+                }
+            },
+            {
+                id: '6',
+                name: '12x12, Starts at $19.99',
+                value: {
+                    w: 1200,
+                    h: 1200
+                }
+            },
+            {
+                id: '7',
+                name: '16x16, Starts at $29.99',
+                value: {
+                    w: 1600,
+                    h: 1600
+                }
+            },
+            {
+                id: '8',
+                name: '20x20, Starts at $49.99',
+                value: {
+                    w: 2000,
+                    h: 2000
+                }
+            },
+            {
+                id: '9',
+                name: '30x30, Starts at $69.99',
+                value: {
+                    w: 3000,
+                    h: 3000
+                }
+            },
+            {
+                id: '10',
+                name: '10x13, Starts at $24.99',
+                value: {
+                    w: 1000,
+                    h: 1300
+                }
+            },
+            {
+                id: '11',
+                name: '10x20, Starts at $34.99',
+                value: {
+                    w: 1000,
+                    h: 2000
+                }
+            },
+        {
+          id: '12',
           name: '11x14, Starts at $49.99',
           value: {
-            w: 2750,
-            h: 3500
+            w: 1100,
+            h: 1400
           }
         },
         {
-          id: '2',
+          id: '13',
           name: '16x20, Starts at $69.99',
           value: {
-            w: 4000,
-            h: 5000
+            w: 1600,
+            h: 2000
           }
         },
+            {
+                id: '14',
+                name: '18x24, Starts at $89.99',
+                value: {
+                    w: 1800,
+                    h: 2400
+                }
+            },
         {
-          id: '3',
+          id: '15',
           name: '20x24, Starts at $99.99',
           value: {
-            w: 5000,
-            h: 6000
+            w: 2000,
+            h: 2400
           }
         },
         {
-          id: '4',
+          id: '16',
           name: '20x30, Starts at $129.99',
           value: {
-            w: 5000,
-            h: 7500
+            w: 2000,
+            h: 3000
           }
-        }
+            },
+            {
+                id: '17',
+                name: '5x15, Starts at $39.99',
+                value: {
+                    w: 500,
+                    h: 1500
+                }
+            },
+            {
+                id: '18',
+                name: '8x24, Starts at $69.99',
+                value: {
+                    w: 800,
+                    h: 2400
+                }
+            },
+            {
+                id: '19',
+                name: '12x36, Starts at $99.99',
+                value: {
+                    w: 1200,
+                    h: 3600
+                }
+            }
       ];
 
       $scope.selectedOption = $scope.availableOptions[1];
