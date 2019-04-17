@@ -64,7 +64,7 @@ app.all('/', function(req, res, next) {
       res.sendFile(path.join(__dirname+'/../../client/payment.html'));
     });
 
-    app.get('/dashboard',function(req,res){
+    app.get('/dashboard-secureAdmin16420',function(req,res){
         res.sendFile(path.join(__dirname+'/../../client/dashboard.html'));
     });
     
