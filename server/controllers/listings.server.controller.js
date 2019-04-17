@@ -58,6 +58,24 @@ exports.updateOrderStatus = function(req, res) {
     
 };
 
+exports.updateTrackingNumber = function(req, res) {
+    console.log("UPDATING ORDER NUMBER")
+	var id = req.params.id;
+	var trackingNumber = req.params.trackingNumber;
+	console.log(id);
+	console.log(trackingNumber);
+    
+    Listing.findOneAndUpdate({ _id: id}, {trackingNumber: trackingNumber}, function(err){
+        if (err) {
+            console.log(err);
+            res.status(400).send(err);
+        } else{
+            console.log("TRACKING UPDATED")
+        } 
+    })
+    
+};
+
 /* Delete a listing */
 exports.delete = function(req, res) {
   var listing = req.listing;

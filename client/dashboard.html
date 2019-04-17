@@ -91,7 +91,9 @@
                         <p>Order Status: {{detailedInfo.orderStatus}}</p>
                         <p>Medium: {{detailedInfo.medium}}</p>
                         <p>Photo Size: {{detailedInfo.photoSize}}</p>
-                        <p>Enter Tracking Number: <input type="text" ng-model="updateTracking.trackingNumber" /><br />
+                        <p>Enter Tracking Number: <input type="text" placeholder={{detailedInfo.trackingNumber}} ng-model="trackingNumber" />
+                        	<button ng-click="modifyTrackingNumber(detailedInfo._id)">Enter</button>
+                        <br />
                         </p>
                         <link rel="stylesheet"
                             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

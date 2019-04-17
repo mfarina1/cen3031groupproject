@@ -4,6 +4,7 @@ angular.module('mainApp')
     function ($scope, Listings) {
 
       $scope.listings = undefined;
+      $scope.trackingNumber = undefined;
 
       /* Get all the listings, then bind it to the scope */
 
@@ -24,6 +25,15 @@ angular.module('mainApp')
 		$scope.detailedInfo.orderStatus = newStatus;
         Listings.updateOrderStatus(id, newStatus).then(function (response) {
           console.log("Modifing status");
+        }, function (error) {
+          console.log('Unable to modify status:', error);
+        });
+      }
+      
+      $scope.modifyTrackingNumber= function (id) {
+      	console.log($scope.trackingNumber);
+        Listings.updateTrackingNumber(id, $scope.trackingNumber).then(function (response) {
+          console.log("Updating tracking number");
         }, function (error) {
           console.log('Unable to modify status:', error);
         });

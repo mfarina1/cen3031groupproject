@@ -35,7 +35,7 @@ angular.module('mainApp')
       $scope.uploadNewPhoto = function () {
         console.log($scope.newUpload.photoSize);
           $scope.newUpload.orderStatus = "Processing";
-          $scope.newUpload.trackingNumber = "testing";
+          $scope.newUpload.trackingNumber = "";
 		var firebaseUser = firebase.auth().currentUser
 		$scope.newUpload.FBUID = firebaseUser.uid;
 		console.log($scope.newUpload.FBUID)

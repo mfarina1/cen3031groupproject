@@ -21,7 +21,12 @@ angular.module('mainApp')
 
       updateOrderStatus: function (id, newStatus) {
       	console.log("updating order ID "+id+ " "+newStatus);
-        return $http.get('/api/update/tracking/'+id+'/'+newStatus);
+        return $http.get('/api/update/status/'+id+'/'+newStatus);
+      },
+      
+      updateTrackingNumber: function (id, trackingNumber) {
+      	console.log("updating tracking number "+id+ " "+trackingNumber);
+        return $http.get('/api/update/tracking/'+id+'/'+trackingNumber);
       },
 
       delete: function (id) {
