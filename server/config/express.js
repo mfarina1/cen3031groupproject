@@ -75,7 +75,7 @@ app.all('/', function(req, res, next) {
     });
     
     
-    app.get('/api/update/tracking/:id', listingsRouter, function(req, res){
+    app.get('/api/update/tracking/:id/:newStatus', listingsRouter, function(req, res){
         console.log("update listing")
         res.send()
     });

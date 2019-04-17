@@ -41,16 +41,17 @@ exports.updateOrderStatus = function(req, res) {
   var listing = req.listing;
     console.log("UPDATING ORDER STATUS")
 	var id = req.params.id;
+	var newStatus = req.params.newStatus;
 	console.log(id);
-    //console.log(listing.orderStatus)
+	console.log(newStatus);
     
-    Listing.findOneAndUpdate({ _id: id}, {orderStatus: "Printing"}, function(err, updatedListing){
+    Listing.findOneAndUpdate({ _id: id}, {orderStatus: newStatus}, function(err, updatedListing){
         if (err) {
             console.log(err);
             res.status(400).send(err);
         } else{
             updatedListing.orderStatus = req.body.orderStatus
-            console.log(updatedListing.orderStatus)
+//             console.log(updatedListing.orderStatus)
             res.json(updatedListing);
         } 
     })

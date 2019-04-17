@@ -20,10 +20,8 @@ angular.module('mainApp')
         console.log($scope.listings[index].firstName);
       };
 
-      $scope.modifyStatus = function (id, newStatus) {
-        console.log($scope.detailedInfo.orderStatus);
-        console.log(newStatus);
-
+      $scope.modifyOrderStatus= function (id, newStatus) {
+		$scope.detailedInfo.orderStatus = newStatus;
         Listings.updateOrderStatus(id, newStatus).then(function (response) {
           console.log("Modifing status");
         }, function (error) {

@@ -17,7 +17,7 @@ router.route('/api/listings')
 router.route('/api/listings/:listingId')
   .delete(listings.delete)
   
-router.route('/api/update/tracking/:id')
+router.route('/api/update/tracking/:id/:newStatus')
   .get(listings.updateOrderStatus)
   
 router.route('/listingId/:UID')
