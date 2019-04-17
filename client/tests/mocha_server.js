@@ -1,7 +1,3 @@
-//created by madeline
-//this is just a copy of the listings.server.model.test.js file from Bootcamp 1
-//with minor adjustments
-
 var should = require('should'), 
     fs = require('fs'),
     request = require('request');
@@ -18,17 +14,17 @@ describe('Photography App Server Unit Tests', function() {
     This before hook loads the JSON data to the listings variable, so that we can compare 
     the response to 'http://localhost:8080' to the data we expect to recieve. 
    */
-  before(function(done) {
-    fs.readFile('listings.json', 'utf8', function(err, data) {
-      listings = JSON.parse(data);
+  // before(function(done) {
+  //   fs.readFile('listings.json', 'utf8', function(err, data) {
+  //     listings = JSON.parse(data);
 
-      /*
-        Calling done() will pass code execution to the next appropriate block of code. 
-        In this case, execution will pass to the first it() statement.  
-       */
-      done();
-    });
-  });
+  //     /*
+  //       Calling done() will pass code execution to the next appropriate block of code. 
+  //       In this case, execution will pass to the first it() statement.  
+  //      */
+  //     done();
+  //   });
+  // });
 
   describe('Server responds to requests', function() {
     it('should respond', function(done) {
