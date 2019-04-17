@@ -37,13 +37,14 @@ exports.read = function(req, res) {
 };
 
 /* Update a listing */
-exports.update = function(req, res) {
+exports.updateOrderStatus = function(req, res) {
   var listing = req.listing;
     console.log("UPDATING ORDER STATUS")
-
-    console.log(listing.orderStatus)
+	var id = req.params.id;
+	console.log(id);
+    //console.log(listing.orderStatus)
     
-    Listing.findOneAndUpdate({ _id: listing.id}, {orderStatus: "Printing"}, function(err, updatedListing){
+    Listing.findOneAndUpdate({ _id: id}, {orderStatus: "Printing"}, function(err, updatedListing){
         if (err) {
             console.log(err);
             res.status(400).send(err);

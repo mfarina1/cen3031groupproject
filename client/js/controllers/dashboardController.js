@@ -24,7 +24,7 @@ angular.module('mainApp')
         console.log($scope.detailedInfo.orderStatus);
         console.log(newStatus);
 
-        Listings.updateOrderStatus(id).then(function (response) {
+        Listings.updateOrderStatus(id, newStatus).then(function (response) {
           console.log("Modifing status");
         }, function (error) {
           console.log('Unable to modify status:', error);

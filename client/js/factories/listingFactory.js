@@ -19,8 +19,9 @@ angular.module('mainApp')
         return $http.post('/api/listings', listing);
       },
 
-      updateOrderStatus: function (id) {
-        return $http.put('/api/listings/' + id)
+      updateOrderStatus: function (id, newStatus) {
+      	console.log("updating order ID "+id+ " "+newStatus);
+        return $http.get('/api/update/tracking/'+id)
       },
 
       delete: function (id) {

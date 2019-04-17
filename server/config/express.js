@@ -75,7 +75,7 @@ app.all('/', function(req, res, next) {
     });
     
     
-    app.put('/api/listings/:listingId', listingsRouter, function(req, res){
+    app.get('/api/update/tracking/:id', listingsRouter, function(req, res){
         console.log("update listing")
         res.send()
     });
