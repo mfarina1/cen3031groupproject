@@ -19,13 +19,23 @@
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 
     <script type="text/javascript">
-        var user = firebase.auth().currentUser;
-        String uid = user.getUid();
-            if (uid == 'YOimsQLzhIMx8kYN7CKHZ8mXd2F3') {
+    
+    firebase.auth().onAuthStateChanged(function(user) {
+			if (user) {
+				redirect(user.uid);
+			}
+		});
+		
+	 	redirect = function(uid){
+	 		console.log(uid);
+	 		if (uid == 'vscCWWo7FxWOrHxeHUF2psKbTL43') {
                 window.location.href = '/dashboard';
             } else {
                 window.location.href = '/upload';
             }
+	 	}
+     
+            
         
     </script>
 

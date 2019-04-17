@@ -55,6 +55,10 @@ app.all('/', function(req, res, next) {
     app.get('/login',function(req,res){
       res.sendFile(path.join(__dirname+'/../../client/login.html'));
     });
+    
+    app.get('/redirect',function(req,res){
+      res.sendFile(path.join(__dirname+'/../../client/redirect.html'));
+    });
 
     app.get('/payment',function(req,res){
       res.sendFile(path.join(__dirname+'/../../client/payment.html'));
