@@ -2,10 +2,13 @@
 
 <head>
     <title>Petree Print</title>
+    <link href="./resources/favicon.png" rel="icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Mukta:300,400,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles/upload.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
     <!-- 
@@ -26,7 +29,22 @@
 
 
 <body>
-    <div style="margin:20px">
+    <nav class="navbar navbar" id="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">
+                    <img src="./resources/petree_logo.png" height="50" alt="">
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a class="active" href="/upload">Upload</a></li>
+                <li><a href="/trackOrder">Track Order</a></li>
+                <li><a class="log_in" href="/login"><span class="glyphicon glyphicon-user"></span>&nbsp; Account</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- <div style="margin:20px">
         <div class="title-login">
             <h2>Petree Prints</h2>
             <a class="log_in" href="/login" role="button">Log In</a>
@@ -39,7 +57,7 @@
                 <li class="active"><a href="/upload">Upload</a></li>
                 <li><a href="/trackOrder">Track Order</a></li>
             </ul>
-        </div>
+        </div> -->
 
         <div ng-app="mainApp" style=" margin:20px">
             <div ng-controller="ListingsController">
@@ -52,8 +70,8 @@
                                 <legend>List size: </legend>
                                 <div class="form-group">
                                     <select class="form-control" name="campaignSelect" id="repeatSelect"
-                                            ng-model="selectedOption"
-                                            ng-options="option.name for option in availableOptions"></select>
+                                        ng-model="selectedOption"
+                                        ng-options="option.name for option in availableOptions"></select>
                                 </div>
                             </form>
                             <a class="next" onclick="showSection('material', 'size')" role="button">Next step</a>
@@ -62,85 +80,105 @@
                         <div class="jumbotron" id="material" style="display: none;">
                             <h2 class="title">Print Material</h2>
                             <p>Select the type of material your would like your order to be printed on</p>
-                            <div ng-click="calculatePrice()" style="background-color:#d6d6d6; padding:10px;line-height: 26pt">
+                            <div ng-click="calculatePrice()"
+                                style="background-color:#d6d6d6; padding:10px;line-height: 26pt">
                                 <p>Photo Paper</p>
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="PGPhoto170">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial"
+                                        value="PGPhoto170">
                                     Premium Glossy Photo Paper (170)</input>
                                 </label>
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="PGPhoto250">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial"
+                                        value="PGPhoto250">
                                     Premium Glossy Photo Paper (250)</input>
                                 </label>
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="PSGPhoto170">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial"
+                                        value="PSGPhoto170">
                                     Premium Semigloss Photo Paper (170)</input>
                                 </label>
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="PSGPhoto250">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial"
+                                        value="PSGPhoto250">
                                     Premium Semigloss Photo Paper (250)</input>
                                 </label>
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="PLPhoto260">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial"
+                                        value="PLPhoto260">
                                     Premium Luster Photo Paper (260)</input>
                                 </label>
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="PSMPhoto260">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial"
+                                        value="PSMPhoto260">
                                     Premium Semimatte Photo Paper (260)</input>
                                 </label>
                                 <p>Proofing Paper</p>
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="CProofing">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial"
+                                        value="CProofing">
                                     Proofing Paper Commercial</input>
                                 </label>
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="WSProofing">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial"
+                                        value="WSProofing">
                                     Proofing Paper White Semimatte</input>
                                 </label>
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="PProofing">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial"
+                                        value="PProofing">
                                     Proofing Paper Publication</input>
                                 </label>
                                 <p>Matte Paper</p>
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="DWMatte">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial"
+                                        value="DWMatte">
                                     Doubleweight Matte Paper</input>
                                 </label>
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="SVMatte">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial"
+                                        value="SVMatte">
                                     Somerset Velvet</input>
                                 </label>
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="SWMatte">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial"
+                                        value="SWMatte">
                                     Singleweight Matte Paper</input>
                                 </label>
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="PPMatte">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial"
+                                        value="PPMatte">
                                     Presentation Paper Matte</input>
                                 </label>
                                 <p>Fine Art Paper</p>
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="USFAPaper">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial"
+                                        value="USFAPaper">
                                     UltraSmooth Fine Art Paper</input>
                                 </label>
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="TFAPaper">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial"
+                                        value="TFAPaper">
                                     Textured Fine Art Paper</input>
                                 </label>
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="VFAPaper">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial"
+                                        value="VFAPaper">
                                     Velvet Fine Art Paper</input>
                                 </label>
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="RWWatercolor">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial"
+                                        value="RWWatercolor">
                                     Watercolor Paper - Radiant White</input>
                                 </label>
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="PCSatin">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial"
+                                        value="PCSatin">
                                     Premium Canvas Satin - PremierArt Water Resistant Canvas</input>
                                 </label>
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="PCMatte">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial"
+                                        value="PCMatte">
                                     Premium Canvas Matte - Piezo Pro Matte Canvas</input>
                                 </label>
                                 <label style="display: block">
@@ -149,16 +187,20 @@
                                 </label>
                                 <p>Others</p>
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="EMPosterboard">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial"
+                                        value="EMPosterboard">
                                     Enhanced Matte Posterboard</input>
                                 </label>
                                 <label style="display: block">
-                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial" value="EASynthetic">
+                                    <input type="radio" ng-model="newUpload.medium" name="paperMaterial"
+                                        value="EASynthetic">
                                     Enhanced Adhesive Synthetic Paper</input>
                                 </label>
                             </div>
 
-                            <p><button class="next" ng-click="calculatePrice()" onclick="showSection('upload', 'material')" id="matSelectNext">Next Step</button></p>
+                            <p><button class="next" ng-click="calculatePrice()"
+                                    onclick="showSection('upload', 'material')" id="matSelectNext">Next Step</button>
+                            </p>
 
 
                             <p><a class="back" onclick="showSection('size', 'material')" role="button">Go Back</a></p>
@@ -175,7 +217,8 @@
                             </div>
 
                             <p>
-                                <button class="next" onclick="showSection('crop', 'upload')" id="fileSelectNext">Next step</button>
+                                <button class="next" onclick="showSection('crop', 'upload')" id="fileSelectNext">Next
+                                    step</button>
                             </p>
 
 
@@ -189,18 +232,17 @@
                                     </br>
                                     <div class="cropArea">
                                         <br><br><br><br><br><br><br>
-                                             <ui-cropper image="myImage" area-type="rectangle" aspect-ratio="1.7"
-                                                      result-image="myCroppedImage"
-                                                      result-image-size="{w: selectedOption.value.w, h: selectedOption.value.h}"
-                                                    
-                                                    init-max-area="true" style="margin-left: 150px;"></ui-cropper>
+                                        <ui-cropper image="myImage" area-type="rectangle" aspect-ratio="1.7"
+                                            result-image="myCroppedImage"
+                                            result-image-size="{w: selectedOption.value.w, h: selectedOption.value.h}"
+                                            init-max-area="true" style="margin-left: 150px;"></ui-cropper>
 
                                     </div>
                                 </div>
                                 <div class="col-lg-offset-2 col-lg-4">
                                     <h3>Preview Image:</h3>
                                     </br>
-                                    <img ng-src="{{myCroppedImage}}" class="preview-image img-responsive"/>
+                                    <img ng-src="{{myCroppedImage}}" class="preview-image img-responsive" />
                                     </br>
                                 </div>
                             </div>
@@ -210,13 +252,14 @@
                         <div class="jumbotron" id="userinfo" style="display: none;">
                             <h2>Shipping Information</h2>
 
-                                First Name: <input type="text" ng-model="newUpload.firstName" name="sA"><br />
-                                Last Name: <input type="text" ng-model="newUpload.lastName" name="sB"><br />
-                                Address: <input type="text" ng-model="newUpload.address" name="sC"><br />
-                                City: <input type="text" ng-model="newUpload.city" name="sD"><br />
-                                State: <input type="text" ng-model="newUpload.state" name="sE"><br />
-                                Zip Code: <input type="text" ng-model="newUpload.zipCode" name="sF"><br />
-                                <p><button class="next" onclick="showSection('payment', 'userinfo'); showSubmitButton()" id="shipInfoNext">Next step</button></p>
+                            First Name: <input type="text" ng-model="newUpload.firstName" name="sA"><br />
+                            Last Name: <input type="text" ng-model="newUpload.lastName" name="sB"><br />
+                            Address: <input type="text" ng-model="newUpload.address" name="sC"><br />
+                            City: <input type="text" ng-model="newUpload.city" name="sD"><br />
+                            State: <input type="text" ng-model="newUpload.state" name="sE"><br />
+                            Zip Code: <input type="text" ng-model="newUpload.zipCode" name="sF"><br />
+                            <p><button class="next" onclick="showSection('payment', 'userinfo'); showSubmitButton()"
+                                    id="shipInfoNext">Next step</button></p>
 
                             <p><a class="back" onclick="showSection('crop', 'userinfo')" role="button">Go Back</a></p>
                         </div>
@@ -233,11 +276,13 @@
                     </div>
                     <div class="divRight">
                         <h2>Your Order</h2>
-                        <p style="text-align:left">Size: {{selectedOption.value.w/100}} x {{selectedOption.value.h/100}}</p>
+                        <p style="text-align:left">Size: {{selectedOption.value.w/100}} x {{selectedOption.value.h/100}}
+                        </p>
                         <p style="text-align:left">Material: {{newUpload.medium}}</p>
                         <p style="text-align:left">Price: ${{newUpload.price}}</p>
                         <br><br>
-                        <a class="submitButton" id="submitButton" style="display: none" role="button"  ng-click="cropUpload()">Submit Order</a>
+                        <a class="submitButton" id="submitButton" style="display: none" role="button"
+                            ng-click="cropUpload()">Submit Order</a>
                     </div>
                 </div>
             </div>
@@ -245,7 +290,7 @@
     </div>
     </div>
     <script src="/js/controllers/listingController.js"></script>
-<!-- 
+    <!-- 
     <script>
         var auth = firebase.auth();
         var storageRef = firebase.storage().ref();
