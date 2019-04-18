@@ -21,7 +21,7 @@ p {
 }
 
 .standardButton:hover {
-    background-color: #FF4C5E !important;
+    background-color: #00B4CC !important;
     color: white;
     text-decoration: none;
 }
@@ -91,7 +91,7 @@ footer {
   }
   
   .log_in:hover {
-    background-color: #FF4C5E !important;
+    background-color: #00B4CC !important;
     color: white;
     text-decoration: none;
   }
@@ -102,4 +102,10 @@ footer {
     font-family: Apple Chancery, cursive;
     /* color: #53ad29; */
     font-weight: bold
+  }
+
+
+
+.aquaSection {
+    background-color: #B2F0E4;
   }

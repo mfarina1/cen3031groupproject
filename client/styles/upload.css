@@ -5,13 +5,14 @@
 
 .divRight {
   flex-grow: 1;
-  background-color: #e0f9e1;
+  background-color: white;
   text-align: center;
 }
 
 .flex-container {
   display: flex;
   align-items: stretch;
+  margin-top: 40px;
 }
 
 .flex-container>div {
@@ -23,63 +24,75 @@
 
 
 .next {
-  background-color: #53ad29;
+  background-color: #FFCA00;
   border: none;
-  color: white;
-  padding: 10px 15px;
+  padding: 14px 16px;
   text-align: center;
   text-decoration: none;
+  display: inline-block;
   font-size: 16px;
+  border-radius: 0px;
+  color: #3A3A3A;
+  font-weight: bold;
   margin: 14px;
-  border-radius: 5px;
   float: right;
   display: flex;
   align-items: stretch;
-
 }
 
 .back {
-  background-color: darkgray;
+  background-color: #FFCA00;
   border: none;
-  color: white;
-  padding: 10px 15px;
+  color: #3A3A3A;
+  padding: 14px 16px;
   text-align: center;
   text-decoration: none;
-  border-radius: 5px;
   float: right;
+  border-radius: 0px;
+  font-family: 'Mukta', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .next:hover {
-  background-color: #316818;
+  background-color: #00B4CC;
   color: white;
   text-decoration: none;
 }
 
 .next:disabled {
-  background-color: #25422d;
+  background-color: lightgray;
+  color: white;
 }
 
 .back:hover {
-  background-color: #6d6d6d;
+  background-color: #00B4CC;
   color: white;
   text-decoration: none;
 }
 
 .submitButton {
-  background-color: #53ad29;
+  background-color: #FFCA00;
   border: none;
-  color: white;
-  padding: 10px 15px;
+  color: #3A3A3A;
+  padding: 14px 16px;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 0px;
+  font-weight: bold;
 }
 
 .submitButton:hover {
-  background-color: #316818;
+  background-color: #00B4CC;
   color: white;
   text-decoration: none;
 }
 
 label {
   font-weight: normal;
+}
+
+
+
+#backgroundAqua {
+  height:100vh;
 }
