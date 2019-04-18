@@ -4,6 +4,7 @@
     <title>Petree Print</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
     </link>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
@@ -27,8 +28,25 @@
 </head>
 
 <body>
-    <div style="margin:20px;">
-        <div class="title-login">
+
+    <nav class="navbar navbar" id="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">
+                    <img src="./resources/petree_logo.png" height="50" alt="">
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <!-- <li><a href="/upload">Upload</a></li> -->
+                <li><a class="active" href="/dashboard">Dashboard</a></li>
+                <li><a class="log_in" href="/login"><span class="glyphicon glyphicon-user"></span>&nbsp; Account</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div>
+        <!-- <div class="title-login">
             <h2>Petree Prints</h2>
             <a class="log_in" href="/login" role="button">Log In</a>
             <a class="log_in" href="/signin" role="button">Sign In</a>
@@ -41,7 +59,7 @@
                 <li class="active"><a href="/dashboard">Dashboard</a></li>
                 <li><a href="/trackOrder">Track Order</a></li>
             </ul>
-        </div>
+        </div> -->
 
         <body ng-app="mainApp">
             <div style="padding:20px">
@@ -91,9 +109,10 @@
                         <p>Order Status: {{detailedInfo.orderStatus}}</p>
                         <p>Medium: {{detailedInfo.medium}}</p>
                         <p>Photo Size: {{detailedInfo.photoSize}}</p>
-                        <p>Enter Tracking Number: <input type="text" placeholder={{detailedInfo.trackingNumber}} ng-model="trackingNumber" />
-                        	<button ng-click="modifyTrackingNumber(detailedInfo._id)">Enter</button>
-                        <br />
+                        <p>Enter Tracking Number: <input type="text" placeholder={{detailedInfo.trackingNumber}}
+                                ng-model="trackingNumber" />
+                            <button ng-click="modifyTrackingNumber(detailedInfo._id)">Enter</button>
+                            <br />
                         </p>
                         <link rel="stylesheet"
                             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

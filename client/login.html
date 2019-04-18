@@ -17,18 +17,17 @@
     </script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
 
 
     <script type="text/javascript">
         var uiConfig = {
             signInSuccessUrl: '/redirect',
-            signInOptions: [
-                {
+            signInOptions: [{
                 // Specify providers you want to offer your users.  
                 provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
                 requireDisplayName: false
-                }
-            ],
+            }],
             // Terms of service url can be specified and will show up in the widget.  
             tosUrl: '<your-tos-url>'
         };
@@ -41,10 +40,25 @@
     <div></div>
 
 <body>
+    <nav class="navbar navbar" id="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">
+                    <img src="./resources/petree_logo.png" height="50" alt="">
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a class="active" href="/upload">Upload</a></li>
+                <li><a href="/trackOrder">Track Order</a></li>
+                <li><a class="log_in" href="/login"><span class="glyphicon glyphicon-user"></span>&nbsp; Account</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <h1 align="center" style="color:green;">PeTrEe PrInTs</h1>
     <div id="firebaseui-auth-container"></div>
     <form action='/home'>
-         <button type="submit" align="center" width="48" height="20" style="color:green;">Retreat Home</button>
+        <button type="submit" align="center" width="48" height="20" style="color:green;">Retreat Home</button>
     </form>
 
 </body>
