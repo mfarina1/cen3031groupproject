@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Petree Print Login</title>
+    <link href="./resources/favicon.png" rel="icon">
     <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"> </script>
     <script>
         var config = {
@@ -17,6 +18,8 @@
     </script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
 
 
@@ -48,18 +51,25 @@
                 </a>
             </div>
             <ul class="nav navbar-nav navbar-right">
-                <li><a class="active" href="/upload">Upload</a></li>
+                <li><a href="/upload">Upload</a></li>
                 <li><a href="/trackOrder">Track Order</a></li>
-                <li><a class="log_in" href="/login"><span class="glyphicon glyphicon-user"></span>&nbsp; Account</a>
+                <li><a class="active" class="log_in" href="/login"><span class="glyphicon glyphicon-user"></span>&nbsp;
+                        Account</a>
                 </li>
             </ul>
         </div>
     </nav>
-    <h1 align="center" style="color:green;">PeTrEe PrInTs</h1>
-    <div id="firebaseui-auth-container"></div>
-    <form action='/home'>
-        <button type="submit" align="center" width="48" height="20" style="color:green;">Retreat Home</button>
-    </form>
+    <div class="aquaSection" id="backgroundAqua">
+        <div class="container">
+            <div class="loginContainer">
+                <div id="firebaseui-auth-container"></div>
+                <!-- <form action='/home'>
+                    <button type="submit" align="center" width="48" height="20" style="color:green;">Retreat
+                        Home</button>
+                </form> -->
+            </div>
+        </div>
+    </div>
 
 </body>
 </head>
