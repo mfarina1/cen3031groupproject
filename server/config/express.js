@@ -94,10 +94,9 @@ app.all('/', function(req, res, next) {
         res.send()
     });
     
-    listingsRouter.get('/',function(req,res){
-  res.sendFile(path.join(__dirname+'/client/home.html'));
-  //__dirname : It will resolve to your project folder.
-});
+    app.get('/', function (req, res) {
+        res.sendFile(path.join(__dirname + '/../../client/home.html'));
+    });
 
 
 var allowCrossDomain = function(req, res, next) {
@@ -121,9 +120,9 @@ app.use(express.static(__dirname + '/Script'));
   /**TODO 
   Go to homepage for all routes not specified */ 
 //OR should it be a *?
-    /*app.get('*', function(req, res){
+    app.get('*', function(req, res){
         console.log("Throwing homepage")
-        res.sendFile(path.join(__dirname+'/../../client/home.html'));
-    });*/
+        res.sendFile(path.join(__dirname+'/../../client/404redirect.html'));
+    });
   return app;
 };  
