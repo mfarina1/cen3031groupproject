@@ -25,6 +25,9 @@ function showSubmitButton() {
   }
 }
 
+function checkLogIn(){
+	console.log("CHECKING IF LOGGED IN")
+}
 
 //Input Validation Source: https://stackoverflow.com/questions/5614399/disabling-submit-button-until-all-fields-have-values
 
