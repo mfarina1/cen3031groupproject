@@ -14,13 +14,14 @@
 
 .displayDataView {
   flex-grow: 1;
-  background-color: #B2F0E4;
+  background-color: white;
 
 }
 
 .flex-container {
   display: flex;
   align-items: stretch;
+  margin-top: 40px;
 }
 
 .flex-container>div {
