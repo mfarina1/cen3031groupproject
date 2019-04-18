@@ -21,6 +21,7 @@
 
 
     <script type="text/javascript">
+        
         var uiConfig = {
             signInSuccessUrl: '/redirect',
             signInOptions: [{
@@ -31,10 +32,21 @@
             // Terms of service url can be specified and will show up in the widget.  
             tosUrl: '<your-tos-url>'
         };
+        
         // Initialize the FirebaseUI Widget using Firebase.  
         var ui = new firebaseui.auth.AuthUI(firebase.auth());
         // The start method will wait until the DOM is loaded.  
         ui.start('#firebaseui-auth-container', uiConfig);
+
+
+        function signOut() {
+            firebase.auth().signOut().then(function() {
+                console.log('Signed Out');
+            }, function(error) {
+                console.error('Sign Out Error', error);
+            })
+        };
+
     </script>
     <!-- Include a simple background image & and title -->
     <div></div>
@@ -59,6 +71,10 @@
     <div id="firebaseui-auth-container"></div>
     <form action='/home'>
         <button type="submit" align="center" width="48" height="20" style="color:green;">Retreat Home</button>
+    </form>
+
+    <form>
+         <input type="button" onclick="signOut()" value="Sign Out" />
     </form>
 
 </body>
