@@ -121,9 +121,9 @@ app.use(express.static(__dirname + '/Script'));
   /**TODO 
   Go to homepage for all routes not specified */ 
 //OR should it be a *?
-    app.get('*', function(req, res){
+    /*app.get('*', function(req, res){
         console.log("Throwing homepage")
         res.sendFile(path.join(__dirname+'/../../client/home.html'));
-    });
+    });*/
   return app;
 };  
