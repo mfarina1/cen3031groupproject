@@ -39,15 +39,15 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a class="active" href="/upload">Upload</a></li>
                 <li><a href="/trackOrder">Track Order</a></li>
-                <li><a class="log_in" href="/login"><span class="glyphicon glyphicon-user"></span>&nbsp; Account</a>
+                <li><a class="log_in" href="/login"><span class="glyphicon glyphicon-user" id="log_in"></span>&nbsp; Sign In</a>
                 </li>
             </ul>
         </div>
     </nav>
 
     <div class="pageContent">
-        <div ng-app="mainApp" class="aquaSection" id="backgroundAqua">
-            <div ng-controller="ListingsController" class="container">
+        <div ng-app="mainApp" class="aquaSection" id="backgroundAqua" >
+            <div ng-controller="ListingsController" ng-init="checkLogIn()" class="container">
                 <div class="flex-container">
                     <div class="divLeft">
                         <div class="jumbotron" id="size">

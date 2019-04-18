@@ -32,6 +32,19 @@ angular.module('mainApp')
           console.log($scope.newUpload.medium);
       }
 
+	  $scope.checkLogIn = function () {
+			console.log("CHECKING IF LOGGED IN")
+			firebase.auth().onAuthStateChanged(function(user) {
+			if (!user) {
+				 window.location = '/login';
+			} else{
+				//document.getElementById("log_in").innerHTML = "Log Out";
+				
+			}
+		});	
+	  }
+
+	
       $scope.uploadNewPhoto = function () {
         console.log($scope.newUpload.photoSize);
           $scope.newUpload.orderStatus = "Processing";
