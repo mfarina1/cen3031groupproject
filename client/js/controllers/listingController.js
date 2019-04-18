@@ -42,10 +42,11 @@ angular.module('mainApp')
 
         // console.log("TCL: $scope.uploadNewPhoto -> $scope.newUpload.photoSize", $scope.newUpload.photoSize)
 
-        window.location = '/';
+       
 
         Listings.create($scope.newUpload).then(function (response) {
           console.log("Updating with new photo");
+           window.location = '/';
         }, function (error) {
           console.log('Unable to upload new photo request:', error);
         });
@@ -355,8 +356,6 @@ angular.module('mainApp')
                     // [START_EXCLUDE]
                     $scope.newUpload.FBImageURL = url;
                     $scope.uploadNewPhoto();
-                    document.getElementById('linkbox').innerHTML = '<a href="' + url +
-                        '">Click For File</a>';
                     // [END_EXCLUDE]
                 });
             }).catch(function (error) {
