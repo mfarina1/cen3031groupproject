@@ -2,10 +2,16 @@
 
 <head>
     <title>Petree Print</title>
+    <link href="./resources/favicon.png" rel="icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="styles/dashboard.css"></link>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"></link>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css"></link>
+    <link rel="stylesheet" type="text/css" href="styles/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    </link>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    </link>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    </link>
+    <link href="https://fonts.googleapis.com/css?family=Mukta:300,400,700" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
 
@@ -26,23 +32,27 @@
 </head>
 
 <body>
-    <div style="margin:20px;">
-        <div class="title-login">
-            <h2>Petree Prints</h2>
-            <a class="log_in" href="/login" role="button">Log In</a>
-            <a class="log_in" href="/signin" role="button">Sign In</a>
-        </div>
 
-        <div>
-            <ul>
-                <li><a href="/">Home</a></li>
+    <nav class="navbar navbar" id="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">
+                    <img src="./resources/petree_logo.png" height="50" alt="">
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
                 <li><a href="/upload">Upload</a></li>
-                <li class="active"><a href="/trackOrder">Track Order</a></li>
+                <li><a class="active" href="/trackOrder">Track Order</a></li>
+                <li><a class="log_in" href="/login"><span class="glyphicon glyphicon-user"></span>&nbsp; Account</a>
+                </li>
             </ul>
         </div>
+    </nav>
 
-        <body ng-app="mainApp">
-            <div style="padding:20px">
+    <div>
+
+        <div ng-app="mainApp">
+            <div>
                 <h1>Track Order</h1>
             </div>
             <div ng-controller="TrackOrderController">
@@ -72,7 +82,7 @@
                         <!-- <div>
                             <div class="card" style="width: 18rem;" ng-repeat="listing in listings | filter: query track by $index"
                             ng-click="showDetails($index)">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/220px-Ash_Tree_-_geograph.org.uk_-_590710.jpg" class="card-img-top" alt="...">
+         diveb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/220px-Ash_Tree_-_geograph.org.uk_-_590710.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up
@@ -112,7 +122,7 @@
                     </div>
                 </div>
             </div>
-        </body>
+        </div>
     </div>
 
 </body>
