@@ -59,11 +59,14 @@
                     <img src="./resources/petree_logo.png" height="50" alt="">
                 </a>
             </div>
+            
+
             <ul class="nav navbar-nav navbar-right">
                 <li><a class="active" href="/upload">Upload</a></li>
                 <li><a href="/trackOrder">Track Order</a></li>
                 <li><a class="log_in" href="/login"><span class="glyphicon glyphicon-user"></span>&nbsp; Account</a>
                 </li>
+                <li><button class="btn btn-danger navbar-btn" onclick="signOut()" href="/home">Sign Out</button></li>
             </ul>
         </div>
     </nav>
@@ -73,9 +76,6 @@
         <button type="submit" align="center" width="48" height="20" style="color:green;">Retreat Home</button>
     </form>
 
-    <form>
-         <input type="button" onclick="signOut()" value="Sign Out" />
-    </form>
 
 </body>
 </head>
