@@ -12,10 +12,6 @@ function showSection(nextSection, currentSection) {
   } else {
     y.style.display = "none";
   }
-
-  if (payment.style.display === "block") {
-    paypal.Buttons().render('body');
-  }
 }
 
 function showSubmitButton() {
