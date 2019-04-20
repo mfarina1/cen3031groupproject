@@ -11,9 +11,10 @@
     <link rel="stylesheet" type="text/css" href="styles/main.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
-    <!-- 
-<script>
-        // Initialize Firebase
+    
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+ <script>
         var config = {
             apiKey: "AIzaSyC8iqW-J1UCgSg7GHez4SuO51APq_n6AJI",
             authDomain: "cen3031-photography-group3.firebaseapp.com",
@@ -23,10 +24,21 @@
             messagingSenderId: "194055935448"
         };
         firebase.initializeApp(config);
+
     </script>
- -->
+ 
 </head>
 
+    <script type="text/javascript">
+        
+                function signOut() {
+                    firebase.auth().signOut().then(function() {
+                        console.log('Signed Out');
+                    }, function(error) {
+                        console.error('Sign Out Error', error);
+                    })
+                };
+    </script>
 
 <body>
     <nav class="navbar navbar" id="navbar">
@@ -41,6 +53,7 @@
                 <li><a href="/trackOrder">Track Order</a></li>
                 <li><a class="log_in" href="/login"><span class="glyphicon glyphicon-user" id="log_in"></span>&nbsp; Sign In</a>
                 </li>
+                <li><button class="btn btn-danger navbar-btn" onclick="signOut()" >Sign Out</button></li>
             </ul>
         </div>
     </nav>
