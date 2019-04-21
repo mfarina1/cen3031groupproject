@@ -73,8 +73,8 @@ angular.module('mainApp')
       $scope.calculatePrice = function() {
        	var firebaseUser = firebase.auth().currentUser
 			console.log(firebaseUser)
-          $scope.newUpload.photoSize = $scope.selectedOption.value.w + "x" + $scope.selectedOption.value.h
-          $scope.newUpload.photoSizeInches = $scope.selectedOption.value.w/100 + "x" + $scope.selectedOption.value.h/100
+           $scope.newUpload.photoSize = $scope.selectedOption.value.w + "x" + $scope.selectedOption.value.h
+           $scope.newUpload.photoSizeInches = $scope.selectedOption.value.w/100 + "x" + $scope.selectedOption.value.h/100
          switch ($scope.newUpload.photoSize){
              case '400x600':
                  $scope.newUpload.price = 6.99;
@@ -137,9 +137,9 @@ angular.module('mainApp')
              default:
                  $scope.newUpload.price = 0.00;
          }
-        if ($scope.newUpload.medium === 'Canvas'){
-            $scope.newUpload.price += 10;
-        }  
+       //  if ($scope.newUpload.medium === 'Canvas'){
+//             $scope.newUpload.price += 10;
+//         }  
 
       };
         

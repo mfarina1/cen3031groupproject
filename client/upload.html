@@ -79,8 +79,8 @@
                 <li><a class="active" href="/upload">Upload</a></li>
                 <li><a href="/trackOrder">Track Order</a></li>
 
-                <li><button class="btn btn-warning navbar-btn" id="sign_out" onclick="signOut()"> Sign Out </button></li>        
-                <li><button class="btn btn-warning navbar-btn" id="sign_in" onclick="signIn()"> Sign In </button></li>
+                <li><button class="log_in" id="sign_out" onclick="signOut()"> Sign Out </button></li>        
+                <li><button class="log_in" id="sign_in" style="display:none" onclick="signIn()"> Sign In </button></li>
 
             </ul>
         </div>
@@ -102,7 +102,7 @@
                                         ng-options="option.name for option in availableOptions"></select>
                                 </div>
                             </form>
-                            <a class="next" onclick="showSection('material', 'size')" role="button">Next step</a>
+                            <a class="next"  ng-click="calculatePrice()" onclick="showSection('material', 'size')" role="button">Next step</a>
 
                         </div>
                         <div class="jumbotron" id="material" style="display: none;">
