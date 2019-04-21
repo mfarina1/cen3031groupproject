@@ -69,7 +69,7 @@
             }, function(error) {
                 console.error('Sign Out Error', error);
             })
-            window.location.href = '/home';
+            window.location.href = '/';
         };
 
         function signIn() {
@@ -94,7 +94,7 @@
                 <li><a class="active" href="/trackOrder">Track Order</a></li>
 
                 <li><button class="btn btn-warning navbar-btn" id="sign_out" onclick="signOut()"> Sign Out </button></li>        
-                <li><button class="btn btn-warning navbar-btn" id="sign_in" onclick="signIn()"> Sign In </button></li>
+                <li><button class="btn btn-warning navbar-btn" style="display:none"id="sign_in" onclick="signIn()"> Sign In </button></li>
 
             </ul>
         </div>
@@ -118,16 +118,18 @@
                         <div class="tableWrapper">
                             <table class="table table-striped table-hover">
                                 <tr>
-                                    <th>Name</th>
+                                    <th>Print Size</th>
+                                    <th>Print Material</th>
                                     <th>Order Status</th>
-                                    <th>Date Ordered</th>
+                                    <th>Price</th>
                                     <th></th>
                                 </tr>
                                 <tr ng-repeat="listing in listings | filter: query track by $index"
                                     ng-click="showDetails($index)">
-                                    <td>{{listing.firstName}} {{listing.lastName}}</td>
+                                    <td>{{listing.photoSize}}</td>
+                                    <td>{{listing.medium}}</td>
                                     <td>{{listing.orderStatus}}</td>
-                                    <td>{{listing.created_at}}</td>
+                                    <td>${{listing.price}}</td>
                                 </tr>
                             </table>
                         </div>
@@ -146,30 +148,18 @@
                     </div>
                     <div class="displayDataView">
 
-                        <h2>View Order</h2>
-                        <p>Name: {{detailedInfo.firstName}} {{detailedInfo.lastName}}</p>
+                        <h2>Order Details</h2>
                         <p>Order Status: {{detailedInfo.orderStatus}}</p>
+                        <p>Tracking Number: {{detailedInfo.trackingNumber}}<p>
                         <p>Medium: {{detailedInfo.medium}}</p>
-                        <p>Photo Size: {{detailedInfo.size}}</p>
-                        <p>Enter Tracking Number: <input type="text" ng-model="updateTracking.trackingNumber" /><br />
-                        </p>
-                        <link rel="stylesheet"
-                            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                        </link>
-
-                        <a href={{detailedInfo.FBImageURL}} download>
-                            <button class="btn" ng-click="downloadImage()"><i class="fa fa-download"></i> Download
-                                Image</button>
-
-                            <div class="dropdown">
-                                <button class="dropbtn">Change Order Status</button>
-                                <div class="dropdown-content">
-                                    <a ng-click="modifyStatus(detailedInfo._id, 'Printing')">Printing</a>
-                                    <a ng-click="modifyStatus(detailedInfo._id, 'Preparing to Ship')">Preparing to
-                                        Ship</a>
-                                    <a ng-click="modifyStatus(detailedInfo._id, 'Shipped')">Shipped</a>
-                                </div>
-                            </div>
+                        <p>Photo Size: {{detailedInfo.photoSize}}</p>
+                    	<br>
+                    	<div style="text-align:center">
+                    		<p>Shipping Address</p>
+                    		<p>{{detailedInfo.firstName}} {{detailedInfo.lastName}}</p>
+                    		<p>{{detailedInfo.address}}</p>
+                    		<p>{{detailedInfo.city}} {{detailedInfo.state}}, {{detailedInfo.zipCode}}</p>
+						</div>
 
                     </div>
                 </div>

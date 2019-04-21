@@ -5,13 +5,13 @@ angular.module('mainApp')
 
   .controller('ListingsController', ['$scope', 'Listings',
     function ($scope, Listings) {
-	var config = {
-  		apiKey: "AIzaSyC8iqW-J1UCgSg7GHez4SuO51APq_n6AJI",
-  		authDomain: "cen3031-photography-group3.firebaseapp.com",
-  		databaseURL: "https://cen3031-photography-group3.firebaseio.com",
-  		storageBucket: "cen3031-photography-group3.appspot.com",
-	};
-	firebase.initializeApp(config);
+	// var config = {
+//   		apiKey: "AIzaSyC8iqW-J1UCgSg7GHez4SuO51APq_n6AJI",
+//   		authDomain: "cen3031-photography-group3.firebaseapp.com",
+//   		databaseURL: "https://cen3031-photography-group3.firebaseio.com",
+//   		storageBucket: "cen3031-photography-group3.appspot.com",
+// 	};
+	// firebase.initializeApp(config);
 	
       $scope.listings = undefined;
 
@@ -74,6 +74,7 @@ angular.module('mainApp')
        	var firebaseUser = firebase.auth().currentUser
 			console.log(firebaseUser)
           $scope.newUpload.photoSize = $scope.selectedOption.value.w + "x" + $scope.selectedOption.value.h
+          $scope.newUpload.photoSizeInches = $scope.selectedOption.value.w/100 + "x" + $scope.selectedOption.value.h/100
          switch ($scope.newUpload.photoSize){
              case '400x600':
                  $scope.newUpload.price = 6.99;
