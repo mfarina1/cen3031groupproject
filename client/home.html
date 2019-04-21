@@ -11,10 +11,57 @@
     <link href="https://fonts.googleapis.com/css?family=Mukta:300,400,700" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"> </script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyC8iqW-J1UCgSg7GHez4SuO51APq_n6AJI",
+            authDomain: "cen3031-photography-group3.firebaseapp.com",
+            databaseURL: "https://cen3031-photography-group3.firebaseio.com",
+            projectId: "cen3031-photography-group3",
+            storageBucket: "cen3031-photography-group3.appspot.com",
+            messagingSenderId: "194055935448"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
     <link rel="stylesheet" type="text/css" href="styles/home.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
 
 </head>
+
+<script type="text/javascript">
+
+        window.onload=account()
+        
+        function account() {
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    document.getElementById("sign_out").style.display='block';
+                    document.getElementById("sign_in").style.display='none';
+                } else {
+                    document.getElementById("sign_in").style.display='block';
+                    document.getElementById("sign_out").style.display='none';
+                }
+            });
+        };
+
+        function signOut() {
+            firebase.auth().signOut().then(function() {
+                console.log('Signed Out');
+            }, function(error) {
+                console.error('Sign Out Error', error);
+            })
+            window.location.href = '/home';
+        };
+
+        function signIn() {
+            window.location.href = '/login';
+        };
+
+</script>
+
 
 <body>
     <nav class="navbar navbar" id="navbar">
@@ -27,8 +74,8 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/upload">Upload</a></li>
                 <li><a href="/trackOrder">Track Order</a></li>
-                <li><a class="log_in" href="/login"><span class="glyphicon glyphicon-user"></span>&nbsp; Account</a></li>
-                <li><button class="btn btn-danger navbar-btn" onclick="signOut()">Sign Out</button></li>
+                <li><button class="btn btn-warning navbar-btn" id="sign_out" onclick="signOut()"> Sign Out </button></li>        
+                <li><button class="btn btn-warning navbar-btn" id="sign_in" onclick="signIn()"> Sign In </button></li>
             </ul>
         </div>
     </nav>
