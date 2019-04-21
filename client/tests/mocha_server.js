@@ -59,10 +59,11 @@ describe('Photography App Server Unit Tests', function() {
         done();
       });
     });
-
-    it('responds with a 404 error to other GET requests', function(done) {
+      //For all other requests, doesn't give 404 error but instead routes to 404redirect
+    it('responds with a 404redirect page to other GET requests', function(done) {
       request.get('http://localhost:8080/pizza', function(error, response, body) {
-        response.statusCode.should.be.exactly(404);
+          should.not.exist(error);
+          should.exist(body);
         //body.should.be.exactly('Bad gateway error');
         done();
       });
