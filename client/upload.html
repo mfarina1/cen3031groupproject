@@ -34,16 +34,37 @@
  
 </head>
 
-    <script type="text/javascript">
+<script type="text/javascript">
+
+        window.onload=account()
         
-                function signOut() {
-                    firebase.auth().signOut().then(function() {
-                        console.log('Signed Out');
-                    }, function(error) {
-                        console.error('Sign Out Error', error);
-                    })
-                };
-    </script>
+        function account() {
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    document.getElementById("sign_out").style.display='block';
+                    document.getElementById("sign_in").style.display='none';
+                } else {
+                    document.getElementById("sign_in").style.display='block';
+                    document.getElementById("sign_out").style.display='none';
+                }
+            });
+        };
+
+        function signOut() {
+            firebase.auth().signOut().then(function() {
+                console.log('Signed Out');
+            }, function(error) {
+                console.error('Sign Out Error', error);
+            })
+            window.location.href = '/home';
+        };
+
+        function signIn() {
+            window.location.href = '/login';
+        };
+
+</script>
+
 
 <body>
     <nav class="navbar navbar" id="navbar">
@@ -57,10 +78,10 @@
                 <li><a href="/about.html">About</a></li>
                 <li><a class="active" href="/upload">Upload</a></li>
                 <li><a href="/trackOrder">Track Order</a></li>
-                <li>
-                    <a class="log_in" href="/login"><span class="glyphicon glyphicon-user" id="log_in"></span>&nbsp; Sign In</a>
-                </li>
-                <li><button class="btn btn-danger navbar-btn" onclick="signOut()">Sign Out</button></li>
+
+                <li><button class="btn btn-warning navbar-btn" id="sign_out" onclick="signOut()"> Sign Out </button></li>        
+                <li><button class="btn btn-warning navbar-btn" id="sign_in" onclick="signIn()"> Sign In </button></li>
+
             </ul>
         </div>
     </nav>
