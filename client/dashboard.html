@@ -48,7 +48,7 @@
         }, function (error) {
             console.error('Sign Out Error', error);
         })
-        window.location.href = '/home';
+        window.location.href = '/';
     };
 
     function signIn() {
@@ -138,7 +138,8 @@
                             <p>Order Status: {{detailedInfo.orderStatus}}</p>
                             <p>Medium: {{detailedInfo.medium}}</p>
                             <p>Photo Size: {{detailedInfo.photoSize}}</p>
-                            <p>Enter Tracking Number: <input type="text" placeholder={{detailedInfo.trackingNumber}}
+                            
+                            <p>Enter Tracking Number: <input type="text" id="trackingNumber" class="trackingNumber" placeholder={{detailedInfo.trackingNumber}}
                                     ng-model="trackingNumber" />
                                 <button ng-click="modifyTrackingNumber(detailedInfo._id)">Enter</button>
                                 <br />
@@ -161,6 +162,14 @@
                                         <a ng-click="modifyOrderStatus(detailedInfo._id, 'Shipped')">Shipped</a>
                                     </div>
                                 </div>
+                                <br>
+                                <br>
+                                <div style="text-align:center">
+                    		<p style="font-weight:bold">Shipping Address</p>
+                    		<p>{{detailedInfo.firstName}} {{detailedInfo.lastName}}</p>
+                    		<p>{{detailedInfo.address}}</p>
+                    		<p>{{detailedInfo.city}} {{detailedInfo.state}}, {{detailedInfo.zipCode}}</p>
+						</div>
                         </div>
                     </div>
 
