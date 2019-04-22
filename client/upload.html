@@ -11,13 +11,13 @@
     <link rel="stylesheet" type="text/css" href="styles/main.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
-    
+
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    
+
     <script>
         // Initialize Firebase
         var config = {
@@ -29,40 +29,37 @@
             messagingSenderId: "194055935448"
         };
         firebase.initializeApp(config);
-
     </script>
- 
+
 </head>
 
 <script type="text/javascript">
+    window.onload = account()
 
-        window.onload=account()
-        
-        function account() {
-            firebase.auth().onAuthStateChanged(function(user) {
-                if (user) {
-                    document.getElementById("sign_out").style.display='block';
-                    document.getElementById("sign_in").style.display='none';
-                } else {
-                    document.getElementById("sign_in").style.display='block';
-                    document.getElementById("sign_out").style.display='none';
-                }
-            });
-        };
+    function account() {
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                document.getElementById("sign_out").style.display = 'block';
+                document.getElementById("sign_in").style.display = 'none';
+            } else {
+                document.getElementById("sign_in").style.display = 'block';
+                document.getElementById("sign_out").style.display = 'none';
+            }
+        });
+    };
 
-        function signOut() {
-            firebase.auth().signOut().then(function() {
-                console.log('Signed Out');
-            }, function(error) {
-                console.error('Sign Out Error', error);
-            })
-            window.location.href = '/home';
-        };
+    function signOut() {
+        firebase.auth().signOut().then(function () {
+            console.log('Signed Out');
+        }, function (error) {
+            console.error('Sign Out Error', error);
+        })
+        window.location.href = '/home';
+    };
 
-        function signIn() {
-            window.location.href = '/login';
-        };
-
+    function signIn() {
+        window.location.href = '/login';
+    };
 </script>
 
 
@@ -79,7 +76,7 @@
                 <li><a class="active" href="/upload">Upload</a></li>
                 <li><a href="/trackOrder">Track Order</a></li>
 
-                <li><button class="log_in" id="sign_out" onclick="signOut()"> Sign Out </button></li>        
+                <li><button class="log_in" id="sign_out" onclick="signOut()"> Sign Out </button></li>
                 <li><button class="log_in" id="sign_in" style="display:none" onclick="signIn()"> Sign In </button></li>
 
             </ul>
@@ -102,7 +99,8 @@
                                         ng-options="option.name for option in availableOptions"></select>
                                 </div>
                             </form>
-                            <a class="next"  ng-click="calculatePrice()" onclick="showSection('material', 'size')" role="button">Next step</a>
+                            <a class="next" ng-click="calculatePrice()" onclick="showSection('material', 'size')"
+                                role="button">Next step</a>
 
                         </div>
                         <div class="jumbotron" id="material" style="display: none;">
@@ -260,7 +258,8 @@
                                     </br>
                                     <div class="cropArea">
                                         <br><br><br><br><br><br><br>
-                                        <ui-cropper image="myImage" area-type="rectangle" aspect-ratio="selectedOption.value.w/selectedOption.value.h"
+                                        <ui-cropper image="myImage" area-type="rectangle"
+                                            aspect-ratio="selectedOption.value.w/selectedOption.value.h"
                                             result-image="myCroppedImage"
                                             result-image-size="{w: selectedOption.value.w, h: selectedOption.value.h}"
                                             init-max-area="true" style="margin-left: 150px;"></ui-cropper>
@@ -274,8 +273,9 @@
                                     </br>
                                 </div>
                             </div>
-                            <p><a class="next" onclick="showSection('userinfo', 'crop')" role="button">Next step</a></p>
-                            <p><a class="back" onclick="showSection('upload', 'crop')" role="button">Go Back</a></p>
+                            <p><a class="next" onclick="showSection('userinfo', 'crop'); showImage()" role="button">Next step</a></p>
+                            <p><a class="back" onclick="showSection('upload', 'crop')" role="button">Go
+                                    Back</a></p>
                         </div>
                         <div class="jumbotron" id="userinfo" style="display: none;">
                             <h2>Shipping Information</h2>
@@ -345,6 +345,9 @@
                     </div>
                     <div class="divRight">
                         <h2>Your Order</h2>
+                        <div id="displayImage" style="display: none">
+                            <img ng-src="{{myCroppedImage}}" class="preview-image img-responsive"/>
+                        </div>
                         <p style="text-align:left">Size: {{selectedOption.value.w/100}} x {{selectedOption.value.h/100}}
                         </p>
                         <p style="text-align:left">Material: {{newUpload.medium}}</p>
