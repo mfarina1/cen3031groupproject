@@ -80,14 +80,15 @@ li a:hover {
     background-color: #FFCA00;
     /* Yellow */
     border: none;
-    padding: 10px 15px;
+    padding: 14px 16px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    float: right;
-    margin: 8px;
     border-radius: 0px;
+    color: #3A3A3A;
+    font-weight: bold;
+    margin-top: 9px;
 }
 
 .log_in:hover {

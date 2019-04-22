@@ -71,8 +71,8 @@
                 <!-- <li><a href="/upload">Upload</a></li> -->
                 <li><a class="active" href="/dashboard">Dashboard</a></li>
                 </li>
-                <li><button class="btn btn-warning navbar-btn" id="sign_out" onclick="signOut()"> Sign Out </button></li>
-                <li><button class="btn btn-warning navbar-btn" id="sign_in" onclick="signIn()"> Sign In </button></li>
+                <li><button class="log_in" id="sign_out" onclick="signOut()"> Sign Out </button></li>
+                <li><button class="log_in" id="sign_in" onclick="signIn()"> Sign In </button></li>
             </ul>
         </div>
     </nav>
@@ -155,7 +155,7 @@
                                 Image</button>
 
                             <div class="dropdown">
-                                <button class="dropbtn">Change Order Status</button>
+                                <button class="standardButton">Change Order Status</button>
                                 <div class="dropdown-content">
                                     <a ng-click="modifyOrderStatus(detailedInfo._id, 'Printing')">Printing</a>
                                     <a ng-click="modifyOrderStatus(detailedInfo._id, 'Preparing to Ship')">Preparing to
