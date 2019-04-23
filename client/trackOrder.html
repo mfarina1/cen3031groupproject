@@ -47,36 +47,6 @@
  -->
 </head>
 
-<script type="text/javascript">
-    window.onload = account()
-
-    function account() {
-        firebase.auth().onAuthStateChanged(function (user) {
-            if (user) {
-                document.getElementById("sign_out").style.display = 'block';
-                document.getElementById("sign_in").style.display = 'none';
-            } else {
-                document.getElementById("sign_in").style.display = 'block';
-                document.getElementById("sign_out").style.display = 'none';
-            }
-        });
-    };
-
-    function signOut() {
-        firebase.auth().signOut().then(function () {
-            console.log('Signed Out');
-        }, function (error) {
-            console.error('Sign Out Error', error);
-        })
-        window.location.href = '/';
-    };
-
-    function signIn() {
-        window.location.href = '/login';
-    };
-</script>
-
-
 <body>
 
     <nav class="navbar navbar" id="navbar">
@@ -97,7 +67,6 @@
             </ul>
         </div>
     </nav>
-
 
     <div>
         <div ng-app="mainApp" class="aquaSection" id="backgroundAqua">
@@ -169,6 +138,7 @@
 </body>
 <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
 <script src="js/app.js"></script>
+<script src="js/main.js"></script>
 <script src="js/factories/listingFactory.js"></script>
 <script src="https://rawgit.com/CrackerakiUA/ui-cropper/master/compile/unminified/ui-cropper.js"></script>
 <script src="js/controllers/listingController.js"></script>

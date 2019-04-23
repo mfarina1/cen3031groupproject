@@ -33,35 +33,6 @@
 
 </head>
 
-<script type="text/javascript">
-    window.onload = account()
-
-    function account() {
-        firebase.auth().onAuthStateChanged(function (user) {
-            if (user) {
-                document.getElementById("sign_out").style.display = 'block';
-                document.getElementById("sign_in").style.display = 'none';
-            } else {
-                document.getElementById("sign_in").style.display = 'block';
-                document.getElementById("sign_out").style.display = 'none';
-            }
-        });
-    };
-
-    function signOut() {
-        firebase.auth().signOut().then(function () {
-            console.log('Signed Out');
-        }, function (error) {
-            console.error('Sign Out Error', error);
-        })
-        window.location.href = '/home';
-    };
-
-    function signIn() {
-        window.location.href = '/login';
-    };
-</script>
-
 
 <body>
     <nav class="navbar navbar" id="navbar">

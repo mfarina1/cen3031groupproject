@@ -1,11 +1,13 @@
 ﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="utf-8" />
     <title>Petree Prints: About</title>
     <link href="./resources/favicon.png" rel="icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     </link>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
@@ -13,70 +15,27 @@
     <link href="https://fonts.googleapis.com/css?family=Mukta:300,400,700" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
     <link rel="stylesheet" type="text/css" href="styles/home.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyC8iqW-J1UCgSg7GHez4SuO51APq_n6AJI",
+            authDomain: "cen3031-photography-group3.firebaseapp.com",
+            databaseURL: "https://cen3031-photography-group3.firebaseio.com",
+            projectId: "cen3031-photography-group3",
+            storageBucket: "cen3031-photography-group3.appspot.com",
+            messagingSenderId: "194055935448"
+        };
+        firebase.initializeApp(config);
+    </script>
 </head>
 
-<script type="text/javascript">
-    window.onload = account()
-
-    function account() {
-        firebase.auth().onAuthStateChanged(function (user) {
-            if (user) {
-                document.getElementById("sign_out").style.display = 'block';
-                document.getElementById("sign_in").style.display = 'none';
-            } else {
-                document.getElementById("sign_in").style.display = 'block';
-                document.getElementById("sign_out").style.display = 'none';
-            }
-        });
-    };
-
-    function signOut() {
-        firebase.auth().signOut().then(function () {
-            console.log('Signed Out');
-        }, function (error) {
-            console.error('Sign Out Error', error);
-        })
-        window.location.href = '/';
-    };
-
-    function signIn() {
-        window.location.href = '/login';
-    };
-</script>
-
 <body>
-    <script type="text/javascript">
-
-        window.onload = account()
-
-        function account() {
-            firebase.auth().onAuthStateChanged(function (user) {
-                if (user) {
-                    document.getElementById("sign_out").style.display = 'block';
-                    document.getElementById("sign_in").style.display = 'none';
-                } else {
-                    document.getElementById("sign_in").style.display = 'block';
-                    document.getElementById("sign_out").style.display = 'none';
-                }
-            });
-        };
-
-        function signOut() {
-            firebase.auth().signOut().then(function () {
-                console.log('Signed Out');
-            }, function (error) {
-                console.error('Sign Out Error', error);
-            })
-            window.location.href = '/home';
-        };
-
-        function signIn() {
-            window.location.href = '/login';
-        };
-
-    </script>
 
     <nav class="navbar navbar" id="navbar">
         <div class="container-fluid">
@@ -86,12 +45,12 @@
                 </a>
             </div>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/about.html">About</a></li>
+                <li><a class="active" href="/about.html">About</a></li>
                 <li><a href="/upload">Upload</a></li>
                 <li><a href="/trackOrder">Track Order</a></li>
 
-                <li><button class="log_in" style="display:none" id="sign_out" onclick="signOut()"> Sign Out </button></li>
-                <li><button class="log_in" id="sign_in" onclick="signIn()"> Sign In </button></li>
+                <li><button class="log_in" id="sign_out" onclick="signOut()"> Sign Out </button></li>
+                <li><button class="log_in" id="sign_in" style="display:none" onclick="signIn()"> Sign In </button></li>
 
             </ul>
         </div>
@@ -108,14 +67,18 @@
                         <h3>We are here to provide affordable, quality prints.</h3>
                         <br />
                         <p>
-                            Petree Prints was founded by Danielle Petree, who decided to take a leap of faith and pursued one of
-                            her passions, large format printing. Petree Prints was created as a need for a large format fine art
-                            photography printing in Gainesville, Florida. Petree Prints is a family run business and is dedicated to
+                            Petree Prints was founded by Danielle Petree, who decided to take a leap of faith and
+                            pursued one of
+                            her passions, large format printing. Petree Prints was created as a need for a large format
+                            fine art
+                            photography printing in Gainesville, Florida. Petree Prints is a family run business and is
+                            dedicated to
                             providing its clients with affordable, quality prints.
                         </p>
                         <br />
                         <h3>Contact Us</h3>
-                        <h4>Phone: (352) 316-0879 <br /> Email: petreeprinting@gmail.com <br />  Address: 10251 Ne 120th Ave. Archer FL, 32618</h4>
+                        <h4>Phone: (352) 316-0879 <br /> Email: petreeprinting@gmail.com <br /> Address: 10251 Ne 120th
+                            Ave. Archer FL, 32618</h4>
                     </div>
 
 
@@ -130,4 +93,11 @@
 
     </div>
 </body>
+
+<script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+<script src="js/app.js"></script>
+<script src="js/factories/listingFactory.js"></script>
+<script src="js/controllers/listingController.js"></script>
+<script src="js/main.js"></script>
+
 </html>
