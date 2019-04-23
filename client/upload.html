@@ -390,13 +390,17 @@
                     </div>
                     <div class="divRight">
                         <h2>Your Order</h2>
+                        <br>
                         <div id="displayImage" style="display: none">
                             <img ng-src="{{myCroppedImage}}" class="preview-image img-responsive" />
                         </div>
-                        <p style="text-align:left">Size: {{selectedOption.value.w/100}} x {{selectedOption.value.h/100}}
-                        </p>
-                        <p style="text-align:left">Material: {{newUpload.medium}}</p>
-                        <p style="text-align:left">Price: ${{newUpload.price}}</p>
+                        <br>
+                        <p style="text-align:left">Size</p>
+                        <h4 id="orderValue" style="text-align:left"><strong>{{selectedOption.value.w/100}} x {{selectedOption.value.h/100}}</strong></h4>
+                        <p style="text-align:left">Material</p>
+                        <h4 id="orderValue" style="text-align:left"><strong>{{newUpload.medium}}</strong></h4>
+                        <p style="text-align:left">Price</p>
+                        <h4 id="orderValue" style="text-align:left"><strong>$ {{newUpload.price}}</strong></h4>
                         <br><br>
                         <a class="submitButton" id="submitButton" style="display: none" role="button"
                             ng-click="cropUpload()">Submit Order</a>

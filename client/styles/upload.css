@@ -18,7 +18,7 @@
 .flex-container>div {
   width: 100px;
   margin: 10px;
-  padding: 10px;
+  padding: 30px;
 }
 
 
@@ -97,4 +97,10 @@ label {
   background-color: #FFCA00;
   height: 100px;
   width: 100px;
+}
+
+
+#orderValue {
+  margin-top: -10px;
+  margin-bottom: 10px;
 }

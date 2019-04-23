@@ -61,13 +61,13 @@
     <nav class="navbar navbar" id="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">
+                <a class="navbar-brand" href="/dashboard-secureAdmin16420">
                     <img src="./resources/petree_logo.png" height="50" alt="">
                 </a>
             </div>
             <ul class="nav navbar-nav navbar-right">
                 <!-- <li><a href="/upload">Upload</a></li> -->
-                <li><a class="active" href="/dashboard">Dashboard</a></li>
+                <li><a class="active" href="/dashboard-secureAdmin16420">Dashboard</a></li>
                 </li>
                 <li><button class="log_in" id="sign_out" onclick="signOut()"> Sign Out </button></li>
                 <li><button class="log_in" id="sign_in" onclick="signIn()"> Sign In </button></li>
@@ -93,11 +93,11 @@
 
         <div ng-app="mainApp" class="aquaSection" id="backgroundAqua">
             <div class="container">
-               
+
                 <div ng-controller="DashboardController">
                     <div class="flex-container">
                         <div class="listTable">
-                                <h1>Dashboard</h1>  
+                            <h1>Dashboard</h1><br>
                             <div class="input-group" id="searchBar">
                                 <span class="input-group-addon" id="sizing-addon1"><span
                                         class="glyphicon glyphicon-search"></span></span>
@@ -134,43 +134,44 @@
                         </div>
                         <div class="displayDataView">
 
-                            <h2>View Order</h2>
-                            <p>Name: {{detailedInfo.firstName}} {{detailedInfo.lastName}}</p>
-                            <p>Order Status: {{detailedInfo.orderStatus}}</p>
-                            <p>Medium: {{detailedInfo.medium}}</p>
-                            <p>Photo Size: {{detailedInfo.photoSize}}</p>
-                            
-                            <p>Enter Tracking Number: <input type="text" id="trackingNumber" class="trackingNumber" placeholder={{detailedInfo.trackingNumber}}
-                                    ng-model="trackingNumber" />
+                            <h2>View Order</h2><br>
+                            <p>Name: <strong>{{detailedInfo.firstName}} {{detailedInfo.lastName}}</strong></p>
+                            <p>Order Status: <strong>{{detailedInfo.orderStatus}}</strong></p>
+                            <p>Medium: <strong>{{detailedInfo.medium}}</strong></p>
+                            <p>Photo Size: <strong>{{detailedInfo.photoSize}}</strong></p>
+
+                            <p>Enter Tracking Number: <input type="text" id="trackingNumber" class="trackingNumber"
+                                    placeholder={{detailedInfo.trackingNumber}} ng-model="trackingNumber" />
                                 <button ng-click="modifyTrackingNumber(detailedInfo._id)">Enter</button>
-                                <br />
+                                <br><br>
                             </p>
                             <link rel="stylesheet"
                                 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                             </link>
-                            <img ng-src="{{detailedInfo.FBImageURL}}" class="preview-image img-responsive"/>
+                            <img ng-src="{{detailedInfo.FBImageURL}}" class="preview-image img-responsive" />
                             <a href={{detailedInfo.FBImageURL}} download>
-                                <button class="btn" ng-click="downloadImage()"><i class="fa fa-download"></i> Download
+                                <button style="width: 100%;" class="btn" ng-click="downloadImage()"><i class="fa fa-download"></i> Download
                                     Image</button>
-
-                                <div class="dropdown">
-                                    <button class="standardButton">Change Order Status</button>
-                                    <div class="dropdown-content">
-                                        <a ng-click="modifyOrderStatus(detailedInfo._id, 'Printing')">Printing</a>
-                                        <a ng-click="modifyOrderStatus(detailedInfo._id, 'Preparing to Ship')">Preparing
-                                            to
-                                            Ship</a>
-                                        <a ng-click="modifyOrderStatus(detailedInfo._id, 'Shipped')">Shipped</a>
-                                    </div>
+                            </a>
+                            <br><br>
+                            <div style="width: 100%;" class="dropdown">
+                                <button style="width: 100%;" class="standardButton">Change Order Status</button>
+                                <div class="dropdown-content">
+                                    <a ng-click="modifyOrderStatus(detailedInfo._id, 'Printing')">Printing</a>
+                                    <a ng-click="modifyOrderStatus(detailedInfo._id, 'Preparing to Ship')">Preparing
+                                        to
+                                        Ship</a>
+                                    <a ng-click="modifyOrderStatus(detailedInfo._id, 'Shipped')">Shipped</a>
                                 </div>
-                                <br>
-                                <br>
-                                <div style="text-align:center">
-                    		<p style="font-weight:bold">Shipping Address</p>
-                    		<p>{{detailedInfo.firstName}} {{detailedInfo.lastName}}</p>
-                    		<p>{{detailedInfo.address}}</p>
-                    		<p>{{detailedInfo.city}} {{detailedInfo.state}}, {{detailedInfo.zipCode}}</p>
-						</div>
+                            </div>
+                            <br>
+                            <br>
+                            <div style="text-align:center">
+                                <p style="font-weight:bold">Shipping Address</p>
+                                <p>{{detailedInfo.firstName}} {{detailedInfo.lastName}}</p>
+                                <p>{{detailedInfo.address}}</p>
+                                <p>{{detailedInfo.city}} {{detailedInfo.state}}, {{detailedInfo.zipCode}}</p>
+                            </div>
                         </div>
                     </div>
 
