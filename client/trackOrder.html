@@ -48,35 +48,33 @@
 </head>
 
 <script type="text/javascript">
+    window.onload = account()
 
-        window.onload=account()
-        
-        function account() {
-            firebase.auth().onAuthStateChanged(function(user) {
-                if (user) {
-                    document.getElementById("sign_out").style.display='block';
-                    document.getElementById("sign_in").style.display='none';
-                } else {
-                    document.getElementById("sign_in").style.display='block';
-                    document.getElementById("sign_out").style.display='none';
-                }
-            });
-        };
+    function account() {
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                document.getElementById("sign_out").style.display = 'block';
+                document.getElementById("sign_in").style.display = 'none';
+            } else {
+                document.getElementById("sign_in").style.display = 'block';
+                document.getElementById("sign_out").style.display = 'none';
+            }
+        });
+    };
 
-        function signOut() {
-            firebase.auth().signOut().then(function() {
-                console.log('Signed Out');
-            }, function(error) {
-                console.error('Sign Out Error', error);
-            })
-            window.location.href = '/';
-        };
+    function signOut() {
+        firebase.auth().signOut().then(function () {
+            console.log('Signed Out');
+        }, function (error) {
+            console.error('Sign Out Error', error);
+        })
+        window.location.href = '/';
+    };
 
-        function signIn() {
-            window.location.href = '/login';
-        };
-
-    </script>
+    function signIn() {
+        window.location.href = '/login';
+    };
+</script>
 
 
 <body>
@@ -93,8 +91,8 @@
                 <li><a href="/upload">Upload</a></li>
                 <li><a class="active" href="/trackOrder">Track Order</a></li>
 
-                <li><button class="log_in" id="sign_out" onclick="signOut()"> Sign Out </button></li>        
-                <li><button class="log_in" style="display:none"id="sign_in" onclick="signIn()"> Sign In </button></li>
+                <li><button class="log_in" id="sign_out" onclick="signOut()"> Sign Out </button></li>
+                <li><button class="log_in" style="display:none" id="sign_in" onclick="signIn()"> Sign In </button></li>
 
             </ul>
         </div>
@@ -149,17 +147,18 @@
                     <div class="displayDataView">
 
                         <h2>Order Details</h2>
+                        <img ng-src="{{detailedInfo.FBImageURL}}" class="preview-image img-responsive"/>
                         <p>Order Status: {{detailedInfo.orderStatus}}</p>
                         <p>Tracking Number: {{detailedInfo.trackingNumber}}<p>
-                        <p>Medium: {{detailedInfo.medium}}</p>
-                        <p>Photo Size: {{detailedInfo.photoSize}}</p>
-                    	<br>
-                    	<div style="text-align:center">
-                    		<p>Shipping Address</p>
-                    		<p>{{detailedInfo.firstName}} {{detailedInfo.lastName}}</p>
-                    		<p>{{detailedInfo.address}}</p>
-                    		<p>{{detailedInfo.city}} {{detailedInfo.state}}, {{detailedInfo.zipCode}}</p>
-						</div>
+                                <p>Medium: {{detailedInfo.medium}}</p>
+                                <p>Photo Size: {{detailedInfo.photoSize}}</p>
+                                <br>
+                                <div style="text-align:center">
+                                    <p>Shipping Address</p>
+                                    <p>{{detailedInfo.firstName}} {{detailedInfo.lastName}}</p>
+                                    <p>{{detailedInfo.address}}</p>
+                                    <p>{{detailedInfo.city}} {{detailedInfo.state}}, {{detailedInfo.zipCode}}</p>
+                                </div>
 
                     </div>
                 </div>

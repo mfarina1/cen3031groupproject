@@ -89,7 +89,8 @@
                 <div class="flex-container">
                     <div class="divLeft">
                         <div class="jumbotron" id="size">
-                            <h2>Photo print size</h2>
+                            <img src="./resources/ic_photo_size.png" class="uploadIcon" alt="Icon Photo Size">
+                            <h2>Photo print size</h2><br><br>
                             <p>Select from the list below to choose which size you would like to crop print for.</p>
                             <form>
                                 <legend>List size: </legend>
@@ -104,7 +105,8 @@
 
                         </div>
                         <div class="jumbotron" id="material" style="display: none;">
-                            <h2 class="title">Print Material</h2>
+                            <img src="./resources/ic_printing_material.png" class="uploadIcon" alt="Icon Photo Size">
+                            <h2 class="title">Print Material</h2><br><br>
                             <p>Select the type of material your would like your order to be printed on</p>
                             <div ng-click="calculatePrice()"
                                 style="background-color:#d6d6d6; padding:10px;line-height: 26pt">
@@ -233,7 +235,8 @@
                         </div>
 
                         <div class="jumbotron" id="upload" style="display: none;">
-                            <h2>Select an image file:</h2>
+                            <img src="./resources/ic_image_select.png" class="uploadIcon" alt="Icon Photo Size">
+                            <h2>Select an image file:</h2><br><br>
                             <div class="row">
                                 <div class="col-lg-5">
                                     <h3>Upload</h3>
@@ -254,8 +257,9 @@
                         <div class="jumbotron" id="crop" style="display: none;">
                             <div class="row">
                                 <div class="col-lg-6">
+                                    <img src="./resources/ic_crop_img.png" class="uploadIcon" alt="Icon Photo Size">
                                     <h2>Crop Image</h2>
-                                    </br>
+                                    </br></br></br></br></br>
                                     <div class="cropArea">
                                         <br><br><br><br><br><br><br>
                                         <ui-cropper image="myImage" area-type="rectangle"
@@ -273,27 +277,68 @@
                                     </br>
                                 </div>
                             </div>
-                            <p><a class="next" onclick="showSection('userinfo', 'crop'); showImage()" role="button">Next step</a></p>
+                            <p><a class="next" onclick="showSection('userinfo', 'crop'); showImage()" role="button">Next
+                                    step</a></p>
                             <p><a class="back" onclick="showSection('upload', 'crop')" role="button">Go
                                     Back</a></p>
                         </div>
                         <div class="jumbotron" id="userinfo" style="display: none;">
-                            <h2>Shipping Information</h2>
-
+                            <img src="./resources/ic_shipping_info.png" class="uploadIcon" alt="Icon Photo Size">
+                            <h2>Shipping Information</h2><br><br><br>
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>First Name</label>
+                                        <input type="text" ng-model="newUpload.firstName" name="sA" class="form-control"
+                                            placeholder="First Name">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Last Name</label>
+                                        <input type="text" ng-model="newUpload.lastName" name="sB" class="form-control"
+                                            placeholder="Last Name">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="inputAddress">Address</label>
+                                    <input input type="text" ng-model="newUpload.address" name="sC" class="form-control"
+                                        placeholder="1234 Main St">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputCity">City</label>
+                                        <input type="text" ng-model="newUpload.city" name="sD" class="form-control"
+                                            placeholder="City">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="inputState">State</label>
+                                        <input type="text" ng-model="newUpload.state" name="sE" class="form-control"
+                                            placeholder="State">
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="inputZip">Zip</label>
+                                        <input input type="text" ng-model="newUpload.zipCode" name="sF"
+                                            class="form-control" placeholder="12345">
+                                    </div>
+                                    <p><button class="next"
+                                            onclick="showSection('payment', 'userinfo'); showSubmitButton()"
+                                            id="shipInfoNext">Next step</button></p>
+                                    <p><a class="back" onclick="showSection('crop', 'userinfo')" role="button" style="margin-top: 14px;">Go
+                                            Back</a></p>
+                                </div>
+                            </form>
+                            <!-- 
                             First Name: <input type="text" ng-model="newUpload.firstName" name="sA"><br />
                             Last Name: <input type="text" ng-model="newUpload.lastName" name="sB"><br />
                             Address: <input type="text" ng-model="newUpload.address" name="sC"><br />
                             City: <input type="text" ng-model="newUpload.city" name="sD"><br />
                             State: <input type="text" ng-model="newUpload.state" name="sE"><br />
-                            Zip Code: <input type="text" ng-model="newUpload.zipCode" name="sF"><br />
-                            <p><button class="next" onclick="showSection('payment', 'userinfo'); showSubmitButton()"
-                                    id="shipInfoNext">Next step</button></p>
+                            Zip Code: <input type="text" ng-model="newUpload.zipCode" name="sF"><br /> -->
 
-                            <p><a class="back" onclick="showSection('crop', 'userinfo')" role="button">Go Back</a></p>
                         </div>
 
                         <div class="jumbotron" id="payment" style="display: none;">
-                            <h2>Payment</h2>
+                            <img src="./resources/ic_payment.png" class="uploadIcon" alt="Icon Photo Size">
+                            <h2>Payment</h2><br><br>
                             <!-- below added by madeline for paypal buttons-->
                             <!-- <div id="paypal-button-container"></div>
 
@@ -346,7 +391,7 @@
                     <div class="divRight">
                         <h2>Your Order</h2>
                         <div id="displayImage" style="display: none">
-                            <img ng-src="{{myCroppedImage}}" class="preview-image img-responsive"/>
+                            <img ng-src="{{myCroppedImage}}" class="preview-image img-responsive" />
                         </div>
                         <p style="text-align:left">Size: {{selectedOption.value.w/100}} x {{selectedOption.value.h/100}}
                         </p>
