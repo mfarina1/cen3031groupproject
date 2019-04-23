@@ -115,19 +115,20 @@
                     </div>
                     <div class="displayDataView">
 
-                        <h2>Order Details</h2>
-                        <img ng-src="{{detailedInfo.FBImageURL}}" class="preview-image img-responsive"/>
-                        <p>Order Status: {{detailedInfo.orderStatus}}</p>
-                        <p>Tracking Number: {{detailedInfo.trackingNumber}}<p>
-                                <p>Medium: {{detailedInfo.medium}}</p>
-                                <p>Photo Size: {{detailedInfo.photoSize}}</p>
-                                <br>
-                                <div style="text-align:center">
-                                    <p>Shipping Address</p>
-                                    <p>{{detailedInfo.firstName}} {{detailedInfo.lastName}}</p>
-                                    <p>{{detailedInfo.address}}</p>
-                                    <p>{{detailedInfo.city}} {{detailedInfo.state}}, {{detailedInfo.zipCode}}</p>
-                                </div>
+                        <h2>Order Details</h2><br>
+                        <img ng-src="{{detailedInfo.FBImageURL}}" class="preview-image img-responsive" />
+                        <br><br>
+                        <p>Order Status: <strong>{{detailedInfo.orderStatus}}</strong></p>
+                        <p>Tracking Number: <strong>{{detailedInfo.trackingNumber}}</strong></p>
+                        <p>Medium: <strong>{{detailedInfo.medium}}</strong></p>
+                        <p>Photo Size: <strong>{{detailedInfo.photoSize}}</strong></p>
+                        <br>
+                        <div style="text-align:center">
+                            <p><strong>Shipping Address</strong></p>
+                            <p>{{detailedInfo.firstName}} {{detailedInfo.lastName}}</p>
+                            <p>{{detailedInfo.address}}</p>
+                            <p>{{detailedInfo.city}} {{detailedInfo.state}}, {{detailedInfo.zipCode}}</p>
+                        </div>
 
                     </div>
                 </div>
