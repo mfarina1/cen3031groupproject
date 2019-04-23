@@ -32,34 +32,32 @@
 </head>
 
 <script type="text/javascript">
+    window.onload = account()
 
-        window.onload=account()
-        
-        function account() {
-            firebase.auth().onAuthStateChanged(function(user) {
-                if (user) {
-                    document.getElementById("sign_out").style.display='block';
-                    document.getElementById("sign_in").style.display='none';
-                } else {
-                    document.getElementById("sign_in").style.display='block';
-                    document.getElementById("sign_out").style.display='none';
-                }
-            });
-        };
+    function account() {
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                document.getElementById("sign_out").style.display = 'block';
+                document.getElementById("sign_in").style.display = 'none';
+            } else {
+                document.getElementById("sign_in").style.display = 'block';
+                document.getElementById("sign_out").style.display = 'none';
+            }
+        });
+    };
 
-        function signOut() {
-            firebase.auth().signOut().then(function() {
-                console.log('Signed Out');
-            }, function(error) {
-                console.error('Sign Out Error', error);
-            })
-            window.location.href = '/home';
-        };
+    function signOut() {
+        firebase.auth().signOut().then(function () {
+            console.log('Signed Out');
+        }, function (error) {
+            console.error('Sign Out Error', error);
+        })
+        window.location.href = '/';
+    };
 
-        function signIn() {
-            window.location.href = '/login';
-        };
-
+    function signIn() {
+        window.location.href = '/login';
+    };
 </script>
 
 
@@ -75,27 +73,14 @@
                 <li><a href="/about.html">About</a></li>
                 <li><a href="/upload">Upload</a></li>
                 <li><a href="/trackOrder">Track Order</a></li>
-                <li><button class="btn btn-warning navbar-btn" id="sign_out" onclick="signOut()"> Sign Out </button></li>        
-                <li><button class="btn btn-warning navbar-btn" id="sign_in" onclick="signIn()"> Sign In </button></li>
+                <li><button class="log_in" style="display:none" id="sign_out" onclick="signOut()"> Sign Out </button></li>
+                <li><button class="log_in" id="sign_in" onclick="signIn()"> Sign In </button></li>
             </ul>
         </div>
     </nav>
 
 
     <div class="pageContent">
-        <!-- <div class="title-login">
-            <h2>Petree Prints</h2>
-            <a class="log_in" href="/login" role="button">Log In</a>
-            <a class="log_in" href="/signin" role="button">Sign In</a>
-        </div>
-        <div>
-            <ul>
-                <li class="active"><a href="/">Home</a></li>
-                <li><a href="/upload">Upload</a></li>
-                <li><a href="/dashboard">Dashboard</a></li>
-                <li><a href="/">Track Order</a></li>
-            </ul>
-        </div> -->
         <div class="aquaSection">
             <div class="container">
                 <div class="row">

@@ -32,6 +32,11 @@ angular.module('mainApp')
       
       $scope.modifyTrackingNumber= function (id) {
       	console.log($scope.trackingNumber);
+      	$scope.detailedInfo.trackingNumber = $scope.trackingNumber;
+      	
+      	document.getElementById("trackingNumber").value = '';
+      	
+      	
         Listings.updateTrackingNumber(id, $scope.trackingNumber).then(function (response) {
           console.log("Updating tracking number");
         }, function (error) {

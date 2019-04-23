@@ -25,6 +25,14 @@ function checkLogIn(){
 	console.log("CHECKING IF LOGGED IN")
 }
 
+function showImage() {
+  var i = document.getElementById('displayImage');
+  if (i.style.display === "none") {
+    i.style.display = "block";
+    console.log("Image displayed")
+  }
+}
+
 //Input Validation Source: https://stackoverflow.com/questions/5614399/disabling-submit-button-until-all-fields-have-values
 
 //****************Material Select Input***********************************************
