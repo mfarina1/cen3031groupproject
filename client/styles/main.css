@@ -107,7 +107,8 @@ li a:hover {
 
 
 .aquaSection {
-    background-color: #B2F0E4;
+    background: rgba(178,240,228, 0.8) 
+    
 }
 
 #backgroundAqua {

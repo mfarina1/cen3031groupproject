@@ -1,19 +1,27 @@
 //this is a copy of listing.model.test.js from bootcamp 3
 var should = require('should'), 
     mongoose = require('mongoose'), 
-    Listing = require('./ListingSchema'), 
-    config = require('../server/config/config.js');
+    Listing = require('./../../server/models/listings.server.model'), 
+    config = require('./../../server/config/config');
 
 var listing, id;
 
-listing =  {
-  id: '1',
-          name: '11x14, Starts at $49.99',
-          value: {
-            w: 2750,
-            h: 3500
-  }, 
-}
+listing = {
+    firstName: 'testFirst',
+    lastName: 'testLast',
+    address: 'testAddress',
+    city: 'testCity',
+    state: 'testState',
+    zipCode: 'testZCode',
+    orderStatus: 'testStatus',
+    photoSize: 'testSize',
+    price: 99,
+    medium: 
+    'testMedium',
+    trackingNumber: 'testTrackingNum',
+    FBImageURL: 'testURL',
+    FBUID: 'TestUID'
+};
 
 describe('Listing Schema Unit Tests', function() {
 
@@ -29,37 +37,26 @@ describe('Listing Schema Unit Tests', function() {
      */
     this.timeout(10000);
 
-    it('saves properly when code and name provided', function(done){
-      new Listing({
-        name: listing.name, 
-        code: listing.code
-      }).save(function(err, listing){
-        should.not.exist(err);
-        id = listing._id;
-        done();
-      });
-    });
-
-    it('saves properly when all three properties provided', function(done){
+    it('saves properly when all properties provided', function(done){
       new Listing(listing).save(function(err, listing){
         should.not.exist(err);
-        id = listing._id;
+        //id = listing.id;
         done();
       });
     });
 
-    it('throws an error when name not provided', function(done){
+    it('throws an error when only firstName provided', function(done){
       new Listing({
-        code: listing.code
+        firstName: listing.firstName
       }).save(function(err){
         should.exist(err);
         done();
       })
     });
 
-    it('throws an error when code not provided', function(done){
+    it('throws an error when only price provided', function(done){
       new Listing({
-        name: listing.name
+        price: 100
       }).save(function(err){
         should.exist(err);
         done();
